@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO de base — ✏️ à personnaliser =====
+       Title : 50-60 caractères max, mots-clés métier en premier -->
+  <title>Graphiste print & digital — Book de Romain Desfonds</title>
+  <meta name="description" content="Book de Romain Desfonds, graphiste print & digital : catalogues produits, PLV, présentoirs, packaging, visuels e-shop, newsletters et community management.">
+  <meta name="author" content="Romain Desfonds">
+  <meta name="robots" content="index, follow">
+  <!-- ✏️ URL définitive de la page (évite le contenu dupliqué) -->
+  <link rel="canonical" href="https://metakina.fr/book/">
+  <meta name="theme-color" content="#faf7f2">
+
+  <!-- ===== Open Graph (aperçu lors d'un partage LinkedIn, mail, etc.) ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Romain Desfonds — Graphiste">
+  <meta property="og:title" content="Graphiste print & digital — Book de Romain Desfonds">
+  <meta property="og:description" content="Catalogues, PLV, packaging, e-shop : découvrez mon book en ligne.">
+  <meta property="og:url" content="https://metakina.fr/book/">
+  <!-- ✏️ Image d'aperçu 1200×630 (JPG/PNG, < 300 Ko) à créer -->
+  <meta property="og:image" content="https://metakina.fr/book/assets/og-image.jpg">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- ===== Twitter/X card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Graphiste print & digital — Book de Romain Desfonds">
+  <meta name="twitter:description" content="Catalogues, PLV, packaging, e-shop : découvrez mon book en ligne.">
+  <meta name="twitter:image" content="https://metakina.fr/book/assets/og-image.jpg">
+
+  <!-- ✏️ Favicon à déposer à la racine -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <!-- ===== Polices ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- ===== Données structurées (Google : fiche personne/pro) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Romain Desfonds",
+    "jobTitle": "Graphiste print & digital",
+    "url": "https://metakina.fr/book/",
+    "email": "mailto:romain.desfonds@gmail.com",
+    "knowsAbout": ["Catalogues produits", "PLV", "Packaging", "E-commerce", "Community management", "Print", "Webdesign"],
+    "nationality": "FR"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="logo" href="#top">R.Desfonds<span class="logo-dot">.</span></a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#book">Book</a>
+      <a href="#profil">Profil</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contenu principal : un seul <main> par page (repère pour Google et lecteurs d'écran) -->
+  <main>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top" aria-label="Présentation">
+    <h1>Graphiste print <em>&amp;</em> digital</h1>
+    <p class="hero-sub">Catalogues, PLV, packaging, e-commerce — de la création à la production.</p>
+    <a href="#book" class="btn btn-primary">Voir le book ↓</a>
+  </section>
+
+  <!-- ===== Galerie / Book ===== -->
+  <section id="book" class="gallery-section">
+    <h2 class="section-title">Le book</h2>
+
+    <!-- Filtres (chips scrollables sur mobile) — générés en JS -->
+    <div class="filters" id="filters" role="tablist" aria-label="Filtrer les projets"></div>
+
+    <!-- Grille — générée en JS depuis ITEMS -->
+    <div class="grid" id="grid"></div>
+
+    <p class="empty-msg" id="emptyMsg" hidden>Aucun projet dans cette catégorie pour le moment.</p>
+  </section>
+
+  <!-- ===== Profil ===== -->
+  <section id="profil" class="profile-section">
+    <h2 class="section-title">Profil</h2>
+    <div class="profile-card">
+      <div class="profile-avatar" aria-hidden="true">RD</div>
+      <div class="profile-text">
+        <h3>Romain Desfonds</h3>
+        <p>
+          <!-- ✏️ Remplace ce texte par ta présentation -->
+          Graphiste polyvalent print &amp; web. Conception de catalogues produits,
+          PLV et présentoirs, packaging, visuels e-shop et community management.
+          Maîtrise de la chaîne graphique, de la maquette au fichier d'exécution.
+        </p>
+        <ul class="skills">
+          <li>Photoshop</li><li>Illustrator</li><li>InDesign</li>
+          <li>Figma</li><li>HTML/CSS</li><li>WordPress</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== Contact ===== -->
+  <footer id="contact" class="contact-section">
+    <div class="contact-inner">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-intro">Disponible pour votre mission.</p>
+
+      <div class="contact-grid">
+        <!-- Colonne 75% : formulaire (l'email de destination reste côté serveur, dans contact.php) -->
+        <form id="contactForm" class="contact-form" method="post" action="contact.php" novalidate>
+          <div class="form-row">
+            <label>Nom *
+              <input type="text" name="nom" required autocomplete="name">
+            </label>
+            <label>Société
+              <input type="text" name="societe" autocomplete="organization">
+            </label>
+          </div>
+          <label>Email *
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label>Message *
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <!-- Honeypot anti-bots : invisible pour un humain, un bot le remplit -->
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="ts" id="formTs">
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+
+        <!-- Colonne 25% : coordonnées (email et téléphone assemblés en JS, jamais en clair dans le HTML) -->
+        <aside class="contact-aside">
+          <h3>Coordonnées</h3>
+          <p>Basé en France<br>Réponse sous 24&nbsp;h</p>
+          <button class="reveal-btn" id="revealMail" type="button">Afficher l'email</button>
+          <button class="reveal-btn" id="revealTel" type="button">Afficher le téléphone</button>
+        </aside>
+      </div>
+
+      <p class="footer-note">© 2026 Romain Desfonds — metakina.fr</p>
+    </div>
+  </footer>
+
+  <!-- ===== Modale fiche produit (type Amazon) ===== -->
+  <div class="overlay" id="productOverlay" hidden>
+    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+      <button class="close-btn" data-close aria-label="Fermer">×</button>
+      <div class="pm-media">
+        <div class="pm-main"><img id="pmMainImg" src="" alt=""></div>
+        <div class="pm-thumbs" id="pmThumbs"></div>
+      </div>
+      <div class="pm-info">
+        <p class="pm-client" id="pmClient"></p>
+        <h3 id="pmTitle"></h3>
+        <p class="pm-desc" id="pmDesc"></p>
+        <div class="pm-tags" id="pmTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Viewer catalogue (flipbook) ===== -->
+  <div class="overlay overlay-dark" id="bookOverlay" hidden>
+    <div class="book-viewer" role="dialog" aria-modal="true" aria-labelledby="bvTitle">
+      <div class="bv-bar">
+        <span id="bvTitle"></span>
+        <button class="close-btn" data-close aria-label="Fermer">×</button>
+      </div>
+      <div class="bv-stage"><div id="flipbook"></div></div>
+      <div class="bv-controls">
+        <button id="bvPrev" class="bv-btn" aria-label="Page précédente">‹</button>
+        <span id="bvPageInfo"></span>
+        <button id="bvNext" class="bv-btn" aria-label="Page suivante">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lib flipbook (pages qui tournent, tactile) -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
