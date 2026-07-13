@@ -29,11 +29,7 @@ function phPages(name, color, n) {
 
 /* --- Pages RÉELLES d'un catalogue : dossier + nombre de pages.
        Attend des fichiers nommés page_01.webp, page_02.webp, …
-       (+ page_cover.webp pour la couverture, ajoutée à part)
-       Usage dans ITEMS :
-         cover: 'assets/catalogue/naturecos-CC/page_cover.webp',
-         pages: ['assets/catalogue/naturecos-CC/page_cover.webp',
-                 ...catPages('assets/catalogue/naturecos-CC', 14)],  --- */
+       (+ page_cover.webp pour la couverture, ajoutée à part) --- */
 function catPages(dir, n) {
   const pages = [];
   for (let i = 1; i <= n; i++) {
@@ -68,14 +64,17 @@ const TAG_LABELS = Object.fromEntries(FILTERS.map(f => [f.tag, f.label]));
    type: 'catalogue' → viewer flipbook (pages qui tournent)
    type: 'produit'   → fiche produit avec vignettes (type Amazon)
                        (1 seule image = pas de vignettes, simple zoom)
+   ratio (catalogues) : largeur/hauteur d'UNE page.
+     1           → carré
+     0.75        → 3:4 (1200×1600)
+     1200 / 1691 → A4 réel (≈ 0.71)
    ============================================================ */
 const ITEMS = [
   {
-    /* ===== DÉMO avec de vraies images ===== */
     id: 'cat-naturecos-cc',
     type: 'catalogue',
-    title: 'Catalogue Nature&cos CC',
-    client: 'Nature&cos',
+    title: 'Catalogue Nature.cos CC',
+    société: 'Nature&cos',
     tags: ['nature-cos', 'catalogue', 'print'],
     description: 'Catalogue produits 14 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.',
     cover: 'assets/catalogue/naturecos-CC/page_cover.webp',
@@ -83,13 +82,55 @@ const ITEMS = [
       'assets/catalogue/naturecos-CC/page_cover.webp', // couverture = 1re page du flipbook
       ...catPages('assets/catalogue/naturecos-CC', 14),
     ],
-    // ratio: 1,  // ✏️ décommente pour un catalogue CARRÉ (défaut : 0.75 = A4 portrait)
+    ratio: 1, // pages carrées — ⚠️ vérifie que ce catalogue est bien carré
+  },
+  {
+    id: 'cat-naturecos-add',
+    type: 'catalogue',
+    title: 'Catalogue Nature.cos ADD',
+    société: 'Nature.cos',
+    tags: ['nature-cos', 'catalogue', 'print'],
+    description: 'Catalogue produits 7 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.',
+    cover: 'assets/catalogue/naturecos-ADD/page_cover.webp',
+    pages: [
+      'assets/catalogue/naturecos-ADD/page_cover.webp',
+      ...catPages('assets/catalogue/naturecos-ADD', 6),
+    ],
+    ratio: 1, // pages carrées — ⚠️ vérifie que ce catalogue est bien carré
+  },
+  {
+    id: 'cat-naturecos-mw',
+    type: 'catalogue',
+    title: 'Catalogue Nature.cos MW',
+    société: 'Nature.cos',
+    tags: ['nature-cos', 'catalogue', 'print'],
+    description: 'Catalogue produits 7 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.',
+    cover: 'assets/catalogue/naturecos-MW/page_cover.webp',
+    pages: [
+      'assets/catalogue/naturecos-MW/page_cover.webp',
+      ...catPages('assets/catalogue/naturecos-MW', 7),
+    ],
+    ratio: 1, // pages carrées — ⚠️ vérifie que ce catalogue est bien carré
+  },
+  {
+    id: 'cat-naturecos-add_bible',
+    type: 'catalogue',
+    title: 'Bible ADD Nature.cos',
+    société: 'Nature.cos',
+    tags: ['nature-cos', 'catalogue', 'print'],
+    description: 'Bible produits et soins Atelier des Délices 124 pages — mise en page, retouche photo, fichier HD certifié imprimeur.',
+    cover: 'assets/catalogue/naturecos-bibleADD/page_cover.webp',
+    pages: [
+      'assets/catalogue/naturecos-bibleADD/page_cover.webp',
+      ...catPages('assets/catalogue/naturecos-bibleADD', 20),
+    ],
+    ratio: 1200 / 1691, // A4 réel : correspond exactement à tes exports 1200×1691
   },
   {
     id: 'cat-siroco',
     type: 'catalogue',
     title: 'Catalogue Siroco',
-    client: 'Siroco',
+    société: 'Siroco',
     tags: ['siroco', 'catalogue', 'print'],
     description: 'Catalogue gamme complète — grille éditoriale, pictos techniques, tableau de références.',
     cover: ph('Catalogue Siroco', '#b0713c', 600, 800),
@@ -99,7 +140,7 @@ const ITEMS = [
     id: 'presentoir-siroco',
     type: 'produit',
     title: 'Présentoir de comptoir Siroco',
-    client: 'Siroco',
+    société: 'Siroco',
     tags: ['siroco', 'presentoir', 'plv'],
     description: 'Présentoir carton 3 niveaux — conception du volume, habillage graphique, plan de découpe et BAT imprimeur.',
     images: [
@@ -113,7 +154,7 @@ const ITEMS = [
     id: 'plv-nature',
     type: 'produit',
     title: 'PLV vitrine Nature&cos',
-    client: 'Nature&cos',
+    société: 'Nature&cos',
     tags: ['nature-cos', 'plv', 'print'],
     description: 'Kit vitrine saisonnier : affiche A1, stop-rayon, vitrophanie.',
     images: [
@@ -126,7 +167,7 @@ const ITEMS = [
     id: 'packaging-coffret',
     type: 'produit',
     title: 'Packaging coffret cadeau',
-    client: 'Nature&cos',
+    société: 'Nature&cos',
     tags: ['nature-cos', 'packaging'],
     description: 'Coffret 3 produits — étui, calage, dorure à chaud. De la maquette 3D au fichier d\'exécution.',
     images: [
@@ -140,7 +181,7 @@ const ITEMS = [
     id: 'eshop-fiches',
     type: 'produit',
     title: 'Visuels fiches produit e-shop',
-    client: 'Siroco',
+    société: 'Siroco',
     tags: ['siroco', 'eshop', 'web'],
     description: 'Pack de visuels normés marketplace : fond blanc, mises en situation, infographies produit.',
     images: [
@@ -153,7 +194,7 @@ const ITEMS = [
     id: 'eshop-bannieres',
     type: 'produit',
     title: 'Bannières e-shop & campagnes',
-    client: 'Nature&cos',
+    société: 'Nature&cos',
     tags: ['nature-cos', 'eshop', 'web'],
     description: 'Slider homepage, bannières catégories et déclinaisons display.',
     images: [ph('Bannières e-shop', '#7a9a8a')],
@@ -162,7 +203,7 @@ const ITEMS = [
     id: 'cm-instagram',
     type: 'produit',
     title: 'Community management Instagram',
-    client: 'Nature&cos',
+    société: 'Nature&cos',
     tags: ['nature-cos', 'cm', 'web'],
     description: 'Charte feed, templates posts & stories, calendrier éditorial.',
     images: [
@@ -175,7 +216,7 @@ const ITEMS = [
     id: 'newsletter',
     type: 'produit',
     title: 'Newsletters mensuelles',
-    client: 'Siroco',
+    société: 'Siroco',
     tags: ['siroco', 'newsletter', 'web'],
     description: 'Gabarit responsive, déclinaison mensuelle, intégration dans l\'outil d\'emailing.',
     images: [
@@ -187,7 +228,7 @@ const ITEMS = [
     id: 'affiche-print',
     type: 'produit',
     title: 'Affiche événementielle',
-    client: 'Projet print',
+    société: 'Projet print',
     tags: ['print'],
     description: 'Affiche 40×60 — création typographique et illustration.',
     images: [ph('Affiche 40×60', '#a04a4a', 600, 800)],
@@ -196,7 +237,7 @@ const ITEMS = [
     id: 'webdesign',
     type: 'produit',
     title: 'Webdesign landing page',
-    client: 'Projet web',
+    société: 'Projet web',
     tags: ['web'],
     description: 'Maquette Figma responsive — desktop, tablette, mobile.',
     images: [
@@ -208,7 +249,7 @@ const ITEMS = [
     id: 'tableau-1',
     type: 'produit',
     title: 'Tableau — acrylique sur toile',
-    client: 'Travail personnel',
+    société: 'Travail personnel',
     tags: ['tableaux'],
     description: 'Acrylique sur toile, 65×54 cm.',
     images: [ph('Tableau 1', '#6a4a6a', 700, 560)],
@@ -217,7 +258,7 @@ const ITEMS = [
     id: 'tableau-2',
     type: 'produit',
     title: 'Tableau — technique mixte',
-    client: 'Travail personnel',
+    société: 'Travail personnel',
     tags: ['tableaux'],
     description: 'Technique mixte sur toile, 80×60 cm.',
     images: [ph('Tableau 2', '#4a4a5a', 700, 560)],
@@ -278,7 +319,7 @@ function renderGrid() {
     label.className = 'card-label';
     label.innerHTML = `<h3></h3><p></p>`;
     label.querySelector('h3').textContent = it.title;
-    label.querySelector('p').textContent = it.client;
+    label.querySelector('p').textContent = it.société;
 
     card.append(img, badge, label);
     const open = () => it.type === 'catalogue' ? openBook(it) : openProduct(it);
@@ -297,13 +338,14 @@ const productOverlay = document.getElementById('productOverlay');
 const pmMainImg = document.getElementById('pmMainImg');
 const pmThumbs = document.getElementById('pmThumbs');
 const pmTitle = document.getElementById('pmTitle');
-const pmClient = document.getElementById('pmClient');
+/* ⚠️ l'id dans index.html reste 'pmClient' — seule la variable est renommée */
+const pmSociete = document.getElementById('pmClient');
 const pmDesc = document.getElementById('pmDesc');
 const pmTags = document.getElementById('pmTags');
 
 function openProduct(item) {
   pmTitle.textContent = item.title;
-  pmClient.textContent = item.client;
+  pmSociete.textContent = item.société;
   pmDesc.textContent = item.description;
 
   pmTags.innerHTML = '';
@@ -360,8 +402,7 @@ function openBook(item) {
   openOverlay(bookOverlay);
 
   /* StPageFlip abîme son conteneur lors du destroy() : on recrée
-     donc un conteneur neuf à chaque ouverture (corrige le bug
-     "les images ne chargent plus à la 2e ouverture") */
+     donc un conteneur neuf à chaque ouverture */
   bvStage.innerHTML = '';
   flipbookEl = document.createElement('div');
   flipbookEl.id = 'flipbook';
@@ -379,9 +420,8 @@ function openBook(item) {
   });
 
   /* Dimensions : occupe le maximum de la scène.
-     ratio = largeur/hauteur d'UNE page :
-     0.75 → A4 portrait (défaut) ; 1 → catalogue carré ;
-     se règle par catalogue avec  ratio: 1  dans ITEMS. */
+     ⚠️ clientHeight / clientWidth : propriétés natives du DOM,
+     à ne jamais renommer (le "client" n'a rien à voir avec un client !) */
   const ratio = item.ratio || 0.75;
   const maxH = bvStage.clientHeight - 8;
   const maxW = bvStage.clientWidth - 8;
