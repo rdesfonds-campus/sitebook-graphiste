@@ -108,9 +108,9 @@ const ITEMS = [
     cover: 'assets/catalogue/naturecos-MW/page_cover.webp',
     pages: [
       'assets/catalogue/naturecos-MW/page_cover.webp',
-      ...catPages('assets/catalogue/naturecos-MW', 7),
+      ...catPages('assets/catalogue/naturecos-MW', 14),
     ],
-    ratio: 1, // pages carrées — ⚠️ vérifie que ce catalogue est bien carré
+    ratio: 1,
   },
   {
     id: 'cat-naturecos-add_bible',
@@ -124,57 +124,56 @@ const ITEMS = [
       'assets/catalogue/naturecos-bibleADD/page_cover.webp',
       ...catPages('assets/catalogue/naturecos-bibleADD', 20),
     ],
-    ratio: 1200 / 1691, // A4 réel : correspond exactement à tes exports 1200×1691
+    ratio: 1200 / 1691,
   },
   {
     id: 'cat-siroco',
     type: 'catalogue',
-    title: 'Catalogue Siroco',
-    société: 'Siroco',
+    title: 'Catalogue Siroco 2024',
+    société: 'Siroco SAS',
     tags: ['siroco', 'catalogue', 'print'],
-    description: 'Catalogue gamme complète — grille éditoriale, pictos techniques, tableau de références.',
-    cover: ph('Catalogue Siroco', '#b0713c', 600, 800),
-    pages: phPages('Siroco', '#b0713c', 12),
-  },
-  {
-    id: 'presentoir-siroco',
-    type: 'produit',
-    title: 'Présentoir de comptoir Siroco',
-    société: 'Siroco',
-    tags: ['siroco', 'presentoir', 'plv'],
-    description: 'Présentoir carton 3 niveaux — conception du volume, habillage graphique, plan de découpe et BAT imprimeur.',
-    images: [
-      ph('Présentoir — face', '#8c5a3c'),
-      ph('Présentoir — profil', '#9c6a4c'),
-      ph('Présentoir — en magasin', '#7c4a2c'),
-      ph('Plan de découpe', '#6c3a1c'),
+    description: 'Catalogue des prestations Siroco 2024 — Branding, mise en page, retouche photo, fichier HD certifié imprimeur.',
+    cover: 'assets/catalogue/siroco-2024/page_cover.webp',
+    pages: [
+      'assets/catalogue/siroco-2024/page_cover.webp',
+      ...catPages('assets/catalogue/siroco-2024', 12),
     ],
+    ratio: 1200 / 1691,
   },
   {
-    id: 'plv-nature',
+    id: 'plv-totem-triptyque',
     type: 'produit',
-    title: 'PLV vitrine Nature&cos',
-    société: 'Nature&cos',
+    title: 'PLV totem triptyque',
+    société: 'Nature.cos',
     tags: ['nature-cos', 'plv', 'print'],
-    description: 'Kit vitrine saisonnier : affiche A1, stop-rayon, vitrophanie.',
+    description: 'PLV 154x154cm : porte affiche 50x154cm',
     images: [
-      ph('Affiche A1', '#5c7a4c'),
-      ph('Stop-rayon', '#6c8a5c'),
-      ph('Vitrophanie', '#4c6a3c'),
+      { src: 'assets/totem/totem_triptyque-recto-01.webp',
+        alt: 'PLV totem triptyque Nature.cos 154×154 cm — vue de face' },
+      { src: 'assets/totem/totem_triptyque-verso-02.webp',
+        alt: 'Porte-affiche 50×154 cm du totem triptyque' },
+      { src: 'assets/totem/totem_triptyque-posters-03.webp',
+        alt: 'Totem triptyque en situation magasin' },
     ],
   },
-  {
-    id: 'packaging-coffret',
-    type: 'produit',
-    title: 'Packaging coffret cadeau',
-    société: 'Nature&cos',
-    tags: ['nature-cos', 'packaging'],
-    description: 'Coffret 3 produits — étui, calage, dorure à chaud. De la maquette 3D au fichier d\'exécution.',
+ {
+    id: 'photo-pro',
+    type: 'photos',
+    title: 'Photos professionnelles',
+    société: 'Nature.cos',
+    tags: ['nature.cos', 'photos promotionnelles','refflex', 'print'],
+    description: 'Photos promotionnelles utilisées pour supports de communication',
     images: [
-      ph('Coffret fermé', '#4a6a5a'),
-      ph('Coffret ouvert', '#5a7a6a'),
-      ph('Étui à plat', '#3a5a4a'),
-      ph('Mockup 3D', '#2a4a3a'),
+      { src: 'assets/photo-promotionnelle/presentoir-produits-CC-01.webp',
+        alt: 'Photo de présentoir gamme Couleur Caramel à l\'attention des dépositaires' },
+      { src: 'assets/photo-promotionnelle/presentoir-produits-CC-02.webp',
+        alt: 'Photo de présentoir gamme Couleur Caramel à l\'attention des dépositaires' },
+      { src: 'assets/photo-promotionnelle/presentoir-produits-MW-03.webp',
+        alt: 'Photo de présentoir gamme miss W à l\'attention des dépositaires' },
+      { src: 'assets/photo-promotionnelle/skinvision-01.webp',
+        alt: 'Photo promotionnelle de l\'appareil à diagnostic peau Skin@vision à l\'attention des dépositaires' },
+            { src: 'assets/photo-promotionnelle/skinvision-02.webp',
+        alt: 'Photo promotionnelle de l\'appareil à diagnostic peau Skin@vision à l\'attention des dépositaires' },  
     ],
   },
   {
@@ -307,7 +306,9 @@ function renderGrid() {
     card.setAttribute('aria-label', it.title);
 
     const img = document.createElement('img');
-    img.src = it.cover || (it.images && it.images[0]) || '';
+    // fallback vignette : 1re image du produit (chaîne OU objet {src, alt})
+    const first = it.images && it.images[0];
+    img.src = it.cover || (typeof first === 'string' ? first : first && first.src) || '';
     img.alt = it.title;
     img.loading = 'lazy';
 
@@ -344,6 +345,14 @@ const pmDesc = document.getElementById('pmDesc');
 const pmTags = document.getElementById('pmTags');
 
 function openProduct(item) {
+  /* images accepte 2 formats, mélangeables :
+       'chemin.webp'                            → alt = titre du projet
+       { src: 'chemin.webp', alt: 'texte SEO' } → alt personnalisé
+     L'ordre d'affichage = l'ordre du tableau (1re = visuel principal). */
+  const imgs = item.images.map(im =>
+    typeof im === 'string' ? { src: im, alt: item.title } : im
+  );
+
   pmTitle.textContent = item.title;
   pmSociete.textContent = item.société;
   pmDesc.textContent = item.description;
@@ -357,21 +366,22 @@ function openProduct(item) {
 
   // vignettes : cliquer remplace le visuel principal
   pmThumbs.innerHTML = '';
-  pmThumbs.hidden = item.images.length < 2;
-  item.images.forEach((src, i) => {
+  pmThumbs.hidden = imgs.length < 2;
+  imgs.forEach((imgDef, i) => {
     const b = document.createElement('button');
     b.className = i === 0 ? 'active' : '';
-    b.setAttribute('aria-label', `Visuel ${i + 1}`);
+    b.setAttribute('aria-label', imgDef.alt || `Visuel ${i + 1}`);
     const im = document.createElement('img');
-    im.src = src;
-    im.alt = '';
+    im.src = imgDef.src;
+    im.alt = imgDef.alt || '';
     b.appendChild(im);
     const select = () => {
-      if (pmMainImg.src === src) return;
+      if (pmMainImg.src === imgDef.src) return;
       // fondu doux lors du changement de visuel
       pmMainImg.style.opacity = '0';
       setTimeout(() => {
-        pmMainImg.src = src;
+        pmMainImg.src = imgDef.src;
+        pmMainImg.alt = imgDef.alt || item.title;
         pmMainImg.onload = () => { pmMainImg.style.opacity = '1'; };
       }, 150);
       pmThumbs.querySelectorAll('button').forEach(x => x.classList.remove('active'));
@@ -382,8 +392,8 @@ function openProduct(item) {
     pmThumbs.appendChild(b);
   });
 
-  pmMainImg.src = item.images[0];
-  pmMainImg.alt = item.title;
+  pmMainImg.src = imgs[0].src;
+  pmMainImg.alt = imgs[0].alt || item.title;
   openOverlay(productOverlay);
 }
 
