@@ -425,23 +425,62 @@ img { display: block; max-width: 100%; }
 .pm-dots span.active { background: var(--accent); }
 
 /* ============================================================
-   MOBILE UNIQUEMENT (< 900px) : priorité au visuel.
-   Vignettes et tags masqués, navigation au swipe + points,
-   image à son ratio naturel, cadre au plus large.
+   MOBILE UNIQUEMENT (< 900px) : visionneuse plein écran façon
+   Amazon — fond blanc opaque, visuel au centre à son ratio
+   naturel, mini-vignettes en bas, navigation au swipe.
    ⚠️ Ces règles doivent IMPÉRATIVEMENT rester dans ce @media,
    sinon elles s'appliquent aussi au desktop.
    ============================================================ */
 @media (max-width: 899px) {
-  .pm-thumbs, .pm-tags { display: none; }
+  /* fond blanc opaque, plein écran (le flipbook garde son fond sombre) */
+  #productOverlay { padding: 0; background: #fff; backdrop-filter: none; }
 
-  .overlay { padding: .5rem; }
-  .product-modal { padding: .75rem .75rem 1.25rem; max-height: 96dvh; }
+  .product-modal {
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
 
+  /* épuré : titre seul en haut, pas de description/tags/société */
+  .pm-info { order: -1; margin-top: 0; padding-right: 3rem; }
+  .pm-info h3 { font-size: 1.05rem; }
+  .pm-client, .pm-desc, .pm-tags { display: none; }
+
+  /* le visuel occupe tout l'espace restant, à son ratio naturel */
+  .pm-media { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+  .pm-main {
+    flex: 1;
+    min-height: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .pm-main img {
     aspect-ratio: auto;
     width: 100%;
-    max-height: 72vh;
+    max-height: 100%;
+    object-fit: contain;
   }
+
+  /* mini-vignettes centrées en bas, façon Amazon
+     (elles servent aussi d'indicateur de position) */
+  .pm-thumbs {
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem;
+    flex: 0 0 auto;
+  }
+  .pm-thumbs button { width: 52px; height: 52px; border-radius: 6px; }
+
+  /* les vignettes remplacent les points */
+  .pm-dots { display: none; }
 }
 
 .pm-info { margin-top: 1rem; }
