@@ -424,10 +424,24 @@ img { display: block; max-width: 100%; }
 }
 .pm-dots span.active { background: var(--accent); }
 
-/* Mobile : priorité au visuel — vignettes et tags masqués,
-   navigation au swipe gauche/droite sur l'image */
+/* ============================================================
+   MOBILE UNIQUEMENT (< 900px) : priorité au visuel.
+   Vignettes et tags masqués, navigation au swipe + points,
+   image à son ratio naturel, cadre au plus large.
+   ⚠️ Ces règles doivent IMPÉRATIVEMENT rester dans ce @media,
+   sinon elles s'appliquent aussi au desktop.
+   ============================================================ */
 @media (max-width: 899px) {
   .pm-thumbs, .pm-tags { display: none; }
+
+  .overlay { padding: .5rem; }
+  .product-modal { padding: .75rem .75rem 1.25rem; max-height: 96dvh; }
+
+  .pm-main img {
+    aspect-ratio: auto;
+    width: 100%;
+    max-height: 72vh;
+  }
 }
 
 .pm-info { margin-top: 1rem; }
