@@ -357,11 +357,14 @@ img { display: block; max-width: 100%; }
 }
 .close-btn:hover { background: var(--accent); }
 
+/* ===== Modale fiche produit (type Amazon) ===== */
 .product-modal {
   position: relative;
   background: var(--card);
   border-radius: var(--radius);
   width: 100%;
+  /* ×1,5 desktop (ex-920px) : 88vw sur écrans moyens, plafonné à 1380px
+     sur les grands — min() prend automatiquement la plus petite valeur. */
   max-width: min(1380px, 88vw);
   max-height: 92dvh;
   overflow-y: auto;
@@ -392,8 +395,8 @@ img { display: block; max-width: 100%; }
 }
 .pm-thumbs button {
   flex: 0 0 auto;
-  width: 60px;
-  height: 60px;
+  width: 90px;   /* vignettes agrandies en proportion (ex-60px) */
+  height: 90px;
   padding: 0;
   border-radius: 8px;
   border: 2px solid var(--border);
@@ -404,6 +407,28 @@ img { display: block; max-width: 100%; }
 .pm-thumbs button img { width: 100%; height: 100%; object-fit: cover; }
 .pm-thumbs button.active { border-color: var(--accent); }
 .pm-thumbs button:hover { border-color: var(--ink); }
+
+/* Points de position (mobile uniquement — masqués en desktop) */
+.pm-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: .6rem;
+}
+.pm-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background .2s;
+}
+.pm-dots span.active { background: var(--accent); }
+
+/* Mobile : priorité au visuel — vignettes et tags masqués,
+   navigation au swipe gauche/droite sur l'image */
+@media (max-width: 899px) {
+  .pm-thumbs, .pm-tags { display: none; }
+}
 
 .pm-info { margin-top: 1rem; }
 .pm-client {
@@ -538,7 +563,8 @@ body.no-scroll { overflow: hidden; }
   .profile-card { flex-direction: row; padding: 2rem; }
   .profile-avatar { width: 96px; height: 96px; font-size: 2rem; }
 
-  /* Fiche produit : infos en haut, visuel à gauche, vignettes à droite */
+  /* Fiche produit : infos en haut, puis visuel aligné à gauche
+     avec la colonne de vignettes de navigation à droite */
   .product-modal {
     display: flex;
     flex-direction: column;
@@ -546,7 +572,7 @@ body.no-scroll { overflow: hidden; }
     padding: 2rem 2.5rem;
     max-width: min(1160px, 90vw);
   }
-  .pm-info { order: -1; margin-top: 0; padding-right: 3.5rem; }
+  .pm-info { order: -1; margin-top: 0; padding-right: 3.5rem; } /* infos au-dessus ; marge pour le bouton ✕ */
 
   .pm-media {
     display: flex;
@@ -554,9 +580,15 @@ body.no-scroll { overflow: hidden; }
     align-items: flex-start;
     width: 100%;
   }
-  .pm-main { flex: 1; min-width: 0; }
+  .pm-main { flex: 1; min-width: 0; } /* le visuel prend la place restante, bord gauche aligné au texte */
+
+  /* Le visuel ne dépasse jamais l'écran en hauteur → plus d'ascenseur
+     dans la modale (l'image reste entière grâce à object-fit: contain) */
   .pm-main img { max-height: 62vh; }
 
+  /* Vignettes : colonne verticale à droite, défilable si nombreuses.
+     Le padding évite que les coins arrondis des 1re/dernière vignettes
+     soient rognés par le conteneur défilant. */
   .pm-thumbs {
     flex: 0 0 auto;
     flex-direction: column;
@@ -567,4 +599,8 @@ body.no-scroll { overflow: hidden; }
     overflow-x: hidden;
     padding: 3px 6px 3px 3px;
   }
-  .pm-thumbs button { width: 80px; height: 80px; }}
+  .pm-thumbs button { width: 80px; height: 80px; }
+
+  /* Desktop : la navigation se fait par les vignettes, pas par les points */
+  .pm-dots { display: none; }
+}

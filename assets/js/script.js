@@ -49,6 +49,7 @@ const FILTERS = [
   { tag: 'plv',         label: 'PLV' },
   { tag: 'presentoir',  label: 'Présentoirs' },
   { tag: 'packaging',   label: 'Packaging' },
+  { tag: 'photos',      label: 'Photos' },
   { tag: 'eshop',       label: 'E-shop' },
   { tag: 'cm',          label: 'Community management' },
   { tag: 'newsletter',  label: 'Newsletters' },
@@ -156,12 +157,13 @@ const ITEMS = [
         alt: 'Totem triptyque en situation magasin' },
     ],
   },
- {
+  {
     id: 'photo-pro',
-    type: 'photos',
+    type: 'produit', // 'photos' n'existe pas comme type : produit = fiche avec visuels
     title: 'Photos professionnelles',
     société: 'Nature.cos',
-    tags: ['nature.cos', 'photos promotionnelles','refflex', 'print'],
+    /* tags = clés de FILTERS (le libellé affiché vient de là) */
+    tags: ['nature-cos', 'photos', 'print'],
     description: 'Photos promotionnelles utilisées pour supports de communication',
     images: [
       { src: 'assets/photo-promotionnelle/presentoir-produits-CC-01.webp',
@@ -172,8 +174,8 @@ const ITEMS = [
         alt: 'Photo de présentoir gamme miss W à l\'attention des dépositaires' },
       { src: 'assets/photo-promotionnelle/skinvision-01.webp',
         alt: 'Photo promotionnelle de l\'appareil à diagnostic peau Skin@vision à l\'attention des dépositaires' },
-            { src: 'assets/photo-promotionnelle/skinvision-02.webp',
-        alt: 'Photo promotionnelle de l\'appareil à diagnostic peau Skin@vision à l\'attention des dépositaires' },  
+      { src: 'assets/photo-promotionnelle/skinvision-02.webp',
+        alt: 'Photo promotionnelle de l\'appareil à diagnostic peau Skin@vision à l\'attention des dépositaires' },
     ],
   },
   {
@@ -334,9 +336,13 @@ function renderGrid() {
 
 /* ============================================================
    Modale fiche produit (type Amazon)
+   Desktop : vignettes cliquables à droite
+   Mobile  : vignettes et tags masqués (voir CSS), navigation
+             au swipe gauche/droite + points de position
    ============================================================ */
 const productOverlay = document.getElementById('productOverlay');
 const pmMainImg = document.getElementById('pmMainImg');
+const pmMainBox = document.querySelector('.pm-main');
 const pmThumbs = document.getElementById('pmThumbs');
 const pmTitle = document.getElementById('pmTitle');
 /* ⚠️ l'id dans index.html reste 'pmClient' — seule la variable est renommée */
@@ -344,12 +350,43 @@ const pmSociete = document.getElementById('pmClient');
 const pmDesc = document.getElementById('pmDesc');
 const pmTags = document.getElementById('pmTags');
 
+/* Points de position (mobile) — créés une fois, sous le visuel */
+const pmDots = document.createElement('div');
+pmDots.className = 'pm-dots';
+pmMainBox.after(pmDots);
+
+let pmImgs = [];   // images de la fiche ouverte
+let pmIndex = 0;   // visuel affiché
+
+function showProductImage(i, instant = false) {
+  if (!pmImgs.length) return;
+  const next = (i + pmImgs.length) % pmImgs.length; // boucle aux extrémités
+  if (!instant && next === pmIndex) return;
+  pmIndex = next;
+  const def = pmImgs[pmIndex];
+
+  const apply = () => {
+    pmMainImg.src = def.src;
+    pmMainImg.alt = def.alt || '';
+    pmMainImg.onload = () => { pmMainImg.style.opacity = '1'; };
+  };
+  if (instant) {
+    apply();
+  } else {
+    pmMainImg.style.opacity = '0';   // fondu doux
+    setTimeout(apply, 150);
+  }
+
+  pmThumbs.querySelectorAll('button').forEach((b, k) => b.classList.toggle('active', k === pmIndex));
+  pmDots.querySelectorAll('span').forEach((d, k) => d.classList.toggle('active', k === pmIndex));
+}
+
 function openProduct(item) {
   /* images accepte 2 formats, mélangeables :
        'chemin.webp'                            → alt = titre du projet
        { src: 'chemin.webp', alt: 'texte SEO' } → alt personnalisé
      L'ordre d'affichage = l'ordre du tableau (1re = visuel principal). */
-  const imgs = item.images.map(im =>
+  pmImgs = item.images.map(im =>
     typeof im === 'string' ? { src: im, alt: item.title } : im
   );
 
@@ -364,38 +401,42 @@ function openProduct(item) {
     pmTags.appendChild(s);
   });
 
-  // vignettes : cliquer remplace le visuel principal
+  // vignettes (desktop) : cliquer remplace le visuel principal
   pmThumbs.innerHTML = '';
-  pmThumbs.hidden = imgs.length < 2;
-  imgs.forEach((imgDef, i) => {
+  pmThumbs.hidden = pmImgs.length < 2;
+  pmImgs.forEach((imgDef, i) => {
     const b = document.createElement('button');
-    b.className = i === 0 ? 'active' : '';
     b.setAttribute('aria-label', imgDef.alt || `Visuel ${i + 1}`);
     const im = document.createElement('img');
     im.src = imgDef.src;
     im.alt = imgDef.alt || '';
     b.appendChild(im);
-    const select = () => {
-      if (pmMainImg.src === imgDef.src) return;
-      // fondu doux lors du changement de visuel
-      pmMainImg.style.opacity = '0';
-      setTimeout(() => {
-        pmMainImg.src = imgDef.src;
-        pmMainImg.alt = imgDef.alt || item.title;
-        pmMainImg.onload = () => { pmMainImg.style.opacity = '1'; };
-      }, 150);
-      pmThumbs.querySelectorAll('button').forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-    };
-    b.addEventListener('click', select);
-    b.addEventListener('mouseenter', select); // comme Amazon : survol = aperçu
+    b.addEventListener('click', () => showProductImage(i));
+    b.addEventListener('mouseenter', () => showProductImage(i)); // survol façon Amazon
     pmThumbs.appendChild(b);
   });
 
-  pmMainImg.src = imgs[0].src;
-  pmMainImg.alt = imgs[0].alt || item.title;
+  // points de position (mobile)
+  pmDots.innerHTML = '';
+  if (pmImgs.length > 1) {
+    pmImgs.forEach(() => pmDots.appendChild(document.createElement('span')));
+  }
+
+  showProductImage(0, true);
   openOverlay(productOverlay);
 }
+
+/* Swipe gauche/droite sur le visuel (mobile) */
+let pmTouchX = null;
+pmMainBox.addEventListener('touchstart', e => {
+  pmTouchX = e.touches[0].clientX;
+}, { passive: true });
+pmMainBox.addEventListener('touchend', e => {
+  if (pmTouchX === null || pmImgs.length < 2) return;
+  const dx = e.changedTouches[0].clientX - pmTouchX;
+  pmTouchX = null;
+  if (Math.abs(dx) > 40) showProductImage(pmIndex + (dx < 0 ? 1 : -1));
+});
 
 /* ============================================================
    Viewer catalogue — flipbook (StPageFlip)
