@@ -68,12 +68,31 @@
   <!-- Contenu principal : un seul <main> par page (repère pour Google et lecteurs d'écran) -->
   <main>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero" id="top" aria-label="Présentation">
-    <h1>Graphiste print <em>&amp;</em> digital</h1>
-    <p class="hero-sub">Catalogues, PLV, packaging, e-commerce — de la création à la production.</p>
-    <a href="#book" class="btn btn-primary">Voir le book ↓</a>
-  </section>
+  <section class="hero" id="top">
+  <!-- ✏️ Dépose ton fallback ici : assets/hero/hero-fallback.jpg (1920×1080 mini)
+       Quand ta vidéo sera prête, ajoute juste le src ci-dessous (mp4, ~5-10 Mo max, muet). -->
+  <video autoplay muted loop playsinline
+         class="hero-media"
+         poster="assets/hero/hero-fallback.jpg"
+         src="assets/hero/hero-bg.mp4"></video>
+
+  <div class="hero-line"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span> Graphiste print &amp; digital — disponible pour votre mission
+    </div>
+    <h1 class="hero-name">Romain<br><span class="last">Desfonds</span></h1>
+    <p class="hero-sub">
+      Catalogues, PLV, packaging, e-commerce — de la création à la production.
+    </p>
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-primary">Voir le book ↓</a>
+      <a href="#contact" class="btn btn-ghost">Me contacter</a>
+    </div>
+  </div>
+</section>
 
   <!-- ===== Galerie / Book ===== -->
   <section id="book" class="gallery-section">
