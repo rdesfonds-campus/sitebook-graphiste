@@ -57,10 +57,7 @@
 
   <!-- ===== Header ===== -->
   <header class="site-header">
-    <!-- ✏️ Logo image — dépose ton fichier dans assets/img/logo.png (ou .svg) -->
-    <a class="logo" href="#top">
-      <img src="assets/SVG/logo-rd.svg" alt="Romain Desfonds" class="logo-img">
-    </a>
+    <a class="logo" href="#top">R.Desfonds<span class="logo-dot">.</span></a>
     <nav class="site-nav" aria-label="Navigation principale">
       <a href="#book">Book</a>
       <a href="#profil">Profil</a>
@@ -72,87 +69,34 @@
   <main>
 
   <section class="hero" id="top">
-    <div class="hero-line"></div>
-    <div class="hero-vignette"></div>
+  <!-- ✏️ Dépose ton fallback ici : assets/hero/hero-fallback.jpg (1920×1080 mini)
+       Quand ta vidéo sera prête, ajoute juste le src ci-dessous (mp4, ~5-10 Mo max, muet). -->
+  <video autoplay muted loop playsinline
+         class="hero-media"
+         poster="assets/hero/hero-fallback.jpg"
+         src="assets/hero/hero-bg.mp4"></video>
 
-    <div class="hero-content">
-      <div class="hero-textbox">
-        <div class="hero-badge">
-          <span class="dot"></span> Graphiste print &amp; digital — disponible pour votre mission
-        </div>
-        <h1 class="hero-name">Romain<br><span class="last">Desfonds</span></h1>
-        <p class="hero-sub">
-          Catalogues, PLV, packaging, e-commerce — de la création à la production.
-        </p>
-        <div class="hero-actions">
-          <a href="#book" class="btn btn-primary">Voir le book ↓</a>
-          <a href="#contact" class="btn btn-ghost">Me contacter</a>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- ===== Profil ===== -->
-<section id="profil" class="profile-section">
-  
+  <div class="hero-line"></div>
+  <div class="hero-vignette"></div>
 
-  <div class="profile-layout">
-    <div class="profile-photo">
-      <img src="assets/img/romain-desfonds-graphiste-senior-developpeur-junior-portrait.webp" alt="Portrait de Romain Desfonds">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span> Graphiste print &amp; digital — disponible pour votre mission
     </div>
-    <div class="profile-card">
- <h2 class="section-title profile-title">De l'image <span class="accent">et du code</span></h2>      <p>
-        Graphiste authentique, je maîtrise les logiciels Adobe et les techniques d'impression. J'ai mis à jour mes compétences dans le numérique avec une formation de développeur web et web mobile (Front-End), et je suis familiarisé avec les enjeux du marketing digital.
-      </p>
-      <p>
-        Je possède un profil hybride designer/développeur polyvalent, capable de réaliser vos missions avec ou sans l'aide de l'IA et être un soutien pour des services marketing, communication, ou développement.
-      </p>
-      <p>
-        Ma force réside dans ma capacité à comprendre à la fois les contraintes techniques du développement et les exigences de l'expérience utilisateur (UX/UI).
-      </p>
-      <p class="profile-objective">
-        <strong>Objectif :</strong> monter en compétences au sein d'une équipe technique et contribuer concrètement à des projets en apportant ma double vision Créa/Tech.
-      </p>
+    <h1 class="hero-name">Romain<br><span class="last">Desfonds</span></h1>
+    <p class="hero-sub">
+      Catalogues, PLV, packaging, e-commerce — de la création à la production.
+    </p>
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-primary">Voir le book ↓</a>
+      <a href="#contact" class="btn btn-ghost">Me contacter</a>
     </div>
   </div>
 </section>
 
-
-
-<!-- ===== Hard & Soft skills ===== -->
-<section class="skills-dark">
-  <div class="skills-dark-inner">
-    <span class="eyebrow eyebrow-light">Hard &amp; soft skills</span>
-    <h2 class="skills-dark-title">Ce que je sais faire.<br>Comment je <span class="accent">travaille</span>.</h2>
-
-    <div class="skills-columns">
-      <div class="skills-col">
-        <h4>Hard skills — technique</h4>
-        <ul>
-          <li>Vue.js, Supabase, PHP / MariaDB</li>
-          <li>Webdesign UX/UI — Figma, Adobe CC</li>
-          <li>Git / GitHub — versioning, workflow collaboratif</li>
-          <li>WordPress &amp; Prestashop</li>
-          <li>Utilisateur IA (Claude, ChatGPT, Gemini, Copilot…)</li>
-          <li>JavaScript, PHP, Laravel</li>
-        </ul>
-      </div>
-      <div class="skills-col">
-        <h4>Soft skills — humain</h4>
-        <ul>
-          <li>Autonomie &amp; travail en équipe</li>
-          <li>Gestion de projet — délais, budgets, enjeux client</li>
-          <li>Communication transverse (créa, tech, client)</li>
-          <li>Force de proposition et sens du détail</li>
-          <li>Curiosité permanente et veille active</li>
-          <li>Reconversion proactive et capacité d'adaptation</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
   <!-- ===== Galerie / Book ===== -->
   <section id="book" class="gallery-section">
-    <h2 class="section-title">Mon book</h2>
+    <h2 class="section-title">Le book</h2>
 
     <!-- Filtres (chips scrollables sur mobile) — générés en JS -->
     <div class="filters" id="filters" role="tablist" aria-label="Filtrer les projets"></div>
@@ -163,7 +107,26 @@
     <p class="empty-msg" id="emptyMsg" hidden>Aucun projet dans cette catégorie pour le moment.</p>
   </section>
 
-  
+  <!-- ===== Profil ===== -->
+  <section id="profil" class="profile-section">
+    <h2 class="section-title">Profil</h2>
+    <div class="profile-card">
+      <div class="profile-avatar" aria-hidden="true">RD</div>
+      <div class="profile-text">
+        <h3>Romain Desfonds</h3>
+        <p>
+          <!-- ✏️ Remplace ce texte par ta présentation -->
+          Graphiste polyvalent print &amp; web. Conception de catalogues produits,
+          PLV et présentoirs, packaging, visuels e-shop et community management.
+          Maîtrise de la chaîne graphique, de la maquette au fichier d'exécution.
+        </p>
+        <ul class="skills">
+          <li>Photoshop</li><li>Illustrator</li><li>InDesign</li>
+          <li>Figma</li><li>HTML/CSS</li><li>WordPress</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   </main>
 

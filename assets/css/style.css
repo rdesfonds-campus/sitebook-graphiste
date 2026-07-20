@@ -31,7 +31,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Hiérarchie typographique : h1 bold 2em / h2 semibold 1.6em / texte 1em regular */
 h1 { font-weight: 700; font-size: 2em; }
 h2 { font-weight: 600; font-size: 1.6em; }
 
@@ -45,13 +44,17 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .8rem 1rem;
+  height: 100px;
+  padding: 0 1rem;
   background: rgba(250, 247, 242, .92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-family: var(--font-title);
   font-weight: 700;
   font-size: 1.15rem;
@@ -59,6 +62,12 @@ img { display: block; max-width: 100%; }
   text-decoration: none;
 }
 .logo-dot { color: var(--accent); }
+
+.logo-img {
+  display: block;
+  height: 60px;
+  width: auto;
+}
 
 .site-nav { display: flex; gap: .35rem; }
 .site-nav a {
@@ -73,35 +82,25 @@ img { display: block; max-width: 100%; }
 .site-nav .nav-cta { background: var(--ink); color: #fff; }
 .site-nav .nav-cta:hover { background: var(--accent); }
 
-/* ===== Hero — plein écran, fallback mobile, vidéo desktop, ambiance chaude ===== */
-
-/* --- Base mobile : pas de vidéo, juste le fallback + voile --- */
+/* ===== Hero ===== */
 .hero {
   position: relative;
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
-  overflow: hidden;
   background-color: var(--bg);
-  background-image: url('assets/hero/hero-fallback.jpg');
+  background-image: url('../img/romain-desfonds-graphiste-senior-developpeur-junior.webp');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.hero-media { display: none; } /* activée en desktop, voir breakpoint */
-
-.hero-line { display: none; } /* décor desktop uniquement */
+.hero-line { display: none; }
 
 .hero-vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    var(--bg) 0%,
-    rgba(250, 247, 242, .85) 30%,
-    rgba(250, 247, 242, .35) 60%,
-    rgba(250, 247, 242, .05) 100%
-  );
   pointer-events: none;
 }
 
@@ -109,7 +108,17 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 0 1.25rem clamp(2.5rem, 9vw, 6rem);
+  padding: 0 1.25rem clamp(30rem, 7vw, 4rem);
+}
+
+.hero-textbox {
+  display: inline-block;
+  max-width: 34rem;
+  background: rgba(255, 255, 255, .78);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.85rem;
+  box-shadow: var(--shadow);
 }
 
 .hero-badge {
@@ -166,11 +175,8 @@ img { display: block; max-width: 100%; }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
 
 /* ===== Sections ===== */
-.section-title {
-  margin-bottom: 1rem;
-}
+.section-title { margin-bottom: 1rem; }
 
-/* Mobile : sections pleine largeur (pas de limite) */
 .gallery-section { padding: 1rem 1rem 3rem; margin: 0 auto; }
 
 /* ===== Filtres (chips) ===== */
@@ -202,15 +208,10 @@ img { display: block; max-width: 100%; }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 .chip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
 
-/* ===== Grille (flexbox : les visuels s'encastrent en lignes) ===== */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-}
+/* ===== Grille galerie ===== */
+.grid { display: flex; flex-wrap: wrap; gap: .75rem; }
 
 .card {
-  /* 2 visuels par ligne sur mobile */
   flex: 1 1 calc(50% - .375rem);
   max-width: calc(50% - .375rem);
   position: relative;
@@ -228,13 +229,9 @@ img { display: block; max-width: 100%; }
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 
-/* Visuels sources en 1200×1200 : affichage plein cadre sans recadrage.
-   Le ratio imposé garantit des blocs identiques quelle que soit l'image. */
 .card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 
-.card-label {
-  padding: .55rem .7rem .7rem;
-}
+.card-label { padding: .55rem .7rem .7rem; }
 .card-label h3 { font-size: .85rem; font-weight: 600; line-height: 1.3; }
 .card-label p { font-size: .72rem; color: var(--muted); }
 
@@ -254,51 +251,112 @@ img { display: block; max-width: 100%; }
 
 .empty-msg { color: var(--muted); text-align: center; padding: 2rem 0; }
 
+/* ===== Eyebrow / accent util ===== */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .75rem;
+}
+.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--accent); }
+.eyebrow-light { color: #fff; }
+
+.accent { color: var(--accent); }
+
 /* ===== Profil ===== */
 .profile-section { padding: 2.5rem 1rem; margin: 0 auto; }
 
-.profile-card {
+.profile-title { font-size: clamp(1.8rem, 5vw, 2.6rem); margin-bottom: 1rem; }
+.profile-intro { color: var(--muted); font-size: 1rem; max-width: 42rem; margin-bottom: 2rem; }
+
+.profile-layout {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.profile-photo { border-radius: var(--radius); overflow: hidden; }
+.profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.profile-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.75rem;
   box-shadow: var(--shadow);
 }
+.profile-card h3 { font-family: var(--font-title); font-size: 1.25rem; margin-bottom: .9rem; }
+.profile-card p { color: var(--muted); font-size: .95rem; margin-bottom: .9rem; }
+.profile-card p:last-child { margin-bottom: 0; }
 
-.profile-avatar {
-  width: 72px;
-  height: 72px;
+.profile-objective {
+  color: var(--ink) !important;
+  background: var(--accent-soft);
+  padding: .9rem 1rem;
+  border-radius: 10px;
+}
+.profile-objective strong { color: var(--accent); }
+
+/* ===== Stack & outils ===== */
+.stack-section { padding: 2.5rem 1rem; margin: 0 auto; }
+.stack-header { margin-bottom: 1.75rem; }
+.stack-intro { color: var(--muted); font-size: .95rem; max-width: 40rem; }
+
+.stack-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.stack-card {
+  flex: 1 1 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+.stack-icon { display: inline-block; font-size: 1.4rem; margin-bottom: .75rem; }
+.stack-card h3 { font-family: var(--font-title); font-size: 1.05rem; margin-bottom: .5rem; }
+.stack-card p { color: var(--muted); font-size: .88rem; }
+.stack-card em { font-style: italic; color: var(--muted); }
+
+/* ===== Hard / Soft skills (fond sombre) ===== */
+.skills-dark { padding: 3rem 1rem 3.5rem; background: var(--ink); color: #fff; }
+
+.skills-dark-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.skills-columns { display: flex; flex-direction: column; gap: 2rem; }
+
+.skills-col h4 {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .6);
+  margin-bottom: 1rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.skills-col ul { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+.skills-col li { position: relative; padding-left: 1.2rem; font-size: .92rem; color: rgba(255, 255, 255, .9); }
+.skills-col li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  color: #fff;
-  font-family: var(--font-title);
-  font-size: 1.5rem;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.profile-text h3 { font-family: var(--font-title); font-size: 1.25rem; margin-bottom: .4rem; }
-.profile-text p { color: var(--muted); font-size: .95rem; }
-
-.skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  margin-top: .9rem;
-}
-.skills li {
-  font-size: .75rem;
-  font-weight: 500;
-  background: var(--accent-soft);
-  color: var(--accent);
-  padding: .3rem .7rem;
-  border-radius: 999px;
 }
 
 /* ===== Contact ===== */
@@ -312,7 +370,6 @@ img { display: block; max-width: 100%; }
 .contact-section .btn-primary { background: var(--accent); }
 .contact-section .btn-primary:hover { background: #fff; color: var(--ink); }
 
-/* Mobile : colonnes empilées ; desktop : 75 / 25 (voir breakpoint) */
 .contact-grid {
   display: flex;
   flex-direction: column;
@@ -349,7 +406,6 @@ img { display: block; max-width: 100%; }
 .contact-form textarea { resize: vertical; }
 .contact-form .btn { align-self: flex-start; }
 
-/* Honeypot : hors écran (surtout pas display:none, certains bots le détectent) */
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
 .form-status { font-size: .85rem; min-height: 1.3em; }
@@ -399,7 +455,6 @@ img { display: block; max-width: 100%; }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Apparition douce des contenus de modale (fiche produit + flipbook) */
 @keyframes softIn {
   from { opacity: 0; transform: translateY(18px) scale(.97); }
   to   { opacity: 1; transform: none; }
@@ -419,14 +474,12 @@ img { display: block; max-width: 100%; }
 }
 .close-btn:hover { background: var(--accent); }
 
-/* ===== Modale fiche produit (type Amazon) ===== */
+/* ===== Modale fiche produit ===== */
 .product-modal {
   position: relative;
   background: var(--card);
   border-radius: var(--radius);
   width: 100%;
-  /* ×1,5 desktop (ex-920px) : 88vw sur écrans moyens, plafonné à 1380px
-     sur les grands — min() prend automatiquement la plus petite valeur. */
   max-width: min(1380px, 88vw);
   max-height: 92dvh;
   overflow-y: auto;
@@ -440,12 +493,17 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   border: 1px solid var(--border);
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .pm-main img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 70vh;
   object-fit: contain;
-  transition: opacity .25s ease; /* fondu au changement de vignette */
+  transition: opacity .25s ease;
 }
 
 .pm-thumbs {
@@ -457,7 +515,7 @@ img { display: block; max-width: 100%; }
 }
 .pm-thumbs button {
   flex: 0 0 auto;
-  width: 90px;   /* vignettes agrandies en proportion (ex-60px) */
+  width: 90px;
   height: 90px;
   padding: 0;
   border-radius: 8px;
@@ -470,7 +528,6 @@ img { display: block; max-width: 100%; }
 .pm-thumbs button.active { border-color: var(--accent); }
 .pm-thumbs button:hover { border-color: var(--ink); }
 
-/* Points de position (mobile uniquement — masqués en desktop) */
 .pm-dots {
   display: flex;
   justify-content: center;
@@ -486,15 +543,7 @@ img { display: block; max-width: 100%; }
 }
 .pm-dots span.active { background: var(--accent); }
 
-/* ============================================================
-   MOBILE UNIQUEMENT (< 900px) : visionneuse plein écran façon
-   Amazon — fond blanc opaque, visuel au centre à son ratio
-   naturel, mini-vignettes en bas, navigation au swipe.
-   ⚠️ Ces règles doivent IMPÉRATIVEMENT rester dans ce @media,
-   sinon elles s'appliquent aussi au desktop.
-   ============================================================ */
 @media (max-width: 899px) {
-  /* fond blanc opaque, plein écran (le flipbook garde son fond sombre) */
   #productOverlay { padding: 0; background: #fff; backdrop-filter: none; }
 
   .product-modal {
@@ -509,12 +558,10 @@ img { display: block; max-width: 100%; }
     gap: .5rem;
   }
 
-  /* épuré : titre seul en haut, pas de description/tags/société */
   .pm-info { order: -1; margin-top: 0; padding-right: 3rem; }
   .pm-info h3 { font-size: 1.05rem; }
   .pm-client, .pm-desc, .pm-tags { display: none; }
 
-  /* le visuel occupe tout l'espace restant, à son ratio naturel */
   .pm-media { flex: 1; min-height: 0; display: flex; flex-direction: column; }
   .pm-main {
     flex: 1;
@@ -525,14 +572,11 @@ img { display: block; max-width: 100%; }
     justify-content: center;
   }
   .pm-main img {
-    aspect-ratio: auto;
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
     object-fit: contain;
   }
 
-  /* mini-vignettes centrées en bas, façon Amazon
-     (elles servent aussi d'indicateur de position) */
   .pm-thumbs {
     display: flex;
     justify-content: center;
@@ -541,7 +585,6 @@ img { display: block; max-width: 100%; }
   }
   .pm-thumbs button { width: 52px; height: 52px; border-radius: 6px; }
 
-  /* les vignettes remplacent les points */
   .pm-dots { display: none; }
 }
 
@@ -569,7 +612,7 @@ img { display: block; max-width: 100%; }
 /* ===== Viewer catalogue (flipbook) ===== */
 .book-viewer {
   width: 100%;
-  max-width: 1500px; /* +50 % : le livre occupe bien plus d'écran */
+  max-width: 1500px;
   height: 100%;
   max-height: 96dvh;
   display: flex;
@@ -630,7 +673,6 @@ img { display: block; max-width: 100%; }
 }
 .bv-btn:hover { background: var(--accent); }
 
-/* Verrouille le scroll du fond quand une modale est ouverte */
 body.no-scroll { overflow: hidden; }
 
 /* ============================================================
@@ -644,16 +686,8 @@ body.no-scroll { overflow: hidden; }
   }
   .card-label h3 { font-size: .92rem; }
 
-  /* Hero : vidéo en fond + décor ligne verticale */
-  .hero-media {
-    display: block;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: .55;
-  }
+  .stack-card { flex: 1 1 calc(50% - .5rem); max-width: calc(50% - .5rem); }
+
   .hero-line {
     display: block;
     position: absolute;
@@ -667,14 +701,11 @@ body.no-scroll { overflow: hidden; }
 }
 
 @media (min-width: 900px) {
-  /* Navbar : fond pleine largeur, contenu aligné sur la colonne de 60% */
-  .site-header { padding: .9rem 20%; }
+  .site-header { padding: 0 20%; }
 
-  /* Desktop : les sections tiennent dans un max-width de 60%
-     ⚠️ .hero N'EST PAS dans cette liste : la section reste full-bleed,
-     seul son contenu (.hero-content) est recentré, ci-dessous. */
   .gallery-section,
-  .profile-section {
+  .profile-section,
+  .stack-section {
     max-width: 60%;
     margin-inline: auto;
   }
@@ -683,11 +714,9 @@ body.no-scroll { overflow: hidden; }
     margin-inline: auto;
   }
 
-  /* Hero : le contenu texte se recentre, la vidéo reste plein écran */
   .hero-content { max-width: 60%; margin-inline: auto; }
   .hero-sub { font-size: 1.1rem; }
 
-  /* Contact : 2 colonnes 75 / 25 */
   .contact-grid { flex-direction: row; }
   .contact-form { flex: 0 0 75%; max-width: 75%; }
   .contact-aside { flex: 1; }
@@ -699,25 +728,41 @@ body.no-scroll { overflow: hidden; }
     max-width: calc(33.333% - .67rem);
   }
 
-  .profile-card { flex-direction: row; padding: 2rem; }
-  .profile-avatar { width: 96px; height: 96px; font-size: 2rem; }
+  /* Profil : photo + carte côte à côte */
+  .profile-layout { flex-direction: row; align-items: stretch; gap: 2rem; }
+  .profile-photo { flex: 0 0 55%; max-width: 55%; }
+  .profile-card { flex: 0 0 45%; max-width: 45%; padding: 2.25rem; display: flex; flex-direction: column; justify-content: center; }
+
+  /* Stack : 3 colonnes */
+  .stack-card { flex: 1 1 calc(33.333% - .667rem); max-width: calc(33.333% - .667rem); }
+
+  /* Skills sombre : colonnes côte à côte, contenu recentré */
+  .skills-dark { padding: 4rem 20% 4.5rem; }
+  .skills-columns { flex-direction: row; gap: 3rem; }
+  .skills-col { flex: 1; }
 
   .product-modal {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     padding: 2rem 2.5rem;
-    max-width: min(1160px, 90vw);
-  }
+    width: auto;
+    }
   .pm-info { order: -1; margin-top: 0; padding-right: 3.5rem; }
 
   .pm-media {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    justify-content: center;
     width: 100%;
   }
-  .pm-main { flex: 1; min-width: 0; }
+  .pm-main {
+    flex: 0 1 auto;
+    width: fit-content;
+    min-width: 0;
+    max-width: 100%;
+  }
   .pm-main img { max-height: 62vh; }
 
   .pm-thumbs {

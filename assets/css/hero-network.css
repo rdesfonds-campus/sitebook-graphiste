@@ -1,0 +1,212 @@
+.hero-network-bg{
+    --bg:     #2B211B;
+    --cream:  #F2E8D5;
+    --beige:  #D8C2A8;
+    --copper: #C89B62;
+    --gold:   #F3C96A;
+  }
+
+  .hero-network-bg{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0; /* reste derrière .hero-line / .hero-vignette / .hero-content */
+  }
+
+  #hero-network{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    display:block;
+  }
+
+  .layer{
+    transform: translate(calc(var(--px,0px) * var(--depth,0)), calc(var(--py,0px) * var(--depth,0)));
+    transition: transform .08s linear;
+  }
+
+  .node{
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity:0;
+    animation:
+      nodeAppear .6s ease-out both,
+      nodeBreathe 9s ease-in-out infinite;
+    animation-delay: var(--d), calc(var(--d) + .6s);
+  }
+  @keyframes nodeAppear{
+    0%{ opacity:0; scale:0; }
+    100%{ opacity:1; scale:1; }
+  }
+  @keyframes nodeBreathe{
+    0%,100%{ scale:1; }
+    25%{ scale:1.05; }
+    75%{ scale:.95; }
+  }
+
+  .link{
+    fill:none;
+    stroke: var(--beige);
+    stroke-width:.7;
+    pathLength:1;
+    stroke-dasharray:1;
+    stroke-dashoffset:1;
+    opacity:0;
+    animation:
+      lineDraw 1.1s ease-out both,
+      lineFlicker 7s ease-in-out infinite;
+    animation-delay: var(--d), calc(var(--d) + 1.1s);
+  }
+  @keyframes lineDraw{
+    0%{ stroke-dashoffset:1; opacity:0; }
+    100%{ stroke-dashoffset:0; opacity:.22; }
+  }
+  @keyframes lineFlicker{
+    0%,100%{ opacity:.16; }
+    50%{ opacity:.36; }
+  }
+
+  .pulse{
+    fill: var(--gold);
+    opacity:0;
+    offset-rotate:0deg;
+    animation: pulseMove 4.5s linear infinite;
+  }
+  @keyframes pulseMove{
+    0%{ offset-distance:0%; opacity:0; }
+    8%{ opacity:.95; }
+    92%{ opacity:.95; }
+    100%{ offset-distance:100%; opacity:0; }
+  }
+
+  .tri{
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity:0;
+    animation: triLife 12s ease-in-out infinite;
+  }
+  @keyframes triLife{
+    0%{   opacity:0;   transform:translate(0,0) rotate(0deg); }
+    15%{  opacity:.12; }
+    50%{  opacity:.12; transform:translate(6px,-5px) rotate(var(--rot)); }
+    85%{  opacity:.12; }
+    100%{ opacity:0;   transform:translate(0,0) rotate(0deg); }
+  }
+
+  .bezier-curve{
+    fill:none; stroke:var(--gold); stroke-width:1;
+    opacity:.55;
+    pathLength:1; stroke-dasharray:1; stroke-dashoffset:1;
+    animation: bezierDraw 1.4s ease-out .9s both;
+  }
+  @keyframes bezierDraw{ to{ stroke-dashoffset:0; } }
+
+  .handle-line{
+    fill:none; stroke:var(--beige); stroke-width:.6; stroke-dasharray:2 3;
+    opacity:0;
+    animation: fadeInSoft .8s ease-out forwards;
+  }
+  .anchor{
+    fill:var(--cream); stroke:var(--bg); stroke-width:.6;
+    opacity:0; transform-box:fill-box; transform-origin:center;
+    animation: nodeAppear .5s ease-out forwards;
+  }
+  .handle{
+    fill:var(--gold);
+    opacity:0;
+    animation:
+      fadeInSoft .6s ease-out forwards,
+      handleDrift 10s ease-in-out infinite;
+  }
+  @keyframes fadeInSoft{ to{ opacity:.8; } }
+  @keyframes handleDrift{
+    0%,100%{ transform:translate(0,0); }
+    50%{ transform:translate(4px,-3px); }
+  }
+
+  .guide-construct{
+    fill:none; stroke:var(--beige); stroke-width:.6;
+    pathLength:1; stroke-dasharray:1; stroke-dashoffset:1; opacity:0;
+    animation: guideLoop 9s ease-in-out infinite;
+  }
+  @keyframes guideLoop{
+    0%{   stroke-dashoffset:1; opacity:0; }
+    25%{  stroke-dashoffset:0; opacity:.5; }
+    55%{  stroke-dashoffset:0; opacity:.5; }
+    80%{  stroke-dashoffset:-1; opacity:0; }
+    100%{ stroke-dashoffset:-1; opacity:0; }
+  }
+
+  .selection-frame{
+    fill:none; stroke:var(--gold); stroke-width:.8; stroke-dasharray:4 3;
+    opacity:0;
+    animation: selectFrame 14s ease-in-out infinite;
+  }
+  @keyframes selectFrame{
+    0%,100%{ opacity:0; }
+    45%{ opacity:0; }
+    55%{ opacity:.5; }
+    85%{ opacity:.5; }
+    95%{ opacity:0; }
+  }
+
+  .snap-guide{
+    stroke:var(--copper); stroke-width:.6; stroke-dasharray:1 4;
+    opacity:.12;
+    animation: snapPulse 6s ease-in-out infinite;
+  }
+  @keyframes snapPulse{
+    0%,100%{ opacity:.08; }
+    50%{ opacity:.28; }
+  }
+
+  .margin-tick{ stroke:var(--beige); stroke-width:.6; opacity:.3; }
+
+  .modular-grid line{
+    stroke:var(--beige); stroke-width:.4; opacity:.05;
+  }
+
+  .particle{ opacity:0; }
+  .pv1{ animation: p1move var(--dA,26s) ease-in-out infinite, p1fade var(--dB,16s) ease-in-out infinite; }
+  .pv2{ animation: p2move var(--dA,30s) ease-in-out infinite, p1fade var(--dB,14s) ease-in-out infinite; }
+  .pv3{ animation: p3move var(--dA,22s) ease-in-out infinite, p2fade var(--dB,19s) ease-in-out infinite; }
+  .pv4{ animation: p1move var(--dA,34s) ease-in-out infinite reverse, p2fade var(--dB,12s) ease-in-out infinite; }
+  .pv5{ animation: p2move var(--dA,20s) ease-in-out infinite reverse, p1fade var(--dB,17s) ease-in-out infinite; }
+  .pv6{ animation: p3move var(--dA,28s) ease-in-out infinite, p2fade var(--dB,21s) ease-in-out infinite; }
+
+  @keyframes p1move{
+    0%{ transform:translate(0,0); } 30%{ transform:translate(10px,-14px); }
+    60%{ transform:translate(-8px,-4px); } 100%{ transform:translate(0,0); }
+  }
+  @keyframes p2move{
+    0%{ transform:translate(0,0); } 35%{ transform:translate(-12px,8px); }
+    70%{ transform:translate(6px,14px); } 100%{ transform:translate(0,0); }
+  }
+  @keyframes p3move{
+    0%{ transform:translate(0,0); } 40%{ transform:translate(9px,10px); }
+    75%{ transform:translate(-10px,-9px); } 100%{ transform:translate(0,0); }
+  }
+  @keyframes p1fade{ 0%,100%{ opacity:.12; } 50%{ opacity:.55; } }
+  @keyframes p2fade{ 0%,100%{ opacity:.08; } 50%{ opacity:.4; } }
+
+  .glow-sweep{
+    opacity:0;
+    animation: sweepMove 18s ease-in-out infinite;
+    mix-blend-mode: screen;
+  }
+  @keyframes sweepMove{
+    0%{   transform:translateX(0px);   opacity:0; }
+    12%{  opacity:.1; }
+    50%{  transform:translateX(420px); opacity:.12; }
+    88%{  opacity:.1; }
+    100%{ transform:translateX(0px);   opacity:0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .node, .link, .tri, .pulse, .particle, .glow-sweep,
+    .anchor, .handle, .guide-construct, .selection-frame, .snap-guide{
+      animation: none !important;
+      opacity:.6 !important;
+    }
+  }
+

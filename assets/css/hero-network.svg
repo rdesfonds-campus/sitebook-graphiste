@@ -1,0 +1,744 @@
+<svg id="hero-network" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="45"/>
+      </filter>
+    </defs>
+
+    <g id="background">
+      <rect x="0" y="0" width="1600" height="900" fill="var(--bg)"/>
+    </g>
+
+    <g id="hero-network-grid" class="layer" style="--depth:0.15">
+      <g class="modular-grid">
+        <line x1="640" y1="0" x2="640" y2="900"/>
+        <line x1="900" y1="0" x2="900" y2="900"/>
+        <line x1="1160" y1="0" x2="1160" y2="900"/>
+        <line x1="1420" y1="0" x2="1420" y2="900"/>
+        <line x1="0" y1="300" x2="1600" y2="300"/>
+        <line x1="0" y1="600" x2="1600" y2="600"/>
+      </g>
+      <g fill="var(--beige)" opacity=".14">
+<circle cx="680" cy="40" r="1"/>
+<circle cx="680" cy="120" r="1"/>
+<circle cx="680" cy="200" r="1"/>
+<circle cx="680" cy="280" r="1"/>
+<circle cx="680" cy="360" r="1"/>
+<circle cx="680" cy="440" r="1"/>
+<circle cx="680" cy="520" r="1"/>
+<circle cx="680" cy="600" r="1"/>
+<circle cx="680" cy="680" r="1"/>
+<circle cx="680" cy="760" r="1"/>
+<circle cx="680" cy="840" r="1"/>
+<circle cx="760" cy="40" r="1"/>
+<circle cx="760" cy="120" r="1"/>
+<circle cx="760" cy="200" r="1"/>
+<circle cx="760" cy="280" r="1"/>
+<circle cx="760" cy="360" r="1"/>
+<circle cx="760" cy="440" r="1"/>
+<circle cx="760" cy="520" r="1"/>
+<circle cx="760" cy="600" r="1"/>
+<circle cx="760" cy="680" r="1"/>
+<circle cx="760" cy="760" r="1"/>
+<circle cx="760" cy="840" r="1"/>
+<circle cx="840" cy="40" r="1"/>
+<circle cx="840" cy="120" r="1"/>
+<circle cx="840" cy="200" r="1"/>
+<circle cx="840" cy="280" r="1"/>
+<circle cx="840" cy="360" r="1"/>
+<circle cx="840" cy="440" r="1"/>
+<circle cx="840" cy="520" r="1"/>
+<circle cx="840" cy="600" r="1"/>
+<circle cx="840" cy="680" r="1"/>
+<circle cx="840" cy="760" r="1"/>
+<circle cx="840" cy="840" r="1"/>
+<circle cx="920" cy="40" r="1"/>
+<circle cx="920" cy="120" r="1"/>
+<circle cx="920" cy="200" r="1"/>
+<circle cx="920" cy="280" r="1"/>
+<circle cx="920" cy="360" r="1"/>
+<circle cx="920" cy="440" r="1"/>
+<circle cx="920" cy="520" r="1"/>
+<circle cx="920" cy="600" r="1"/>
+<circle cx="920" cy="680" r="1"/>
+<circle cx="920" cy="760" r="1"/>
+<circle cx="920" cy="840" r="1"/>
+<circle cx="1000" cy="40" r="1"/>
+<circle cx="1000" cy="120" r="1"/>
+<circle cx="1000" cy="200" r="1"/>
+<circle cx="1000" cy="280" r="1"/>
+<circle cx="1000" cy="360" r="1"/>
+<circle cx="1000" cy="440" r="1"/>
+<circle cx="1000" cy="520" r="1"/>
+<circle cx="1000" cy="600" r="1"/>
+<circle cx="1000" cy="680" r="1"/>
+<circle cx="1000" cy="760" r="1"/>
+<circle cx="1000" cy="840" r="1"/>
+<circle cx="1080" cy="40" r="1"/>
+<circle cx="1080" cy="120" r="1"/>
+<circle cx="1080" cy="200" r="1"/>
+<circle cx="1080" cy="280" r="1"/>
+<circle cx="1080" cy="360" r="1"/>
+<circle cx="1080" cy="440" r="1"/>
+<circle cx="1080" cy="520" r="1"/>
+<circle cx="1080" cy="600" r="1"/>
+<circle cx="1080" cy="680" r="1"/>
+<circle cx="1080" cy="760" r="1"/>
+<circle cx="1080" cy="840" r="1"/>
+<circle cx="1160" cy="40" r="1"/>
+<circle cx="1160" cy="120" r="1"/>
+<circle cx="1160" cy="200" r="1"/>
+<circle cx="1160" cy="280" r="1"/>
+<circle cx="1160" cy="360" r="1"/>
+<circle cx="1160" cy="440" r="1"/>
+<circle cx="1160" cy="520" r="1"/>
+<circle cx="1160" cy="600" r="1"/>
+<circle cx="1160" cy="680" r="1"/>
+<circle cx="1160" cy="760" r="1"/>
+<circle cx="1160" cy="840" r="1"/>
+<circle cx="1240" cy="40" r="1"/>
+<circle cx="1240" cy="120" r="1"/>
+<circle cx="1240" cy="200" r="1"/>
+<circle cx="1240" cy="280" r="1"/>
+<circle cx="1240" cy="360" r="1"/>
+<circle cx="1240" cy="440" r="1"/>
+<circle cx="1240" cy="520" r="1"/>
+<circle cx="1240" cy="600" r="1"/>
+<circle cx="1240" cy="680" r="1"/>
+<circle cx="1240" cy="760" r="1"/>
+<circle cx="1240" cy="840" r="1"/>
+<circle cx="1320" cy="40" r="1"/>
+<circle cx="1320" cy="120" r="1"/>
+<circle cx="1320" cy="200" r="1"/>
+<circle cx="1320" cy="280" r="1"/>
+<circle cx="1320" cy="360" r="1"/>
+<circle cx="1320" cy="440" r="1"/>
+<circle cx="1320" cy="520" r="1"/>
+<circle cx="1320" cy="600" r="1"/>
+<circle cx="1320" cy="680" r="1"/>
+<circle cx="1320" cy="760" r="1"/>
+<circle cx="1320" cy="840" r="1"/>
+<circle cx="1400" cy="40" r="1"/>
+<circle cx="1400" cy="120" r="1"/>
+<circle cx="1400" cy="200" r="1"/>
+<circle cx="1400" cy="280" r="1"/>
+<circle cx="1400" cy="360" r="1"/>
+<circle cx="1400" cy="440" r="1"/>
+<circle cx="1400" cy="520" r="1"/>
+<circle cx="1400" cy="600" r="1"/>
+<circle cx="1400" cy="680" r="1"/>
+<circle cx="1400" cy="760" r="1"/>
+<circle cx="1400" cy="840" r="1"/>
+<circle cx="1480" cy="40" r="1"/>
+<circle cx="1480" cy="120" r="1"/>
+<circle cx="1480" cy="200" r="1"/>
+<circle cx="1480" cy="280" r="1"/>
+<circle cx="1480" cy="360" r="1"/>
+<circle cx="1480" cy="440" r="1"/>
+<circle cx="1480" cy="520" r="1"/>
+<circle cx="1480" cy="600" r="1"/>
+<circle cx="1480" cy="680" r="1"/>
+<circle cx="1480" cy="760" r="1"/>
+<circle cx="1480" cy="840" r="1"/>
+<circle cx="1560" cy="40" r="1"/>
+<circle cx="1560" cy="120" r="1"/>
+<circle cx="1560" cy="200" r="1"/>
+<circle cx="1560" cy="280" r="1"/>
+<circle cx="1560" cy="360" r="1"/>
+<circle cx="1560" cy="440" r="1"/>
+<circle cx="1560" cy="520" r="1"/>
+<circle cx="1560" cy="600" r="1"/>
+<circle cx="1560" cy="680" r="1"/>
+<circle cx="1560" cy="760" r="1"/>
+<circle cx="1560" cy="840" r="1"/>
+      </g>
+    </g>
+
+    <g id="nodes" class="layer" style="--depth:0.55">
+<circle class="node" id="node-0" cx="1017.5" cy="41.5" r="2.1" fill="#F2E8D5" style="--d:0.0s"/>
+<circle class="node" id="node-1" cx="237.7" cy="108.1" r="2.93" fill="#D8C2A8" style="--d:0.006s"/>
+<circle class="node" id="node-2" cx="941.2" cy="47.3" r="1.77" fill="#F2E8D5" style="--d:0.012s"/>
+<circle class="node" id="node-3" cx="808.4" cy="42.8" r="1.96" fill="#C89B62" style="--d:0.018s"/>
+<circle class="node" id="node-4" cx="363.9" cy="526.8" r="3.06" fill="#D8C2A8" style="--d:0.024s"/>
+<circle class="node" id="node-5" cx="1203.7" cy="157.3" r="2.36" fill="#F3C96A" style="--d:0.03s"/>
+<circle class="node" id="node-6" cx="262.5" cy="843.2" r="2.21" fill="#D8C2A8" style="--d:0.036s"/>
+<circle class="node" id="node-7" cx="612.7" cy="328.7" r="2.22" fill="#F3C96A" style="--d:0.042s"/>
+<circle class="node" id="node-8" cx="1279.1" cy="647.6" r="2.57" fill="#C89B62" style="--d:0.048s"/>
+<circle class="node" id="node-9" cx="142.9" cy="272.1" r="2.73" fill="#F3C96A" style="--d:0.054s"/>
+<circle class="node" id="node-10" cx="920.7" cy="625.9" r="1.68" fill="#F2E8D5" style="--d:0.06s"/>
+<circle class="node" id="node-11" cx="1226.0" cy="867.3" r="3.14" fill="#D8C2A8" style="--d:0.066s"/>
+<circle class="node" id="node-12" cx="613.0" cy="409.9" r="3.1" fill="#F2E8D5" style="--d:0.072s"/>
+<circle class="node" id="node-13" cx="597.5" cy="200.2" r="2.08" fill="#D8C2A8" style="--d:0.078s"/>
+<circle class="node" id="node-14" cx="970.2" cy="167.2" r="2.91" fill="#F2E8D5" style="--d:0.084s"/>
+<circle class="node" id="node-15" cx="741.1" cy="252.2" r="3.27" fill="#F2E8D5" style="--d:0.09s"/>
+<circle class="node" id="node-16" cx="1088.0" cy="744.9" r="3.0" fill="#F2E8D5" style="--d:0.096s"/>
+<circle class="node" id="node-17" cx="1302.0" cy="712.3" r="2.32" fill="#D8C2A8" style="--d:0.102s"/>
+<circle class="node" id="node-18" cx="349.1" cy="830.9" r="3.18" fill="#F3C96A" style="--d:0.108s"/>
+<circle class="node" id="node-19" cx="351.7" cy="449.3" r="3.19" fill="#C89B62" style="--d:0.114s"/>
+<circle class="node" id="node-20" cx="242.9" cy="140.1" r="2.94" fill="#F3C96A" style="--d:0.12s"/>
+<circle class="node" id="node-21" cx="1185.3" cy="388.5" r="2.65" fill="#F3C96A" style="--d:0.126s"/>
+<circle class="node" id="node-22" cx="362.1" cy="877.9" r="2.52" fill="#D8C2A8" style="--d:0.132s"/>
+<circle class="node" id="node-23" cx="1199.0" cy="760.5" r="1.88" fill="#F2E8D5" style="--d:0.138s"/>
+<circle class="node" id="node-24" cx="1255.6" cy="383.1" r="1.71" fill="#C89B62" style="--d:0.144s"/>
+<circle class="node" id="node-25" cx="949.6" cy="422.5" r="2.05" fill="#D8C2A8" style="--d:0.15s"/>
+<circle class="node" id="node-26" cx="1081.2" cy="118.5" r="3.19" fill="#F3C96A" style="--d:0.156s"/>
+<circle class="node" id="node-27" cx="1219.0" cy="312.6" r="2.13" fill="#F2E8D5" style="--d:0.162s"/>
+<circle class="node" id="node-28" cx="727.8" cy="840.3" r="3.18" fill="#F3C96A" style="--d:0.168s"/>
+<circle class="node" id="node-29" cx="1536.1" cy="675.3" r="2.51" fill="#D8C2A8" style="--d:0.174s"/>
+<circle class="node" id="node-30" cx="1378.0" cy="276.7" r="2.75" fill="#F2E8D5" style="--d:0.18s"/>
+<circle class="node" id="node-31" cx="258.4" cy="675.8" r="2.57" fill="#D8C2A8" style="--d:0.186s"/>
+<circle class="node" id="node-32" cx="954.4" cy="440.2" r="1.8" fill="#F3C96A" style="--d:0.192s"/>
+<circle class="node" id="node-33" cx="1390.8" cy="735.2" r="2.15" fill="#D8C2A8" style="--d:0.198s"/>
+<circle class="node" id="node-34" cx="395.8" cy="507.9" r="1.74" fill="#C89B62" style="--d:0.204s"/>
+<circle class="node" id="node-35" cx="1293.0" cy="861.1" r="2.56" fill="#F2E8D5" style="--d:0.21s"/>
+<circle class="node" id="node-36" cx="220.3" cy="428.7" r="2.59" fill="#F3C96A" style="--d:0.216s"/>
+<circle class="node" id="node-37" cx="843.2" cy="541.7" r="3.34" fill="#F2E8D5" style="--d:0.222s"/>
+<circle class="node" id="node-38" cx="1132.2" cy="363.1" r="2.81" fill="#F3C96A" style="--d:0.228s"/>
+<circle class="node" id="node-39" cx="703.4" cy="465.1" r="1.82" fill="#F2E8D5" style="--d:0.234s"/>
+<circle class="node" id="node-40" cx="119.9" cy="38.1" r="2.6" fill="#F2E8D5" style="--d:0.24s"/>
+<circle class="node" id="node-41" cx="31.2" cy="628.7" r="1.71" fill="#D8C2A8" style="--d:0.246s"/>
+<circle class="node" id="node-42" cx="1432.5" cy="759.3" r="1.73" fill="#F2E8D5" style="--d:0.252s"/>
+<circle class="node" id="node-43" cx="454.4" cy="437.5" r="2.57" fill="#C89B62" style="--d:0.258s"/>
+<circle class="node" id="node-44" cx="399.1" cy="426.8" r="2.33" fill="#D8C2A8" style="--d:0.264s"/>
+<circle class="node" id="node-45" cx="171.2" cy="390.7" r="2.36" fill="#C89B62" style="--d:0.27s"/>
+<circle class="node" id="node-46" cx="1367.6" cy="66.6" r="2.78" fill="#D8C2A8" style="--d:0.276s"/>
+<circle class="node" id="node-47" cx="114.6" cy="646.3" r="3.04" fill="#D8C2A8" style="--d:0.282s"/>
+<circle class="node" id="node-48" cx="407.9" cy="183.6" r="2.41" fill="#C89B62" style="--d:0.288s"/>
+<circle class="node" id="node-49" cx="306.2" cy="417.9" r="3.17" fill="#D8C2A8" style="--d:0.294s"/>
+<circle class="node" id="node-50" cx="711.3" cy="760.8" r="2.59" fill="#D8C2A8" style="--d:0.3s"/>
+<circle class="node" id="node-51" cx="1037.3" cy="484.9" r="1.63" fill="#D8C2A8" style="--d:0.306s"/>
+<circle class="node" id="node-52" cx="1465.1" cy="749.9" r="1.9" fill="#C89B62" style="--d:0.312s"/>
+<circle class="node" id="node-53" cx="770.9" cy="763.6" r="3.22" fill="#F2E8D5" style="--d:0.318s"/>
+<circle class="node" id="node-54" cx="611.2" cy="867.4" r="2.08" fill="#C89B62" style="--d:0.324s"/>
+<circle class="node" id="node-55" cx="465.0" cy="619.1" r="2.91" fill="#C89B62" style="--d:0.33s"/>
+<circle class="node" id="node-56" cx="261.5" cy="275.2" r="3.34" fill="#D8C2A8" style="--d:0.336s"/>
+<circle class="node" id="node-57" cx="1186.8" cy="69.2" r="2.65" fill="#F2E8D5" style="--d:0.342s"/>
+<circle class="node" id="node-58" cx="108.7" cy="456.7" r="3.13" fill="#D8C2A8" style="--d:0.348s"/>
+<circle class="node" id="node-59" cx="948.3" cy="600.7" r="2.02" fill="#D8C2A8" style="--d:0.354s"/>
+<circle class="node" id="node-60" cx="1488.9" cy="509.9" r="2.64" fill="#D8C2A8" style="--d:0.36s"/>
+<circle class="node" id="node-61" cx="986.2" cy="380.5" r="2.65" fill="#F3C96A" style="--d:0.366s"/>
+<circle class="node" id="node-62" cx="1478.1" cy="195.7" r="2.89" fill="#F2E8D5" style="--d:0.372s"/>
+<circle class="node" id="node-63" cx="434.4" cy="132.6" r="2.76" fill="#C89B62" style="--d:0.378s"/>
+<circle class="node" id="node-64" cx="513.2" cy="666.6" r="1.73" fill="#C89B62" style="--d:0.384s"/>
+<circle class="node" id="node-65" cx="989.0" cy="504.2" r="1.78" fill="#F2E8D5" style="--d:0.39s"/>
+<circle class="node" id="node-66" cx="809.2" cy="133.9" r="2.23" fill="#D8C2A8" style="--d:0.396s"/>
+<circle class="node" id="node-67" cx="1391.7" cy="337.8" r="1.88" fill="#F3C96A" style="--d:0.402s"/>
+<circle class="node" id="node-68" cx="974.2" cy="869.0" r="2.78" fill="#D8C2A8" style="--d:0.408s"/>
+<circle class="node" id="node-69" cx="1061.9" cy="497.0" r="3.28" fill="#D8C2A8" style="--d:0.414s"/>
+<circle class="node" id="node-70" cx="1484.7" cy="135.5" r="1.81" fill="#D8C2A8" style="--d:0.42s"/>
+<circle class="node" id="node-71" cx="1178.2" cy="153.7" r="2.11" fill="#F2E8D5" style="--d:0.426s"/>
+<circle class="node" id="node-72" cx="1139.5" cy="195.1" r="2.74" fill="#F3C96A" style="--d:0.432s"/>
+<circle class="node" id="node-73" cx="808.4" cy="236.0" r="3.23" fill="#D8C2A8" style="--d:0.438s"/>
+<circle class="node" id="node-74" cx="164.0" cy="384.3" r="2.1" fill="#D8C2A8" style="--d:0.444s"/>
+<circle class="node" id="node-75" cx="540.3" cy="132.5" r="3.36" fill="#F2E8D5" style="--d:0.45s"/>
+<circle class="node" id="node-76" cx="1176.3" cy="494.4" r="2.37" fill="#D8C2A8" style="--d:0.456s"/>
+<circle class="node" id="node-77" cx="194.5" cy="832.7" r="2.84" fill="#F2E8D5" style="--d:0.462s"/>
+<circle class="node" id="node-78" cx="871.1" cy="737.8" r="2.65" fill="#F2E8D5" style="--d:0.468s"/>
+<circle class="node" id="node-79" cx="690.5" cy="56.0" r="2.26" fill="#D8C2A8" style="--d:0.474s"/>
+<circle class="node" id="node-80" cx="1422.3" cy="200.7" r="2.05" fill="#D8C2A8" style="--d:0.48s"/>
+<circle class="node" id="node-81" cx="571.7" cy="501.5" r="3.17" fill="#F2E8D5" style="--d:0.486s"/>
+<circle class="node" id="node-82" cx="1464.2" cy="223.6" r="1.89" fill="#F2E8D5" style="--d:0.492s"/>
+<circle class="node" id="node-83" cx="1395.0" cy="41.3" r="2.93" fill="#F3C96A" style="--d:0.498s"/>
+<circle class="node" id="node-84" cx="1240.5" cy="374.1" r="2.81" fill="#F2E8D5" style="--d:0.504s"/>
+<circle class="node" id="node-85" cx="436.2" cy="697.1" r="1.79" fill="#D8C2A8" style="--d:0.51s"/>
+<circle class="node" id="node-86" cx="1359.4" cy="211.3" r="3.07" fill="#C89B62" style="--d:0.516s"/>
+<circle class="node" id="node-87" cx="565.5" cy="725.7" r="3.17" fill="#F2E8D5" style="--d:0.522s"/>
+<circle class="node" id="node-88" cx="56.9" cy="186.1" r="2.19" fill="#D8C2A8" style="--d:0.528s"/>
+<circle class="node" id="node-89" cx="1528.3" cy="260.0" r="2.75" fill="#C89B62" style="--d:0.534s"/>
+<circle class="node" id="node-90" cx="1080.0" cy="745.5" r="2.2" fill="#D8C2A8" style="--d:0.54s"/>
+<circle class="node" id="node-91" cx="199.9" cy="854.5" r="1.92" fill="#F3C96A" style="--d:0.546s"/>
+<circle class="node" id="node-92" cx="79.7" cy="533.1" r="2.22" fill="#F3C96A" style="--d:0.552s"/>
+<circle class="node" id="node-93" cx="700.8" cy="866.4" r="1.81" fill="#F2E8D5" style="--d:0.558s"/>
+<circle class="node" id="node-94" cx="417.4" cy="629.6" r="1.6" fill="#F2E8D5" style="--d:0.564s"/>
+<circle class="node" id="node-95" cx="588.2" cy="80.2" r="2.8" fill="#F3C96A" style="--d:0.57s"/>
+<circle class="node" id="node-96" cx="992.1" cy="590.5" r="1.82" fill="#F3C96A" style="--d:0.576s"/>
+<circle class="node" id="node-97" cx="811.1" cy="593.5" r="2.19" fill="#F3C96A" style="--d:0.582s"/>
+<circle class="node" id="node-98" cx="884.9" cy="185.0" r="2.8" fill="#C89B62" style="--d:0.588s"/>
+<circle class="node" id="node-99" cx="1076.6" cy="796.4" r="2.71" fill="#F3C96A" style="--d:0.594s"/>
+<circle class="node" id="node-100" cx="653.5" cy="737.0" r="2.15" fill="#F2E8D5" style="--d:0.6s"/>
+<circle class="node" id="node-101" cx="690.6" cy="518.8" r="2.78" fill="#C89B62" style="--d:0.606s"/>
+<circle class="node" id="node-102" cx="709.2" cy="601.0" r="2.52" fill="#F2E8D5" style="--d:0.612s"/>
+<circle class="node" id="node-103" cx="1047.8" cy="264.1" r="2.79" fill="#F3C96A" style="--d:0.618s"/>
+<circle class="node" id="node-104" cx="165.7" cy="838.7" r="2.02" fill="#F3C96A" style="--d:0.624s"/>
+<circle class="node" id="node-105" cx="370.4" cy="191.3" r="1.64" fill="#F2E8D5" style="--d:0.63s"/>
+<circle class="node" id="node-106" cx="1554.9" cy="545.7" r="2.98" fill="#C89B62" style="--d:0.636s"/>
+<circle class="node" id="node-107" cx="666.5" cy="561.6" r="1.95" fill="#C89B62" style="--d:0.642s"/>
+<circle class="node" id="node-108" cx="791.2" cy="229.8" r="2.78" fill="#D8C2A8" style="--d:0.648s"/>
+<circle class="node" id="node-109" cx="1412.5" cy="760.0" r="3.19" fill="#C89B62" style="--d:0.654s"/>
+<circle class="node" id="node-110" cx="361.4" cy="711.5" r="2.85" fill="#C89B62" style="--d:0.66s"/>
+<circle class="node" id="node-111" cx="98.3" cy="234.3" r="3.13" fill="#C89B62" style="--d:0.666s"/>
+<circle class="node" id="node-112" cx="228.0" cy="419.6" r="2.56" fill="#F3C96A" style="--d:0.672s"/>
+<circle class="node" id="node-113" cx="1502.1" cy="786.6" r="2.7" fill="#C89B62" style="--d:0.678s"/>
+<circle class="node" id="node-114" cx="1315.7" cy="491.2" r="3.21" fill="#C89B62" style="--d:0.684s"/>
+<circle class="node" id="node-115" cx="722.1" cy="666.5" r="3.11" fill="#F3C96A" style="--d:0.69s"/>
+<circle class="node" id="node-116" cx="1214.7" cy="468.3" r="2.73" fill="#F3C96A" style="--d:0.696s"/>
+<circle class="node" id="node-117" cx="706.2" cy="633.6" r="2.02" fill="#F3C96A" style="--d:0.702s"/>
+<circle class="node" id="node-118" cx="518.7" cy="484.5" r="1.85" fill="#F2E8D5" style="--d:0.708s"/>
+<circle class="node" id="node-119" cx="617.5" cy="151.4" r="1.99" fill="#C89B62" style="--d:0.714s"/>
+<circle class="node" id="node-120" cx="655.9" cy="486.6" r="2.35" fill="#F2E8D5" style="--d:0.72s"/>
+<circle class="node" id="node-121" cx="1319.3" cy="355.0" r="2.99" fill="#D8C2A8" style="--d:0.726s"/>
+<circle class="node" id="node-122" cx="1356.5" cy="678.4" r="2.28" fill="#D8C2A8" style="--d:0.732s"/>
+<circle class="node" id="node-123" cx="1490.7" cy="276.8" r="2.3" fill="#C89B62" style="--d:0.738s"/>
+<circle class="node" id="node-124" cx="859.6" cy="651.8" r="3.04" fill="#F2E8D5" style="--d:0.744s"/>
+<circle class="node" id="node-125" cx="781.6" cy="254.7" r="2.47" fill="#C89B62" style="--d:0.75s"/>
+<circle class="node" id="node-126" cx="544.4" cy="604.1" r="2.33" fill="#F2E8D5" style="--d:0.756s"/>
+<circle class="node" id="node-127" cx="1331.2" cy="810.8" r="3.37" fill="#D8C2A8" style="--d:0.762s"/>
+<circle class="node" id="node-128" cx="1434.8" cy="529.0" r="2.79" fill="#D8C2A8" style="--d:0.768s"/>
+<circle class="node" id="node-129" cx="1022.7" cy="136.7" r="2.43" fill="#D8C2A8" style="--d:0.774s"/>
+<circle class="node" id="node-130" cx="425.8" cy="301.5" r="2.42" fill="#F3C96A" style="--d:0.78s"/>
+<circle class="node" id="node-131" cx="1207.5" cy="346.0" r="2.95" fill="#C89B62" style="--d:0.786s"/>
+<circle class="node" id="node-132" cx="413.5" cy="90.4" r="1.63" fill="#D8C2A8" style="--d:0.792s"/>
+<circle class="node" id="node-133" cx="1579.9" cy="321.0" r="2.77" fill="#D8C2A8" style="--d:0.798s"/>
+<circle class="node" id="node-134" cx="1196.6" cy="836.7" r="1.96" fill="#D8C2A8" style="--d:0.804s"/>
+<circle class="node" id="node-135" cx="989.3" cy="225.1" r="2.45" fill="#D8C2A8" style="--d:0.81s"/>
+<circle class="node" id="node-136" cx="899.8" cy="207.4" r="2.86" fill="#F3C96A" style="--d:0.816s"/>
+<circle class="node" id="node-137" cx="281.8" cy="542.2" r="2.95" fill="#D8C2A8" style="--d:0.822s"/>
+<circle class="node" id="node-138" cx="1233.4" cy="160.8" r="2.16" fill="#D8C2A8" style="--d:0.828s"/>
+<circle class="node" id="node-139" cx="1469.1" cy="515.2" r="3.23" fill="#C89B62" style="--d:0.834s"/>
+<circle class="node" id="node-140" cx="638.8" cy="634.9" r="1.74" fill="#F2E8D5" style="--d:0.84s"/>
+<circle class="node" id="node-141" cx="179.0" cy="684.3" r="3.13" fill="#D8C2A8" style="--d:0.846s"/>
+<circle class="node" id="node-142" cx="1262.1" cy="506.7" r="1.67" fill="#C89B62" style="--d:0.852s"/>
+<circle class="node" id="node-143" cx="1052.0" cy="79.3" r="2.77" fill="#D8C2A8" style="--d:0.858s"/>
+<circle class="node" id="node-144" cx="1345.3" cy="727.2" r="1.79" fill="#F3C96A" style="--d:0.864s"/>
+<circle class="node" id="node-145" cx="1011.5" cy="732.7" r="2.87" fill="#C89B62" style="--d:0.87s"/>
+<circle class="node" id="node-146" cx="294.8" cy="468.7" r="2.77" fill="#C89B62" style="--d:0.876s"/>
+<circle class="node" id="node-147" cx="745.2" cy="730.1" r="2.67" fill="#F3C96A" style="--d:0.882s"/>
+<circle class="node" id="node-148" cx="1348.7" cy="734.4" r="1.76" fill="#C89B62" style="--d:0.888s"/>
+<circle class="node" id="node-149" cx="400.4" cy="419.6" r="2.7" fill="#C89B62" style="--d:0.894s"/>
+    </g>
+
+    <g id="lines" class="layer" style="--depth:0.4">
+<path class="link" id="line-0" d="M262.5,843.2 L362.1,877.9" style="--d:0.0s"/>
+<path class="link" id="line-1" d="M808.4,42.8 L809.2,133.9" style="--d:0.004s"/>
+<path class="link" id="line-2" d="M262.5,843.2 L194.5,832.7" style="--d:0.008s"/>
+<path class="link" id="line-3" d="M989.3,225.1 L899.8,207.4" style="--d:0.012s"/>
+<path class="link" id="line-4" d="M1422.3,200.7 L1359.4,211.3" style="--d:0.016s"/>
+<path class="link" id="line-5" d="M770.9,763.6 L871.1,737.8" style="--d:0.02s"/>
+<path class="link" id="line-6" d="M571.7,501.5 L655.9,486.6" style="--d:0.024s"/>
+<path class="link" id="line-7" d="M540.3,132.5 L588.2,80.2" style="--d:0.028s"/>
+<path class="link" id="line-8" d="M948.3,600.7 L992.1,590.5" style="--d:0.032s"/>
+<path class="link" id="line-9" d="M613.0,409.9 L518.7,484.5" style="--d:0.036s"/>
+<path class="link" id="line-10" d="M722.1,666.5 L706.2,633.6" style="--d:0.04s"/>
+<path class="link" id="line-11" d="M1412.5,760.0 L1502.1,786.6" style="--d:0.044s"/>
+<path class="link" id="line-12" d="M1132.2,363.1 L1207.5,346.0" style="--d:0.048s"/>
+<path class="link" id="line-13" d="M1279.1,647.6 L1356.5,678.4" style="--d:0.052s"/>
+<path class="link" id="line-14" d="M407.9,183.6 L413.5,90.4" style="--d:0.056s"/>
+<path class="link" id="line-15" d="M56.9,186.1 L98.3,234.3" style="--d:0.06s"/>
+<path class="link" id="line-16" d="M1367.6,66.6 L1484.7,135.5" style="--d:0.064s"/>
+<path class="link" id="line-17" d="M727.8,840.3 L711.3,760.8" style="--d:0.068s"/>
+<path class="link" id="line-18" d="M1528.3,260.0 L1490.7,276.8" style="--d:0.072s"/>
+<path class="link" id="line-19" d="M1331.2,810.8 L1196.6,836.7" style="--d:0.076s"/>
+<path class="link" id="line-20" d="M1356.5,678.4 L1345.3,727.2" style="--d:0.08s"/>
+<path class="link" id="line-21" d="M989.0,504.2 L992.1,590.5" style="--d:0.084s"/>
+<path class="link" id="line-22" d="M262.5,843.2 L349.1,830.9" style="--d:0.088s"/>
+<path class="link" id="line-23" d="M1422.3,200.7 L1464.2,223.6" style="--d:0.092s"/>
+<path class="link" id="line-24" d="M1378.0,276.7 L1359.4,211.3" style="--d:0.096s"/>
+<path class="link" id="line-25" d="M1536.1,675.3 L1502.1,786.6" style="--d:0.1s"/>
+<path class="link" id="line-26" d="M351.7,449.3 L294.8,468.7" style="--d:0.104s"/>
+<path class="link" id="line-27" d="M974.2,869.0 L1076.6,796.4" style="--d:0.108s"/>
+<path class="link" id="line-28" d="M114.6,646.3 L179.0,684.3" style="--d:0.112s"/>
+<path class="link" id="line-29" d="M349.1,830.9 L362.1,877.9" style="--d:0.116s"/>
+<path class="link" id="line-30" d="M613.0,409.9 L571.7,501.5" style="--d:0.12s"/>
+<path class="link" id="line-31" d="M970.2,167.2 L1022.7,136.7" style="--d:0.124s"/>
+<path class="link" id="line-32" d="M544.4,604.1 L638.8,634.9" style="--d:0.128s"/>
+<path class="link" id="line-33" d="M513.2,666.6 L417.4,629.6" style="--d:0.132s"/>
+<path class="link" id="line-34" d="M1061.9,497.0 L1176.3,494.4" style="--d:0.136s"/>
+<path class="link" id="line-35" d="M1081.2,118.5 L1052.0,79.3" style="--d:0.14s"/>
+<path class="link" id="line-36" d="M1464.2,223.6 L1528.3,260.0" style="--d:0.144s"/>
+<path class="link" id="line-37" d="M395.8,507.9 L400.4,419.6" style="--d:0.148s"/>
+<path class="link" id="line-38" d="M194.5,832.7 L165.7,838.7" style="--d:0.152s"/>
+<path class="link" id="line-39" d="M1488.9,509.9 L1469.1,515.2" style="--d:0.156s"/>
+<path class="link" id="line-40" d="M1240.5,374.1 L1207.5,346.0" style="--d:0.16s"/>
+<path class="link" id="line-41" d="M1037.3,484.9 L1061.9,497.0" style="--d:0.164s"/>
+<path class="link" id="line-42" d="M709.2,601.0 L638.8,634.9" style="--d:0.168s"/>
+<path class="link" id="line-43" d="M436.2,697.1 L417.4,629.6" style="--d:0.172s"/>
+<path class="link" id="line-44" d="M1214.7,468.3 L1262.1,506.7" style="--d:0.176s"/>
+<path class="link" id="line-45" d="M1255.6,383.1 L1207.5,346.0" style="--d:0.18s"/>
+<path class="link" id="line-46" d="M1464.2,223.6 L1490.7,276.8" style="--d:0.184s"/>
+<path class="link" id="line-47" d="M1022.7,136.7 L989.3,225.1" style="--d:0.188s"/>
+<path class="link" id="line-48" d="M884.9,185.0 L899.8,207.4" style="--d:0.192s"/>
+<path class="link" id="line-49" d="M513.2,666.6 L544.4,604.1" style="--d:0.196s"/>
+<path class="link" id="line-50" d="M954.4,440.2 L986.2,380.5" style="--d:0.2s"/>
+<path class="link" id="line-51" d="M1378.0,276.7 L1391.7,337.8" style="--d:0.204s"/>
+<path class="link" id="line-52" d="M1279.1,647.6 L1302.0,712.3" style="--d:0.208s"/>
+<path class="link" id="line-53" d="M194.5,832.7 L199.9,854.5" style="--d:0.212s"/>
+<path class="link" id="line-54" d="M949.6,422.5 L954.4,440.2" style="--d:0.216s"/>
+<path class="link" id="line-55" d="M949.6,422.5 L986.2,380.5" style="--d:0.22s"/>
+<path class="link" id="line-56" d="M1186.8,69.2 L1233.4,160.8" style="--d:0.224s"/>
+<path class="link" id="line-57" d="M884.9,185.0 L791.2,229.8" style="--d:0.228s"/>
+<path class="link" id="line-58" d="M954.4,440.2 L989.0,504.2" style="--d:0.232s"/>
+<path class="link" id="line-59" d="M808.4,236.0 L899.8,207.4" style="--d:0.236s"/>
+<path class="link" id="line-60" d="M941.2,47.3 L1022.7,136.7" style="--d:0.24s"/>
+<path class="link" id="line-61" d="M811.1,593.5 L859.6,651.8" style="--d:0.244s"/>
+<path class="link" id="line-62" d="M1022.7,136.7 L1052.0,79.3" style="--d:0.248s"/>
+<path class="link" id="line-63" d="M1315.7,491.2 L1214.7,468.3" style="--d:0.252s"/>
+<path class="link" id="line-64" d="M1203.7,157.3 L1178.2,153.7" style="--d:0.256s"/>
+<path class="link" id="line-65" d="M465.0,619.1 L513.2,666.6" style="--d:0.26s"/>
+<path class="link" id="line-66" d="M1080.0,745.5 L1076.6,796.4" style="--d:0.264s"/>
+<path class="link" id="line-67" d="M859.6,651.8 L745.2,730.1" style="--d:0.268s"/>
+<path class="link" id="line-68" d="M363.9,526.8 L395.8,507.9" style="--d:0.272s"/>
+<path class="link" id="line-69" d="M791.2,229.8 L781.6,254.7" style="--d:0.276s"/>
+<path class="link" id="line-70" d="M407.9,183.6 L434.4,132.6" style="--d:0.28s"/>
+<path class="link" id="line-71" d="M1203.7,157.3 L1186.8,69.2" style="--d:0.284s"/>
+<path class="link" id="line-72" d="M1076.6,796.4 L1011.5,732.7" style="--d:0.288s"/>
+<path class="link" id="line-73" d="M228.0,419.6 L294.8,468.7" style="--d:0.292s"/>
+<path class="link" id="line-74" d="M399.1,426.8 L400.4,419.6" style="--d:0.296s"/>
+<path class="link" id="line-75" d="M1061.9,497.0 L992.1,590.5" style="--d:0.3s"/>
+<path class="link" id="line-76" d="M1017.5,41.5 L1052.0,79.3" style="--d:0.304s"/>
+<path class="link" id="line-77" d="M690.6,518.8 L666.5,561.6" style="--d:0.308s"/>
+<path class="link" id="line-78" d="M1319.3,355.0 L1207.5,346.0" style="--d:0.312s"/>
+<path class="link" id="line-79" d="M727.8,840.3 L700.8,866.4" style="--d:0.316s"/>
+<path class="link" id="line-80" d="M808.4,42.8 L690.5,56.0" style="--d:0.32s"/>
+<path class="link" id="line-81" d="M1226.0,867.3 L1293.0,861.1" style="--d:0.324s"/>
+<path class="link" id="line-82" d="M370.4,191.3 L413.5,90.4" style="--d:0.328s"/>
+<path class="link" id="line-83" d="M588.2,80.2 L617.5,151.4" style="--d:0.332s"/>
+<path class="link" id="line-84" d="M1390.8,735.2 L1412.5,760.0" style="--d:0.336s"/>
+<path class="link" id="line-85" d="M1037.3,484.9 L986.2,380.5" style="--d:0.34s"/>
+<path class="link" id="line-86" d="M258.4,675.8 L179.0,684.3" style="--d:0.344s"/>
+<path class="link" id="line-87" d="M1356.5,678.4 L1348.7,734.4" style="--d:0.348s"/>
+<path class="link" id="line-88" d="M1331.2,810.8 L1345.3,727.2" style="--d:0.352s"/>
+<path class="link" id="line-89" d="M703.4,465.1 L655.9,486.6" style="--d:0.356s"/>
+<path class="link" id="line-90" d="M612.7,328.7 L613.0,409.9" style="--d:0.36s"/>
+<path class="link" id="line-91" d="M1432.5,759.3 L1348.7,734.4" style="--d:0.364s"/>
+<path class="link" id="line-92" d="M1176.3,494.4 L1262.1,506.7" style="--d:0.368s"/>
+<path class="link" id="line-93" d="M1186.8,69.2 L1178.2,153.7" style="--d:0.372s"/>
+<path class="link" id="line-94" d="M941.2,47.3 L1052.0,79.3" style="--d:0.376s"/>
+<path class="link" id="line-95" d="M1367.6,66.6 L1395.0,41.3" style="--d:0.38s"/>
+<path class="link" id="line-96" d="M31.2,628.7 L114.6,646.3" style="--d:0.384s"/>
+<path class="link" id="line-97" d="M164.0,384.3 L228.0,419.6" style="--d:0.388s"/>
+<path class="link" id="line-98" d="M261.5,275.2 L370.4,191.3" style="--d:0.392s"/>
+<path class="link" id="line-99" d="M843.2,541.7 L859.6,651.8" style="--d:0.396s"/>
+<path class="link" id="line-100" d="M989.0,504.2 L1061.9,497.0" style="--d:0.4s"/>
+<path class="link" id="line-101" d="M1378.0,276.7 L1319.3,355.0" style="--d:0.404s"/>
+<path class="link" id="line-102" d="M920.7,625.9 L859.6,651.8" style="--d:0.408s"/>
+<path class="link" id="line-103" d="M237.7,108.1 L242.9,140.1" style="--d:0.412s"/>
+<path class="link" id="line-104" d="M1465.1,749.9 L1502.1,786.6" style="--d:0.416s"/>
+<path class="link" id="line-105" d="M741.1,252.2 L781.6,254.7" style="--d:0.42s"/>
+<path class="link" id="line-106" d="M434.4,132.6 L413.5,90.4" style="--d:0.424s"/>
+<path class="link" id="line-107" d="M171.2,390.7 L228.0,419.6" style="--d:0.428s"/>
+<path class="link" id="line-108" d="M1464.2,223.6 L1359.4,211.3" style="--d:0.432s"/>
+<path class="link" id="line-109" d="M1037.3,484.9 L989.0,504.2" style="--d:0.436s"/>
+<path class="link" id="line-110" d="M1017.5,41.5 L941.2,47.3" style="--d:0.44s"/>
+<path class="link" id="line-111" d="M454.4,437.5 L400.4,419.6" style="--d:0.444s"/>
+<path class="link" id="line-112" d="M741.1,252.2 L791.2,229.8" style="--d:0.448s"/>
+<path class="link" id="line-113" d="M1037.3,484.9 L992.1,590.5" style="--d:0.452s"/>
+<path class="link" id="line-114" d="M142.9,272.1 L56.9,186.1" style="--d:0.456s"/>
+<path class="link" id="line-115" d="M363.9,526.8 L351.7,449.3" style="--d:0.46s"/>
+<path class="link" id="line-116" d="M434.4,132.6 L370.4,191.3" style="--d:0.464s"/>
+<path class="link" id="line-117" d="M690.6,518.8 L655.9,486.6" style="--d:0.468s"/>
+<path class="link" id="line-118" d="M1139.5,195.1 L1047.8,264.1" style="--d:0.472s"/>
+<path class="link" id="line-119" d="M948.3,600.7 L859.6,651.8" style="--d:0.476s"/>
+<path class="link" id="line-120" d="M565.5,725.7 L653.5,737.0" style="--d:0.48s"/>
+<path class="link" id="line-121" d="M258.4,675.8 L361.4,711.5" style="--d:0.484s"/>
+<path class="link" id="line-122" d="M1199.0,760.5 L1196.6,836.7" style="--d:0.488s"/>
+<path class="link" id="line-123" d="M1185.3,388.5 L1132.2,363.1" style="--d:0.492s"/>
+<path class="link" id="line-124" d="M1185.3,388.5 L1207.5,346.0" style="--d:0.496s"/>
+<path class="link" id="line-125" d="M436.2,697.1 L361.4,711.5" style="--d:0.5s"/>
+<path class="link" id="line-126" d="M262.5,843.2 L199.9,854.5" style="--d:0.504s"/>
+<path class="link" id="line-127" d="M370.4,191.3 L425.8,301.5" style="--d:0.508s"/>
+<path class="link" id="line-128" d="M407.9,183.6 L425.8,301.5" style="--d:0.512s"/>
+<path class="link" id="line-129" d="M351.7,449.3 L395.8,507.9" style="--d:0.516s"/>
+<path class="link" id="line-130" d="M465.0,619.1 L544.4,604.1" style="--d:0.52s"/>
+<path class="link" id="line-131" d="M597.5,200.2 L588.2,80.2" style="--d:0.524s"/>
+<path class="link" id="line-132" d="M722.1,666.5 L859.6,651.8" style="--d:0.528s"/>
+<path class="link" id="line-133" d="M1478.1,195.7 L1359.4,211.3" style="--d:0.532s"/>
+<path class="link" id="line-134" d="M1219.0,312.6 L1207.5,346.0" style="--d:0.536s"/>
+<path class="link" id="line-135" d="M1279.1,647.6 L1348.7,734.4" style="--d:0.54s"/>
+<path class="link" id="line-136" d="M417.4,629.6 L361.4,711.5" style="--d:0.544s"/>
+<path class="link" id="line-137" d="M970.2,167.2 L884.9,185.0" style="--d:0.548s"/>
+<path class="link" id="line-138" d="M808.4,236.0 L791.2,229.8" style="--d:0.552s"/>
+<path class="link" id="line-139" d="M970.2,167.2 L1052.0,79.3" style="--d:0.556s"/>
+<path class="link" id="line-140" d="M703.4,465.1 L690.6,518.8" style="--d:0.56s"/>
+<path class="link" id="line-141" d="M706.2,633.6 L745.2,730.1" style="--d:0.564s"/>
+<path class="link" id="line-142" d="M1203.7,157.3 L1233.4,160.8" style="--d:0.568s"/>
+<path class="link" id="line-143" d="M884.9,185.0 L989.3,225.1" style="--d:0.572s"/>
+<path class="link" id="line-144" d="M306.2,417.9 L294.8,468.7" style="--d:0.576s"/>
+<path class="link" id="line-145" d="M220.3,428.7 L228.0,419.6" style="--d:0.58s"/>
+<path class="link" id="line-146" d="M920.7,625.9 L948.3,600.7" style="--d:0.584s"/>
+<path class="link" id="line-147" d="M1390.8,735.2 L1345.3,727.2" style="--d:0.588s"/>
+<path class="link" id="line-148" d="M597.5,200.2 L540.3,132.5" style="--d:0.592s"/>
+<path class="link" id="line-149" d="M770.9,763.6 L745.2,730.1" style="--d:0.596s"/>
+<path class="link" id="line-150" d="M809.2,133.9 L884.9,185.0" style="--d:0.6s"/>
+<path class="link" id="line-151" d="M351.7,449.3 L400.4,419.6" style="--d:0.604s"/>
+<path class="link" id="line-152" d="M1088.0,744.9 L1080.0,745.5" style="--d:0.608s"/>
+<path class="link" id="line-153" d="M1185.3,388.5 L1240.5,374.1" style="--d:0.612s"/>
+<path class="link" id="line-154" d="M986.2,380.5 L989.0,504.2" style="--d:0.616s"/>
+<path class="link" id="line-155" d="M1203.7,157.3 L1139.5,195.1" style="--d:0.62s"/>
+<path class="link" id="line-156" d="M351.7,449.3 L306.2,417.9" style="--d:0.624s"/>
+<path class="link" id="line-157" d="M399.1,426.8 L306.2,417.9" style="--d:0.628s"/>
+<path class="link" id="line-158" d="M242.9,140.1 L370.4,191.3" style="--d:0.632s"/>
+<path class="link" id="line-159" d="M540.3,132.5 L413.5,90.4" style="--d:0.636s"/>
+<path class="link" id="line-160" d="M1139.5,195.1 L1233.4,160.8" style="--d:0.64s"/>
+<path class="link" id="line-161" d="M1255.6,383.1 L1319.3,355.0" style="--d:0.644s"/>
+<path class="link" id="line-162" d="M1465.1,749.9 L1412.5,760.0" style="--d:0.648s"/>
+<path class="link" id="line-163" d="M1302.0,712.3 L1345.3,727.2" style="--d:0.652s"/>
+<path class="link" id="line-164" d="M811.1,593.5 L709.2,601.0" style="--d:0.656s"/>
+<path class="link" id="line-165" d="M220.3,428.7 L164.0,384.3" style="--d:0.66s"/>
+<path class="link" id="line-166" d="M1490.7,276.8 L1579.9,321.0" style="--d:0.664s"/>
+<path class="link" id="line-167" d="M1478.1,195.7 L1484.7,135.5" style="--d:0.668s"/>
+<path class="link" id="line-168" d="M142.9,272.1 L261.5,275.2" style="--d:0.672s"/>
+<path class="link" id="line-169" d="M407.9,183.6 L370.4,191.3" style="--d:0.676s"/>
+<path class="link" id="line-170" d="M1081.2,118.5 L1022.7,136.7" style="--d:0.68s"/>
+<path class="link" id="line-171" d="M199.9,854.5 L165.7,838.7" style="--d:0.684s"/>
+<path class="link" id="line-172" d="M653.5,737.0 L745.2,730.1" style="--d:0.688s"/>
+<path class="link" id="line-173" d="M1081.2,118.5 L1139.5,195.1" style="--d:0.692s"/>
+<path class="link" id="line-174" d="M349.1,830.9 L361.4,711.5" style="--d:0.696s"/>
+<path class="link" id="line-175" d="M1176.3,494.4 L1214.7,468.3" style="--d:0.7s"/>
+<path class="link" id="line-176" d="M711.3,760.8 L653.5,737.0" style="--d:0.704s"/>
+<path class="link" id="line-177" d="M281.8,542.2 L294.8,468.7" style="--d:0.708s"/>
+<path class="link" id="line-178" d="M722.1,666.5 L745.2,730.1" style="--d:0.712s"/>
+<path class="link" id="line-179" d="M142.9,272.1 L98.3,234.3" style="--d:0.716s"/>
+<path class="link" id="line-180" d="M612.7,328.7 L597.5,200.2" style="--d:0.72s"/>
+<path class="link" id="line-181" d="M666.5,561.6 L638.8,634.9" style="--d:0.724s"/>
+<path class="link" id="line-182" d="M1432.5,759.3 L1502.1,786.6" style="--d:0.728s"/>
+<path class="link" id="line-183" d="M809.2,133.9 L781.6,254.7" style="--d:0.732s"/>
+<path class="link" id="line-184" d="M262.5,843.2 L165.7,838.7" style="--d:0.736s"/>
+<path class="link" id="line-185" d="M114.6,646.3 L79.7,533.1" style="--d:0.74s"/>
+<path class="link" id="line-186" d="M1478.1,195.7 L1490.7,276.8" style="--d:0.744s"/>
+<path class="link" id="line-187" d="M1240.5,374.1 L1262.1,506.7" style="--d:0.748s"/>
+<path class="link" id="line-188" d="M242.9,140.1 L261.5,275.2" style="--d:0.752s"/>
+<path class="link" id="line-189" d="M711.3,760.8 L745.2,730.1" style="--d:0.756s"/>
+<path class="link" id="line-190" d="M1302.0,712.3 L1348.7,734.4" style="--d:0.76s"/>
+<path class="link" id="line-191" d="M709.2,601.0 L706.2,633.6" style="--d:0.764s"/>
+<path class="link" id="line-192" d="M709.2,601.0 L722.1,666.5" style="--d:0.768s"/>
+<path class="link" id="line-193" d="M1178.2,153.7 L1139.5,195.1" style="--d:0.772s"/>
+<path class="link" id="line-194" d="M666.5,561.6 L655.9,486.6" style="--d:0.776s"/>
+<path class="link" id="line-195" d="M513.2,666.6 L565.5,725.7" style="--d:0.78s"/>
+<path class="link" id="line-196" d="M171.2,390.7 L164.0,384.3" style="--d:0.784s"/>
+<path class="link" id="line-197" d="M171.2,390.7 L108.7,456.7" style="--d:0.788s"/>
+<path class="link" id="line-198" d="M1080.0,745.5 L1011.5,732.7" style="--d:0.792s"/>
+<path class="link" id="line-199" d="M1412.5,760.0 L1345.3,727.2" style="--d:0.796s"/>
+<path class="link" id="line-200" d="M1076.6,796.4 L1196.6,836.7" style="--d:0.8s"/>
+<path class="link" id="line-201" d="M1391.7,337.8 L1490.7,276.8" style="--d:0.804s"/>
+<path class="link" id="line-202" d="M1432.5,759.3 L1412.5,760.0" style="--d:0.808s"/>
+<path class="link" id="line-203" d="M142.9,272.1 L164.0,384.3" style="--d:0.812s"/>
+<path class="link" id="line-204" d="M709.2,601.0 L666.5,561.6" style="--d:0.816s"/>
+<path class="link" id="line-205" d="M706.2,633.6 L638.8,634.9" style="--d:0.82s"/>
+<path class="link" id="line-206" d="M1240.5,374.1 L1319.3,355.0" style="--d:0.824s"/>
+<path class="link" id="line-207" d="M1255.6,383.1 L1240.5,374.1" style="--d:0.828s"/>
+<path class="link" id="line-208" d="M1226.0,867.3 L1199.0,760.5" style="--d:0.832s"/>
+<path class="link" id="line-209" d="M613.0,409.9 L655.9,486.6" style="--d:0.836s"/>
+<path class="link" id="line-210" d="M454.4,437.5 L518.7,484.5" style="--d:0.84s"/>
+<path class="link" id="line-211" d="M709.2,601.0 L655.9,486.6" style="--d:0.844s"/>
+<path class="link" id="line-212" d="M1293.0,861.1 L1196.6,836.7" style="--d:0.848s"/>
+<path class="link" id="line-213" d="M1315.7,491.2 L1262.1,506.7" style="--d:0.852s"/>
+<path class="link" id="line-214" d="M1412.5,760.0 L1348.7,734.4" style="--d:0.856s"/>
+<path class="link" id="line-215" d="M425.8,301.5 L400.4,419.6" style="--d:0.86s"/>
+<path class="link" id="line-216" d="M518.7,484.5 L655.9,486.6" style="--d:0.864s"/>
+<path class="link" id="line-217" d="M1484.7,135.5 L1395.0,41.3" style="--d:0.868s"/>
+<path class="link" id="line-218" d="M727.8,840.3 L770.9,763.6" style="--d:0.872s"/>
+<path class="link" id="line-219" d="M809.2,133.9 L791.2,229.8" style="--d:0.876s"/>
+<path class="link" id="line-220" d="M1536.1,675.3 L1465.1,749.9" style="--d:0.88s"/>
+<path class="link" id="line-221" d="M1047.8,264.1 L989.3,225.1" style="--d:0.884s"/>
+<path class="link" id="line-222" d="M1226.0,867.3 L1196.6,836.7" style="--d:0.888s"/>
+<path class="link" id="line-223" d="M970.2,167.2 L989.3,225.1" style="--d:0.892s"/>
+<path class="link" id="line-224" d="M1331.2,810.8 L1348.7,734.4" style="--d:0.896s"/>
+<path class="link" id="line-225" d="M690.5,56.0 L588.2,80.2" style="--d:0.9s"/>
+<path class="link" id="line-226" d="M1214.7,468.3 L1207.5,346.0" style="--d:0.904s"/>
+<path class="link" id="line-227" d="M711.3,760.8 L700.8,866.4" style="--d:0.908s"/>
+<path class="link" id="line-228" d="M1528.3,260.0 L1579.9,321.0" style="--d:0.912s"/>
+<path class="link" id="line-229" d="M1390.8,735.2 L1348.7,734.4" style="--d:0.916s"/>
+<path class="link" id="line-230" d="M666.5,561.6 L706.2,633.6" style="--d:0.92s"/>
+<path class="link" id="line-231" d="M306.2,417.9 L228.0,419.6" style="--d:0.924s"/>
+<path class="link" id="line-232" d="M1554.9,545.7 L1434.8,529.0" style="--d:0.928s"/>
+<path class="link" id="line-233" d="M31.2,628.7 L79.7,533.1" style="--d:0.932s"/>
+<path class="link" id="line-234" d="M540.3,132.5 L617.5,151.4" style="--d:0.936s"/>
+<path class="link" id="line-235" d="M871.1,737.8 L859.6,651.8" style="--d:0.94s"/>
+<path class="link" id="line-236" d="M1255.6,383.1 L1262.1,506.7" style="--d:0.944s"/>
+<path class="link" id="line-237" d="M108.7,456.7 L79.7,533.1" style="--d:0.948s"/>
+<path class="link" id="line-238" d="M770.9,763.6 L700.8,866.4" style="--d:0.952s"/>
+<path class="link" id="line-239" d="M465.0,619.1 L417.4,629.6" style="--d:0.956s"/>
+<path class="link" id="line-240" d="M395.8,507.9 L399.1,426.8" style="--d:0.96s"/>
+<path class="link" id="line-241" d="M1185.3,388.5 L1214.7,468.3" style="--d:0.964s"/>
+<path class="link" id="line-242" d="M1434.8,529.0 L1469.1,515.2" style="--d:0.968s"/>
+<path class="link" id="line-243" d="M1219.0,312.6 L1240.5,374.1" style="--d:0.972s"/>
+<path class="link" id="line-244" d="M597.5,200.2 L617.5,151.4" style="--d:0.976s"/>
+<path class="link" id="line-245" d="M1478.1,195.7 L1422.3,200.7" style="--d:0.98s"/>
+<path class="link" id="line-246" d="M727.8,840.3 L611.2,867.4" style="--d:0.984s"/>
+<path class="link" id="line-247" d="M465.0,619.1 L361.4,711.5" style="--d:0.988s"/>
+<path class="link" id="line-248" d="M1088.0,744.9 L1076.6,796.4" style="--d:0.992s"/>
+<path class="link" id="line-249" d="M970.2,167.2 L899.8,207.4" style="--d:0.996s"/>
+<path class="link" id="line-250" d="M108.7,456.7 L228.0,419.6" style="--d:1.0s"/>
+<path class="link" id="line-251" d="M220.3,428.7 L171.2,390.7" style="--d:1.004s"/>
+<path class="link" id="line-252" d="M1432.5,759.3 L1465.1,749.9" style="--d:1.008s"/>
+<path class="link" id="line-253" d="M1088.0,744.9 L1011.5,732.7" style="--d:1.012s"/>
+<path class="link" id="line-254" d="M843.2,541.7 L811.1,593.5" style="--d:1.016s"/>
+<path class="link" id="line-255" d="M237.7,108.1 L119.9,38.1" style="--d:1.02s"/>
+<path class="link" id="line-256" d="M565.5,725.7 L638.8,634.9" style="--d:1.024s"/>
+<path class="link" id="line-257" d="M722.1,666.5 L638.8,634.9" style="--d:1.028s"/>
+<path class="link" id="line-258" d="M1345.3,727.2 L1348.7,734.4" style="--d:1.032s"/>
+<path class="link" id="line-259" d="M1484.7,135.5 L1422.3,200.7" style="--d:1.036s"/>
+<path class="link" id="line-260" d="M1391.7,337.8 L1319.3,355.0" style="--d:1.04s"/>
+<path class="link" id="line-261" d="M1293.0,861.1 L1331.2,810.8" style="--d:1.044s"/>
+<path class="link" id="line-262" d="M690.5,56.0 L617.5,151.4" style="--d:1.048s"/>
+<path class="link" id="line-263" d="M220.3,428.7 L294.8,468.7" style="--d:1.052s"/>
+<path class="link" id="line-264" d="M1488.9,509.9 L1434.8,529.0" style="--d:1.056s"/>
+<path class="link" id="line-265" d="M611.2,867.4 L700.8,866.4" style="--d:1.06s"/>
+<path class="link" id="line-266" d="M1554.9,545.7 L1469.1,515.2" style="--d:1.064s"/>
+<path class="link" id="line-267" d="M884.9,185.0 L781.6,254.7" style="--d:1.068s"/>
+<path class="link" id="line-268" d="M571.7,501.5 L518.7,484.5" style="--d:1.072s"/>
+<path class="link" id="line-269" d="M920.7,625.9 L992.1,590.5" style="--d:1.076s"/>
+<path class="link" id="line-270" d="M1186.8,69.2 L1052.0,79.3" style="--d:1.08s"/>
+<path class="link" id="line-271" d="M711.3,760.8 L770.9,763.6" style="--d:1.084s"/>
+<path class="link" id="line-272" d="M1478.1,195.7 L1464.2,223.6" style="--d:1.088s"/>
+<path class="link" id="line-273" d="M1488.9,509.9 L1554.9,545.7" style="--d:1.092s"/>
+<path class="link" id="line-274" d="M1178.2,153.7 L1233.4,160.8" style="--d:1.096s"/>
+<path class="link" id="line-275" d="M808.4,236.0 L781.6,254.7" style="--d:1.1s"/>
+<path class="link" id="line-276" d="M454.4,437.5 L399.1,426.8" style="--d:1.104s"/>
+<path class="link" id="line-277" d="M363.9,526.8 L281.8,542.2" style="--d:1.108s"/>
+<path class="link" id="line-278" d="M351.7,449.3 L399.1,426.8" style="--d:1.112s"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M941.2,47.3 L1022.7,136.7'); animation-delay:8.71s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1319.3,355.0 L1207.5,346.0'); animation-delay:10.05s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M237.7,108.1 L119.9,38.1'); animation-delay:6.96s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M770.9,763.6 L745.2,730.1'); animation-delay:7.92s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1391.7,337.8 L1319.3,355.0'); animation-delay:10.38s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M970.2,167.2 L1052.0,79.3'); animation-delay:5.36s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1293.0,861.1 L1196.6,836.7'); animation-delay:5.81s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M465.0,619.1 L361.4,711.5'); animation-delay:3.99s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1185.3,388.5 L1214.7,468.3'); animation-delay:9.15s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1185.3,388.5 L1207.5,346.0'); animation-delay:4.53s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M31.2,628.7 L79.7,533.1'); animation-delay:11.19s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M399.1,426.8 L400.4,419.6'); animation-delay:10.44s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M171.2,390.7 L164.0,384.3'); animation-delay:11.77s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M164.0,384.3 L228.0,419.6'); animation-delay:2.87s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M791.2,229.8 L781.6,254.7'); animation-delay:4.6s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1081.2,118.5 L1052.0,79.3'); animation-delay:10.27s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M706.2,633.6 L745.2,730.1'); animation-delay:4.93s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M349.1,830.9 L361.4,711.5'); animation-delay:3.82s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M1484.7,135.5 L1422.3,200.7'); animation-delay:5.68s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M417.4,629.6 L361.4,711.5'); animation-delay:10.96s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M808.4,42.8 L809.2,133.9'); animation-delay:4.57s;"/>
+<circle class="pulse" r="2.1" style="offset-path:path('M306.2,417.9 L294.8,468.7'); animation-delay:11.86s;"/>
+    </g>
+
+    <g id="triangles" class="layer" style="--depth:0.7">
+<polygon class="tri" points="690.2,481.8 690.8,526.0 720.2,548.7" fill="#C89B62" style="--rot:-2deg; animation-duration:12.7s; animation-delay:3.78s;"/>
+<polygon class="tri" points="220.8,432.0 200.3,417.2 265.5,406.7" fill="#C89B62" style="--rot:-2deg; animation-duration:15.0s; animation-delay:5.76s;"/>
+<polygon class="tri" points="1479.3,495.2 1506.4,530.7 1518.7,472.8" fill="#D8C2A8" style="--rot:-2deg; animation-duration:13.4s; animation-delay:6.1s;"/>
+<polygon class="tri" points="454.1,127.3 402.3,143.3 464.2,128.1" fill="#F3C96A" style="--rot:-2deg; animation-duration:9.3s; animation-delay:5.48s;"/>
+<polygon class="tri" points="797.9,128.4 788.7,126.9 823.7,108.3" fill="#F2E8D5" style="--rot:-2deg; animation-duration:13.3s; animation-delay:3.41s;"/>
+<polygon class="tri" points="1185.1,395.2 1163.9,399.5 1182.1,401.8" fill="#C89B62" style="--rot:2deg; animation-duration:13.7s; animation-delay:2.29s;"/>
+<polygon class="tri" points="1250.3,507.3 1198.6,505.3 1229.9,464.8" fill="#F3C96A" style="--rot:-2deg; animation-duration:16.0s; animation-delay:5.77s;"/>
+<polygon class="tri" points="928.6,428.3 955.6,461.9 933.2,460.7" fill="#C89B62" style="--rot:2deg; animation-duration:9.1s; animation-delay:5.83s;"/>
+<polygon class="tri" points="1568.9,694.9 1562.7,707.5 1558.2,653.7" fill="#F3C96A" style="--rot:-2deg; animation-duration:13.5s; animation-delay:4.6s;"/>
+<polygon class="tri" points="418.2,215.9 419.6,168.3 403.2,190.0" fill="#F2E8D5" style="--rot:-2deg; animation-duration:15.4s; animation-delay:3.13s;"/>
+<polygon class="tri" points="1267.1,831.7 1296.2,898.8 1295.5,894.2" fill="#F2E8D5" style="--rot:2deg; animation-duration:15.4s; animation-delay:6.22s;"/>
+<polygon class="tri" points="371.4,436.4 320.9,486.3 323.0,486.6" fill="#C89B62" style="--rot:2deg; animation-duration:9.6s; animation-delay:3.47s;"/>
+<polygon class="tri" points="1282.0,644.0 1292.9,661.4 1285.9,673.4" fill="#F3C96A" style="--rot:-2deg; animation-duration:13.7s; animation-delay:3.86s;"/>
+<polygon class="tri" points="1511.3,173.4 1443.2,221.6 1510.9,179.9" fill="#C89B62" style="--rot:-2deg; animation-duration:10.0s; animation-delay:6.23s;"/>
+<polygon class="tri" points="1243.4,126.6 1182.5,160.3 1194.8,147.0" fill="#C89B62" style="--rot:-2deg; animation-duration:15.2s; animation-delay:4.77s;"/>
+<polygon class="tri" points="118.0,491.8 91.1,471.9 86.1,452.3" fill="#F2E8D5" style="--rot:2deg; animation-duration:9.7s; animation-delay:4.93s;"/>
+<polygon class="tri" points="383.8,460.9 316.5,431.4 389.2,485.2" fill="#C89B62" style="--rot:-2deg; animation-duration:13.6s; animation-delay:4.71s;"/>
+<polygon class="tri" points="686.1,653.2 761.2,689.5 698.5,692.9" fill="#F2E8D5" style="--rot:-2deg; animation-duration:14.7s; animation-delay:2.66s;"/>
+<polygon class="tri" points="1085.0,504.7 1044.1,535.7 1100.9,500.2" fill="#F2E8D5" style="--rot:-2deg; animation-duration:13.6s; animation-delay:1.63s;"/>
+<polygon class="tri" points="529.0,155.6 547.4,93.8 521.5,102.6" fill="#C89B62" style="--rot:-2deg; animation-duration:14.2s; animation-delay:3.88s;"/>
+<polygon class="tri" points="115.7,615.0 114.9,681.9 78.1,669.0" fill="#F3C96A" style="--rot:2deg; animation-duration:13.5s; animation-delay:1.66s;"/>
+<polygon class="tri" points="1505.9,189.8 1446.7,212.7 1473.6,227.6" fill="#F3C96A" style="--rot:-2deg; animation-duration:9.5s; animation-delay:2.88s;"/>
+<polygon class="tri" points="1481.2,284.6 1474.3,277.2 1485.1,300.2" fill="#D8C2A8" style="--rot:-2deg; animation-duration:12.0s; animation-delay:5.94s;"/>
+<polygon class="tri" points="696.3,597.3 702.5,568.6 703.3,614.2" fill="#F3C96A" style="--rot:-2deg; animation-duration:13.8s; animation-delay:3.87s;"/>
+<polygon class="tri" points="1490.7,191.1 1431.9,242.7 1489.1,228.1" fill="#F3C96A" style="--rot:-2deg; animation-duration:11.9s; animation-delay:5.87s;"/>
+<polygon class="tri" points="548.1,502.2 556.2,492.5 506.8,490.7" fill="#F2E8D5" style="--rot:-2deg; animation-duration:13.6s; animation-delay:2.62s;"/>
+<polygon class="tri" points="937.6,427.0 918.8,404.8 927.7,416.8" fill="#D8C2A8" style="--rot:2deg; animation-duration:9.2s; animation-delay:2.87s;"/>
+<polygon class="tri" points="276.6,128.2 217.4,111.6 255.5,105.7" fill="#D8C2A8" style="--rot:-2deg; animation-duration:14.2s; animation-delay:2.58s;"/>
+<polygon class="tri" points="1408.8,732.6 1397.4,746.0 1447.8,767.7" fill="#D8C2A8" style="--rot:-2deg; animation-duration:10.1s; animation-delay:4.59s;"/>
+<polygon class="tri" points="1019.1,497.9 1036.2,480.3 1019.2,505.3" fill="#D8C2A8" style="--rot:2deg; animation-duration:12.0s; animation-delay:2.92s;"/>
+<polygon class="tri" points="972.4,151.9 947.8,206.0 934.6,143.6" fill="#F2E8D5" style="--rot:-2deg; animation-duration:14.3s; animation-delay:2.95s;"/>
+<polygon class="tri" points="771.7,613.3 785.2,583.9 827.4,593.5" fill="#F3C96A" style="--rot:-2deg; animation-duration:11.8s; animation-delay:5.21s;"/>
+<polygon class="tri" points="931.7,200.9 999.2,173.3 976.1,184.0" fill="#C89B62" style="--rot:2deg; animation-duration:9.8s; animation-delay:1.6s;"/>
+<polygon class="tri" points="1464.4,312.6 1487.5,292.0 1479.6,271.7" fill="#D8C2A8" style="--rot:-2deg; animation-duration:12.0s; animation-delay:3.5s;"/>
+<polygon class="tri" points="1232.2,358.9 1227.7,360.7 1214.0,374.9" fill="#D8C2A8" style="--rot:-2deg; animation-duration:15.3s; animation-delay:3.25s;"/>
+<polygon class="tri" points="1040.8,468.7 1037.7,505.2 1082.7,509.4" fill="#F2E8D5" style="--rot:2deg; animation-duration:12.2s; animation-delay:4.32s;"/>
+<polygon class="tri" points="1405.3,765.8 1402.2,774.1 1376.7,772.9" fill="#F3C96A" style="--rot:-2deg; animation-duration:12.1s; animation-delay:3.84s;"/>
+<polygon class="tri" points="1227.4,164.6 1191.9,123.2 1200.6,120.3" fill="#F3C96A" style="--rot:2deg; animation-duration:9.5s; animation-delay:5.82s;"/>
+    </g>
+
+    <g id="bezier" class="layer" style="--depth:0.35">
+      <g>
+        <path class="bezier-curve" d="M700,470 C760,380 860,380 940,460" style="animation-delay:1.6s"/>
+        <line class="handle-line" x1="700" y1="470" x2="760" y2="380" style="animation-delay:1.4s"/>
+        <line class="handle-line" x1="940" y1="460" x2="860" y2="380" style="animation-delay:1.5s"/>
+        <rect class="anchor" x="696" y="466" width="8" height="8" style="--d:1.2s; animation-delay:1.2s"/>
+        <rect class="anchor" x="936" y="456" width="8" height="8" style="--d:1.3s; animation-delay:1.3s"/>
+        <circle class="handle" cx="760" cy="380" r="4" style="animation-delay:1.5s, 3s"/>
+        <circle class="handle" cx="860" cy="380" r="4" style="animation-delay:1.6s, 3.4s"/>
+      </g>
+      <g>
+        <path class="bezier-curve" d="M760,560 C820,640 700,700 780,760" style="animation-delay:2s"/>
+        <line class="handle-line" x1="760" y1="560" x2="820" y2="640" style="animation-delay:1.8s"/>
+        <line class="handle-line" x1="780" y1="760" x2="700" y2="700" style="animation-delay:1.9s"/>
+        <rect class="anchor" x="756" y="556" width="8" height="8" style="--d:1.6s; animation-delay:1.6s"/>
+        <rect class="anchor" x="776" y="756" width="8" height="8" style="--d:1.7s; animation-delay:1.7s"/>
+        <circle class="handle" cx="820" cy="640" r="4" style="animation-delay:1.9s, 4s"/>
+        <circle class="handle" cx="700" cy="700" r="4" style="animation-delay:2s, 4.4s"/>
+      </g>
+    </g>
+
+    <g id="ui_guides" class="layer" style="--depth:0.25">
+      <path class="guide-construct" d="M640,0 L640,900" style="animation-delay:.2s"/>
+      <path class="guide-construct" d="M0,600 L1600,600" style="animation-delay:1.1s"/>
+      <path class="guide-construct" d="M940,80 L1500,80 L1500,760" style="animation-delay:2.1s"/>
+
+      <line class="snap-guide" x1="900" y1="0" x2="900" y2="900"/>
+      <line class="snap-guide" x1="0" y1="300" x2="1600" y2="300"/>
+
+      <rect class="selection-frame" x="760" y="150" width="260" height="220" rx="4" style="animation-delay:0s"/>
+      <rect class="selection-frame" x="1080" y="480" width="300" height="240" rx="4" style="animation-delay:4.5s"/>
+      <rect class="selection-frame" x="640" y="640" width="220" height="180" rx="4" style="animation-delay:9s"/>
+
+      <g class="margin-tick">
+        <line x1="640" y1="40" x2="660" y2="40"/><line x1="650" y1="30" x2="650" y2="50"/>
+        <line x1="1560" y1="40" x2="1580" y2="40"/><line x1="1570" y1="30" x2="1570" y2="50"/>
+        <line x1="640" y1="860" x2="660" y2="860"/><line x1="650" y1="850" x2="650" y2="870"/>
+      </g>
+    </g>
+
+    <g id="particles" class="layer" style="--depth:1">
+<circle class="particle pv1" cx="1368.5" cy="553.5" r="1.26" fill="#D8C2A8" style="--depth:0.83; animation-duration:37.1s, 22.3s; animation-delay:7.02s, 7.02s;"/>
+<circle class="particle pv2" cx="65.6" cy="818.1" r="1.33" fill="#F3C96A" style="--depth:0.73; animation-duration:27.5s, 16.5s; animation-delay:1.43s, 1.43s;"/>
+<circle class="particle pv3" cx="99.0" cy="93.2" r="1.69" fill="#D8C2A8" style="--depth:0.99; animation-duration:19.7s, 11.8s; animation-delay:6.14s, 6.14s;"/>
+<circle class="particle pv4" cx="62.6" cy="636.9" r="1.79" fill="#F2E8D5" style="--depth:0.81; animation-duration:21.2s, 12.7s; animation-delay:3.54s, 3.54s;"/>
+<circle class="particle pv5" cx="452.6" cy="367.9" r="1.07" fill="#F2E8D5" style="--depth:0.62; animation-duration:30.6s, 18.4s; animation-delay:3.18s, 3.18s;"/>
+<circle class="particle pv6" cx="527.5" cy="502.2" r="1.13" fill="#D8C2A8" style="--depth:0.89; animation-duration:31.1s, 18.7s; animation-delay:8.61s, 8.61s;"/>
+<circle class="particle pv1" cx="1397.2" cy="300.0" r="1.34" fill="#F3C96A" style="--depth:0.97; animation-duration:24.2s, 14.5s; animation-delay:6.23s, 6.23s;"/>
+<circle class="particle pv2" cx="1059.4" cy="116.1" r="1.48" fill="#F3C96A" style="--depth:0.72; animation-duration:25.5s, 15.3s; animation-delay:7.52s, 7.52s;"/>
+<circle class="particle pv3" cx="1301.1" cy="603.1" r="1.61" fill="#F2E8D5" style="--depth:1.0; animation-duration:36.2s, 21.7s; animation-delay:0.89s, 0.89s;"/>
+<circle class="particle pv4" cx="1072.7" cy="457.6" r="0.72" fill="#D8C2A8" style="--depth:0.67; animation-duration:22.3s, 13.4s; animation-delay:9.0s, 9.0s;"/>
+<circle class="particle pv5" cx="778.0" cy="203.9" r="0.85" fill="#F3C96A" style="--depth:0.72; animation-duration:33.8s, 20.3s; animation-delay:4.82s, 4.82s;"/>
+<circle class="particle pv6" cx="863.6" cy="664.8" r="1.28" fill="#F2E8D5" style="--depth:0.73; animation-duration:33.3s, 20.0s; animation-delay:1.24s, 1.24s;"/>
+<circle class="particle pv1" cx="602.8" cy="146.0" r="1.61" fill="#F2E8D5" style="--depth:0.92; animation-duration:21.3s, 12.8s; animation-delay:4.16s, 4.16s;"/>
+<circle class="particle pv2" cx="657.4" cy="608.7" r="0.96" fill="#D8C2A8" style="--depth:0.84; animation-duration:33.0s, 19.8s; animation-delay:7.45s, 7.45s;"/>
+<circle class="particle pv3" cx="374.4" cy="215.3" r="1.76" fill="#D8C2A8" style="--depth:0.96; animation-duration:21.9s, 13.1s; animation-delay:6.44s, 6.44s;"/>
+<circle class="particle pv4" cx="912.7" cy="396.5" r="1.55" fill="#D8C2A8" style="--depth:0.8; animation-duration:26.4s, 15.8s; animation-delay:1.54s, 1.54s;"/>
+<circle class="particle pv5" cx="319.5" cy="544.2" r="1.66" fill="#F3C96A" style="--depth:0.86; animation-duration:35.5s, 21.3s; animation-delay:5.27s, 5.27s;"/>
+<circle class="particle pv6" cx="164.1" cy="761.3" r="1.64" fill="#D8C2A8" style="--depth:0.63; animation-duration:21.2s, 12.7s; animation-delay:4.27s, 4.27s;"/>
+<circle class="particle pv1" cx="821.4" cy="747.9" r="0.8" fill="#F3C96A" style="--depth:0.93; animation-duration:35.7s, 21.4s; animation-delay:8.84s, 8.84s;"/>
+<circle class="particle pv2" cx="663.8" cy="356.8" r="1.11" fill="#D8C2A8" style="--depth:1.0; animation-duration:25.5s, 15.3s; animation-delay:0.27s, 0.27s;"/>
+<circle class="particle pv3" cx="1489.3" cy="755.3" r="1.41" fill="#F3C96A" style="--depth:0.66; animation-duration:23.7s, 14.2s; animation-delay:7.88s, 7.88s;"/>
+<circle class="particle pv4" cx="1113.7" cy="124.9" r="1.48" fill="#D8C2A8" style="--depth:0.85; animation-duration:36.1s, 21.7s; animation-delay:0.18s, 0.18s;"/>
+<circle class="particle pv5" cx="345.0" cy="134.6" r="1.73" fill="#F2E8D5" style="--depth:0.81; animation-duration:20.2s, 12.1s; animation-delay:2.74s, 2.74s;"/>
+<circle class="particle pv6" cx="481.8" cy="43.0" r="1.16" fill="#F2E8D5" style="--depth:0.78; animation-duration:20.2s, 12.1s; animation-delay:8.6s, 8.6s;"/>
+<circle class="particle pv1" cx="954.8" cy="14.8" r="1.27" fill="#F3C96A" style="--depth:0.89; animation-duration:23.8s, 14.3s; animation-delay:0.01s, 0.01s;"/>
+<circle class="particle pv2" cx="564.5" cy="513.6" r="0.91" fill="#F2E8D5" style="--depth:0.63; animation-duration:37.5s, 22.5s; animation-delay:0.64s, 0.64s;"/>
+<circle class="particle pv3" cx="841.7" cy="456.6" r="1.79" fill="#F2E8D5" style="--depth:0.61; animation-duration:35.5s, 21.3s; animation-delay:0.41s, 0.41s;"/>
+<circle class="particle pv4" cx="619.0" cy="336.0" r="1.52" fill="#D8C2A8" style="--depth:0.92; animation-duration:24.9s, 14.9s; animation-delay:6.96s, 6.96s;"/>
+<circle class="particle pv5" cx="1005.2" cy="694.4" r="1.51" fill="#D8C2A8" style="--depth:0.65; animation-duration:25.0s, 15.0s; animation-delay:3.22s, 3.22s;"/>
+<circle class="particle pv6" cx="1028.5" cy="747.3" r="1.45" fill="#F2E8D5" style="--depth:0.79; animation-duration:21.6s, 13.0s; animation-delay:1.28s, 1.28s;"/>
+<circle class="particle pv1" cx="1145.7" cy="849.2" r="0.74" fill="#F3C96A" style="--depth:0.62; animation-duration:22.0s, 13.2s; animation-delay:0.4s, 0.4s;"/>
+<circle class="particle pv2" cx="1493.4" cy="463.8" r="1.79" fill="#F2E8D5" style="--depth:0.79; animation-duration:18.7s, 11.2s; animation-delay:6.15s, 6.15s;"/>
+<circle class="particle pv3" cx="457.8" cy="775.9" r="0.75" fill="#F2E8D5" style="--depth:0.73; animation-duration:20.5s, 12.3s; animation-delay:3.5s, 3.5s;"/>
+<circle class="particle pv4" cx="1423.2" cy="669.0" r="1.68" fill="#D8C2A8" style="--depth:0.74; animation-duration:21.7s, 13.0s; animation-delay:6.57s, 6.57s;"/>
+<circle class="particle pv5" cx="587.8" cy="717.6" r="0.99" fill="#F3C96A" style="--depth:0.89; animation-duration:19.6s, 11.8s; animation-delay:5.72s, 5.72s;"/>
+<circle class="particle pv6" cx="1315.7" cy="490.9" r="1.05" fill="#F3C96A" style="--depth:0.73; animation-duration:23.9s, 14.3s; animation-delay:4.24s, 4.24s;"/>
+<circle class="particle pv1" cx="1148.3" cy="150.0" r="1.19" fill="#D8C2A8" style="--depth:0.62; animation-duration:35.4s, 21.2s; animation-delay:3.35s, 3.35s;"/>
+<circle class="particle pv2" cx="1597.0" cy="247.1" r="1.78" fill="#F3C96A" style="--depth:0.63; animation-duration:30.8s, 18.5s; animation-delay:3.45s, 3.45s;"/>
+<circle class="particle pv3" cx="1281.8" cy="611.5" r="1.75" fill="#F3C96A" style="--depth:0.94; animation-duration:31.6s, 19.0s; animation-delay:4.16s, 4.16s;"/>
+<circle class="particle pv4" cx="202.0" cy="212.4" r="1.41" fill="#D8C2A8" style="--depth:0.75; animation-duration:29.3s, 17.6s; animation-delay:5.75s, 5.75s;"/>
+<circle class="particle pv5" cx="1086.5" cy="853.9" r="1.11" fill="#F3C96A" style="--depth:0.83; animation-duration:28.6s, 17.2s; animation-delay:3.78s, 3.78s;"/>
+<circle class="particle pv6" cx="1039.3" cy="224.7" r="0.82" fill="#F2E8D5" style="--depth:0.67; animation-duration:28.4s, 17.0s; animation-delay:8.68s, 8.68s;"/>
+    </g>
+
+    <g id="glow" class="layer" style="--depth:0.12">
+      <circle class="glow-sweep" cx="820" cy="480" r="240" fill="var(--gold)" filter="url(#glowBlur)"/>
+    </g>
+
+  </svg>

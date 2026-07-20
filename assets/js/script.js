@@ -211,25 +211,26 @@ const ITEMS = [
       "Design d'interface application pour appareil à diasgnostic peau Skin@Vision",
     images: [
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-01.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
+        src: "assets/appli-skinvision/skinvision-01.webp",
+        alt: "Application diagnotstic peau Skin@vision",
       },
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-02.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
+        src: "assets/appli-skinvision/skinvision-02.webp",
+        alt: "Application diagnotstic peau Skin@vision",
       },
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-MW-03.webp",
-        alt: "Photo de présentoir gamme miss W à l'attention des dépositaires",
+        src: "assets/appli-skinvision/skinvision-03.webp",
+        alt: "Application diagnotstic peau Skin@vision",
       },
       {
-        src: "assets/photo-promotionnelle/skinvision-01.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
+        src: "assets/appli-skinvision/skinvision-04.webp",
+        alt: "Application diagnotstic peau Skin@vision",
       },
       {
-        src: "assets/photo-promotionnelle/skinvision-02.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
+        src: "assets/appli-skinvision/skinvision-05.webp",
+        alt: "Application diagnotstic peau Skin@vision",
       },
+     
     ],
   },
   {
@@ -263,27 +264,27 @@ const ITEMS = [
     société: "Nature.cos",
     tags: ["nature-cos", "digital", "print"],
     description:
-      "Community management et création de contenu à l'attention des pages Facebook des marques Couleur Caramel, L'Atelier des Délices, Miss W. Parutions destinées aux clients B2B et B2C.",
+      "Community management et création de contenu Facebook - Parutions destinées aux clients B2B et B2C.",
     images: [
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-01.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
+        src: "assets/facebook/mise-en-avant-produit-CC02.webp",
+        alt: "Parutions facebook B2B/B2C",
       },
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-02.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
+        src: "assets/facebook/mise-en-avant-produit-CC03.webp",
+        alt: "Parutions facebook B2B/B2C",
       },
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-MW-03.webp",
-        alt: "Photo de présentoir gamme miss W à l'attention des dépositaires",
+        src: "assets/facebook/mise-en-avant-produit-CC04.webp",
+        alt: "Parutions facebook B2B/B2C",
       },
       {
-        src: "assets/photo-promotionnelle/skinvision-01.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
+        src: "assets/facebook/mise-en-avant-produit-ADD.webp",
+        alt: "Parutions facebook B2B/B2C",
       },
       {
-        src: "assets/photo-promotionnelle/skinvision-02.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
+        src: "assets/facebook/mise-en-avant-produit-MW05.webp",
+        alt: "Parutions facebook B2B/B2C",
       },
     ],
   },
@@ -337,92 +338,28 @@ const ITEMS = [
     société: "Siroco SAS",
     tags: ["siroco", "photos", "print"],
     description:
-      "Photos promotionnelles utilisées pour supports de communication",
+      "Présentoirs carton, box de foire ave reprise d'invendus",
     images: [
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-01.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
+        src: "assets/presentoirs/presentoir-halloween.webp",
+        alt: "Présentoir carton, box Halloween",
       },
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-02.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
+        src: "assets/presentoirs/presentoir-barbecue.webp",
+        alt: "Présentoir carton, box BBQ Party",
       },
       {
-        src: "assets/photo-promotionnelle/presentoir-produits-MW-03.webp",
-        alt: "Photo de présentoir gamme miss W à l'attention des dépositaires",
+        src: "assets/presentoirs/presentoir-boxelec.webp",
+        alt: "Présentoir carton, box Box Elec",
       },
       {
-        src: "assets/photo-promotionnelle/skinvision-01.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
+        src: "assets/presentoirs/presentoir-chandeleur.webp",
+        alt: "Présentoir carton, box Chandeleur",
       },
-      {
-        src: "assets/photo-promotionnelle/skinvision-02.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
-      },
+      
     ],
   },
-  {
-    id: "branding-siroco",
-    type: "produit",
-    title: "Branding Siroco",
-    société: "Siroco SAS",
-    tags: ["siroco", "photos", "print"],
-    description:
-      "Photos promotionnelles utilisées pour supports de communication",
-    images: [
-      {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-01.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-02.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/presentoir-produits-MW-03.webp",
-        alt: "Photo de présentoir gamme miss W à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/skinvision-01.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/skinvision-02.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
-      },
-    ],
-  },
-    {
-    id: "application-skinvision",
-    type: "produit",
-    title: "Application Skin@vision",
-    société: "Nature.cos",
-    tags: ["nature-cos", "application", "UI/UX"],
-    description:
-      "Design d'interface application pour appareil à diasgnostic peau Skin@Vision",
-    images: [
-      {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-01.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/presentoir-produits-CC-02.webp",
-        alt: "Photo de présentoir gamme Couleur Caramel à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/presentoir-produits-MW-03.webp",
-        alt: "Photo de présentoir gamme miss W à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/skinvision-01.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
-      },
-      {
-        src: "assets/photo-promotionnelle/skinvision-02.webp",
-        alt: "Photo promotionnelle de l'appareil à diagnostic peau Skin@vision à l'attention des dépositaires",
-      },
-    ],
-  },
+  
 ];
 
 /* ============================================================
