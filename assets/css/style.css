@@ -1,8 +1,21 @@
 /* ============================================================
-   Book graphiste — mobile first
+   Book graphiste
    Palette : crème / encre / accent terracotta
+   ------------------------------------------------------------
+   Sommaire
+   1. Variables & reset
+   2. Composants communs (boutons, container, panel, eyebrow)
+   3. Header
+   4. Hero (desktop ≥900px vs mobile <900px)
+   5. Profil
+   6. Galerie / Book
+   7. Contact
+   8. Overlays & modales (fiche produit / flipbook)
    ============================================================ */
 
+/* ============================================================
+   1. Variables & reset
+   ============================================================ */
 :root {
   --bg: #faf7f2;
   --ink: #1c1a17;
@@ -15,6 +28,13 @@
   --shadow: 0 6px 24px rgba(28, 26, 23, .08);
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+
+  /* Largeur de contenu recentré sur desktop, réutilisée par .section-inner */
+  --content-width: 60%;
+
+  /* Breakpoint unique utilisé dans tout le fichier : 899px / 900px.
+     Ne pas en introduire d'autre pour le hero, sous peine de désync
+     entre les blocs desktop et mobile. */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,13 +50,99 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+body.no-scroll { overflow: hidden; }
 
-h1 { font-weight: 700; font-size: 2em; }
-h2 { font-weight: 600; font-size: 1.6em; }
+h1 { font-weight: 700; font-size: 2.5em; }
+h2 { font-weight: 600; font-size: 2.3em; }
 
 img { display: block; max-width: 100%; }
 
-/* ===== Header ===== */
+/* ============================================================
+   2. Composants communs
+   ============================================================ */
+
+/* --- Container recentré (hero, profil, galerie, contact) --- */
+.section-inner { margin: 0 auto; }
+@media (min-width: 900px) {
+  .section-inner { max-width: var(--content-width); }
+}
+
+/* --- Panel : carte blanche à fond/ombre, réutilisée partout
+       (profil, "ce que je recherche", soft skills…) --- */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+.panel p { color: var(--muted); font-size: .95rem; margin-bottom: .9rem; }
+.panel p:last-child { margin-bottom: 0; }
+.panel strong { color: var(--ink); }
+
+.panel-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Titres de section & accent --- */
+.section-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.accent { color: var(--accent); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .75rem;
+}
+.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--accent); }
+.eyebrow-light { color: #fff; }
+
+/* --- Boutons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: .7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-primary:hover { background: var(--ink); border-color: var(--ink); }
+
+.btn-ghost {
+  border-color: rgba(28, 26, 23, .25);
+  color: var(--ink);
+  background: rgba(255, 255, 255, .4);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
+
+/* Sur fond sombre (section contact), le bouton primaire garde l'accent */
+.contact-section .btn-primary:hover { background: #fff; color: var(--ink); }
+
+/* ============================================================
+   3. Header
+   ============================================================ */
 .site-header {
   position: sticky;
   top: 0;
@@ -55,19 +161,9 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   height: 100%;
-  font-family: var(--font-title);
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--ink);
   text-decoration: none;
 }
-.logo-dot { color: var(--accent); }
-
-.logo-img {
-  display: block;
-  height: 60px;
-  width: auto;
-}
+.logo-img { display: block; height: 60px; width: auto; }
 
 .site-nav { display: flex; gap: .35rem; }
 .site-nav a {
@@ -82,7 +178,34 @@ img { display: block; max-width: 100%; }
 .site-nav .nav-cta { background: var(--ink); color: #fff; }
 .site-nav .nav-cta:hover { background: var(--accent); }
 
-/* ===== Hero ===== */
+@media (min-width: 900px) {
+  .site-header { padding: 0 20%; }
+}
+
+/* ============================================================
+   4. Hero
+   ------------------------------------------------------------
+   Deux blocs distincts qui s'excluent mutuellement via le même
+   breakpoint (899px / 900px) :
+
+   A) DESKTOP (≥900px, comportement par défaut, non modifié)
+      - .hero porte l'image en background-image (cover, fixed)
+      - .hero-mobile-img est masqué (display: none)
+
+   B) MOBILE (<900px)
+      - .hero repasse en bloc simple, sans background-image
+      - .hero-mobile-img (un vrai <img> dans le HTML) est affiché
+        en haut de la section, en flux normal
+      - .hero-textbox redevient un simple bloc de texte sans le
+        "verre dépoli" (plus besoin, il n'y a plus d'image derrière)
+
+   Un seul et même breakpoint pilote les deux blocs : jamais de
+   « max-width » différent d'un côté et « min-width » différent de
+   l'autre, sinon on obtient une zone où les deux s'affichent (ou
+   aucun des deux) en même temps.
+   ============================================================ */
+
+/* --- A) Bloc desktop : image en fond de section (comportement actuel) --- */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -90,25 +213,42 @@ img { display: block; max-width: 100%; }
   align-items: flex-end;
   background-color: var(--bg);
   background-image: url('../img/romain-desfonds-graphiste-senior-developpeur-junior.webp');
-  background-size: cover;
+  /* ✏️ Ajuste si le sujet de la photo n'est pas centré à l'écran */
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.hero-line { display: none; }
+/* Le bloc image mobile existe dans le HTML mais reste masqué tant
+   qu'on est en desktop : c'est lui qui bascule dans le média-query
+   ci-dessous. */
+.hero-mobile-img { display: none; }
 
-.hero-vignette {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.hero-line { display: none; }
+@media (min-width: 640px) {
+  .hero-line {
+    display: block;
+    position: absolute;
+    left: 1.25rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent) 30%, var(--accent) 70%, transparent);
+    opacity: .35;
+  }
 }
+
+.hero-vignette { position: absolute; inset: 0; pointer-events: none; }
 
 .hero-content {
   position: relative;
   z-index: 2;
   width: 100%;
   padding: 0 1.25rem clamp(30rem, 7vw, 4rem);
+}
+@media (min-width: 900px) {
+  .hero-content { max-width: var(--content-width); margin-inline: auto; }
 }
 
 .hero-textbox {
@@ -143,6 +283,7 @@ img { display: block; max-width: 100%; }
   border-radius: 50%;
   animation: heroBlink 2s infinite;
 }
+@keyframes heroBlink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 
 .hero-name {
   font-family: var(--font-title);
@@ -163,23 +304,128 @@ img { display: block; max-width: 100%; }
   margin-bottom: 1.5rem;
   max-width: 32rem;
 }
+@media (min-width: 900px) {
+  .hero-sub { font-size: 1.1rem; }
+}
 
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
 
-.btn-ghost {
-  border: 1px solid rgba(28, 26, 23, .25);
-  color: var(--ink);
-  background: rgba(255, 255, 255, .4);
-  transition: all .2s;
+/* --- B) Bloc mobile : bascule complète en dessous de 900px --- */
+@media (max-width: 899px) {
+  /* On abandonne totalement le mode "background-image + overlay" :
+     sur iOS/Android, background-attachment:fixed est instable et
+     "cover" zoome souvent sur une zone vide de la photo. */
+  .hero {
+    background-image: none;
+    background-color: var(--bg);
+    min-height: 0;
+    display: block;
+  }
+
+  /* L'image mobile prend le relais, en flux normal (pas en position
+     absolute), donc elle pousse naturellement le reste du contenu
+     vers le bas — aucun calcul de hauteur à maintenir en JS. */
+  .hero-mobile-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    position: relative;
+    padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .hero-textbox {
+    display: block;
+    max-width: none;
+    background: transparent;   /* plus besoin du verre dépoli : fond uni, pas d'image derrière */
+    backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+  }
 }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
 
-/* ===== Sections ===== */
-.section-title { margin-bottom: 1rem; }
+/* ============================================================
+   5. Profil
+   ============================================================ */
+.profile-section {
+  padding: 2.5rem 1rem;
+  background-color: #797069;
+}
 
-.gallery-section { padding: 1rem 1rem 3rem; margin: 0 auto; }
+.profile-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-/* ===== Filtres (chips) ===== */
+.profile-photo { border-radius: var(--radius); overflow: hidden; }
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.profile-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Pastilles pleines (même logique que .card-badge.badge-book de la galerie) */
+.skill-tags { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem; }
+.skill-tags li {
+  background: var(--accent);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  padding: .32rem .8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (min-width: 900px) {
+  .profile-layout { flex-direction: row; align-items: flex-start; gap: 2rem; }
+
+  .profile-photo {
+    flex: 0 0 45%;
+    max-width: 45%;
+    position: sticky;
+    top: 120px;
+  }
+  .profile-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .profile-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .profile-stack .panel {
+    padding: 1.25rem 1.5rem;
+  }
+  .profile-stack .panel-title,
+  .profile-stack .section-title { font-size: 2rem; margin-bottom: .6rem; }
+  .profile-stack .panel p { font-size: .88rem; margin-bottom: .6rem; }
+}
+
+/* ============================================================
+   6. Galerie / Book
+   ============================================================ */
+.gallery-section { padding: 1rem 1rem 3rem; }
+@media (min-width: 900px) {
+  .gallery-section { padding: 2rem 0 4rem; }
+}
+.galerie-intro { color: var(--ink); margin-bottom: 1.5rem; }
+/* --- Filtres (chips) --- */
 .filters {
   display: flex;
   gap: .5rem;
@@ -208,8 +454,9 @@ img { display: block; max-width: 100%; }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
 .chip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
 
-/* ===== Grille galerie ===== */
+/* --- Grille (cartes générées en JS) --- */
 .grid { display: flex; flex-wrap: wrap; gap: .75rem; }
+@media (min-width: 640px) { .grid { gap: 1rem; } }
 
 .card {
   flex: 1 1 calc(50% - .375rem);
@@ -228,7 +475,6 @@ img { display: block; max-width: 100%; }
   to   { opacity: 1; transform: none; }
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-
 .card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 
 .card-label { padding: .55rem .7rem .7rem; }
@@ -249,134 +495,23 @@ img { display: block; max-width: 100%; }
 }
 .card-badge.badge-book { background: var(--accent); }
 
+@media (min-width: 640px) {
+  .card { flex: 1 1 calc(33.333% - .67rem); max-width: calc(33.333% - .67rem); }
+  .card-label h3 { font-size: .92rem; }
+}
+
 .empty-msg { color: var(--muted); text-align: center; padding: 2rem 0; }
 
-/* ===== Eyebrow / accent util ===== */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: .75rem;
-}
-.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--accent); }
-.eyebrow-light { color: #fff; }
-
-.accent { color: var(--accent); }
-
-/* ===== Profil ===== */
-.profile-section { padding: 2.5rem 1rem; margin: 0 auto; }
-
-.profile-title { font-size: clamp(1.8rem, 5vw, 2.6rem); margin-bottom: 1rem; }
-.profile-intro { color: var(--muted); font-size: 1rem; max-width: 42rem; margin-bottom: 2rem; }
-
-.profile-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.profile-photo { border-radius: var(--radius); overflow: hidden; }
-.profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.profile-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: var(--shadow);
-}
-.profile-card h3 { font-family: var(--font-title); font-size: 1.25rem; margin-bottom: .9rem; }
-.profile-card p { color: var(--muted); font-size: .95rem; margin-bottom: .9rem; }
-.profile-card p:last-child { margin-bottom: 0; }
-
-.profile-objective {
-  color: var(--ink) !important;
-  background: var(--accent-soft);
-  padding: .9rem 1rem;
-  border-radius: 10px;
-}
-.profile-objective strong { color: var(--accent); }
-
-/* ===== Stack & outils ===== */
-.stack-section { padding: 2.5rem 1rem; margin: 0 auto; }
-.stack-header { margin-bottom: 1.75rem; }
-.stack-intro { color: var(--muted); font-size: .95rem; max-width: 40rem; }
-
-.stack-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-
-.stack-card {
-  flex: 1 1 100%;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: var(--shadow);
-}
-.stack-icon { display: inline-block; font-size: 1.4rem; margin-bottom: .75rem; }
-.stack-card h3 { font-family: var(--font-title); font-size: 1.05rem; margin-bottom: .5rem; }
-.stack-card p { color: var(--muted); font-size: .88rem; }
-.stack-card em { font-style: italic; color: var(--muted); }
-
-/* ===== Hard / Soft skills (fond sombre) ===== */
-.skills-dark { padding: 3rem 1rem 3.5rem; background: var(--ink); color: #fff; }
-
-.skills-dark-title {
-  font-family: var(--font-title);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 6vw, 2.8rem);
-  line-height: 1.1;
-  margin-bottom: 2rem;
-}
-
-.skills-columns { display: flex; flex-direction: column; gap: 2rem; }
-
-.skills-col h4 {
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, .6);
-  margin-bottom: 1rem;
-  padding-bottom: .75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .15);
-}
-
-.skills-col ul { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
-.skills-col li { position: relative; padding-left: 1.2rem; font-size: .92rem; color: rgba(255, 255, 255, .9); }
-.skills-col li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: .5em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-/* ===== Contact ===== */
-.contact-section {
-  padding: 3rem 1rem 2rem;
-  background: var(--ink);
-  color: #fff;
-}
+/* ============================================================
+   7. Contact
+   ============================================================ */
+.contact-section { padding: 3rem 1rem 2rem; background: var(--ink); color: #fff; }
 .contact-section .section-title { color: #fff; }
 .contact-intro { color: rgba(255, 255, 255, .7); margin-bottom: 1.5rem; }
-.contact-section .btn-primary { background: var(--accent); }
-.contact-section .btn-primary:hover { background: #fff; color: var(--ink); }
 
-.contact-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+.contact-grid { display: flex; }
 
-.contact-form { display: flex; flex-direction: column; gap: .9rem; }
+.contact-form { display: flex; flex-direction: column; gap: .9rem; width: 100%; max-width: 42rem; }
 .form-row { display: flex; flex-direction: column; gap: .9rem; }
 
 .contact-form label {
@@ -406,6 +541,7 @@ img { display: block; max-width: 100%; }
 .contact-form textarea { resize: vertical; }
 .contact-form .btn { align-self: flex-start; }
 
+/* Honeypot anti-bots : hors écran, jamais display:none (certains bots le détectent) */
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
 .form-status { font-size: .85rem; min-height: 1.3em; }
@@ -414,6 +550,7 @@ img { display: block; max-width: 100%; }
 
 .contact-aside h3 { font-size: 1em; font-weight: 600; margin-bottom: .4rem; }
 .contact-aside p { color: rgba(255, 255, 255, .7); font-size: .9rem; margin-bottom: 1rem; }
+.contact-aside a { color: var(--accent); word-break: break-all; }
 
 .reveal-btn {
   display: block;
@@ -429,14 +566,24 @@ img { display: block; max-width: 100%; }
   padding: .6rem .8rem;
   margin-bottom: .6rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .reveal-btn:hover { border-color: var(--accent); }
-.contact-aside a { color: var(--accent); word-break: break-all; }
+/* état "révélé" : le bouton devient un lien, garde exactement le même gabarit */
+.reveal-btn.is-revealed { cursor: default; }
+.reveal-btn.is-revealed:hover { border-color: rgba(255, 255, 255, .18); }
 
 .footer-note { font-size: .75rem; margin-top: 2.5rem; color: rgba(255, 255, 255, .5); }
 
+@media (min-width: 900px) {
+  .contact-grid { flex-direction: row; }
+  .contact-form { flex: 0 0 75%; max-width: 75%; }
+  .contact-aside { flex: 1; }
+  .form-row { flex-direction: row; }
+}
+
 /* ============================================================
-   Overlays / modales
+   8. Overlays & modales
    ============================================================ */
 .overlay {
   position: fixed;
@@ -454,7 +601,6 @@ img { display: block; max-width: 100%; }
 .overlay-dark { background: rgba(15, 14, 12, .88); }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
 @keyframes softIn {
   from { opacity: 0; transform: translateY(18px) scale(.97); }
   to   { opacity: 1; transform: none; }
@@ -474,7 +620,7 @@ img { display: block; max-width: 100%; }
 }
 .close-btn:hover { background: var(--accent); }
 
-/* ===== Modale fiche produit ===== */
+/* --- Fiche produit (type Amazon) --- */
 .product-modal {
   position: relative;
   background: var(--card);
@@ -528,12 +674,7 @@ img { display: block; max-width: 100%; }
 .pm-thumbs button.active { border-color: var(--accent); }
 .pm-thumbs button:hover { border-color: var(--ink); }
 
-.pm-dots {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: .6rem;
-}
+.pm-dots { display: flex; justify-content: center; gap: 6px; margin-top: .6rem; }
 .pm-dots span {
   width: 8px;
   height: 8px;
@@ -542,51 +683,6 @@ img { display: block; max-width: 100%; }
   transition: background .2s;
 }
 .pm-dots span.active { background: var(--accent); }
-
-@media (max-width: 899px) {
-  #productOverlay { padding: 0; background: #fff; backdrop-filter: none; }
-
-  .product-modal {
-    width: 100%;
-    height: 100dvh;
-    max-width: none;
-    max-height: none;
-    border-radius: 0;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-  }
-
-  .pm-info { order: -1; margin-top: 0; padding-right: 3rem; }
-  .pm-info h3 { font-size: 1.05rem; }
-  .pm-client, .pm-desc, .pm-tags { display: none; }
-
-  .pm-media { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-  .pm-main {
-    flex: 1;
-    min-height: 0;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .pm-main img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  .pm-thumbs {
-    display: flex;
-    justify-content: center;
-    margin-top: .5rem;
-    flex: 0 0 auto;
-  }
-  .pm-thumbs button { width: 52px; height: 52px; border-radius: 6px; }
-
-  .pm-dots { display: none; }
-}
 
 .pm-info { margin-top: 1rem; }
 .pm-client {
@@ -609,7 +705,73 @@ img { display: block; max-width: 100%; }
   border-radius: 999px;
 }
 
-/* ===== Viewer catalogue (flipbook) ===== */
+/* Mobile : visionneuse plein écran façon Amazon.
+   ⚠️ Ces règles doivent rester dans ce @media, sinon elles
+   s'appliquent aussi au desktop. */
+@media (max-width: 899px) {
+  #productOverlay { padding: 0; background: #fff; backdrop-filter: none; }
+
+  .product-modal {
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .pm-info { order: -1; margin-top: 0; padding-right: 3rem; }
+  .pm-info h3 { font-size: 1.05rem; }
+  .pm-client, .pm-desc, .pm-tags { display: none; }
+
+  .pm-media { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+  .pm-main { flex: 1; min-height: 0; border: none; display: flex; align-items: center; justify-content: center; }
+  .pm-main img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .pm-thumbs { display: flex; justify-content: center; margin-top: .5rem; flex: 0 0 auto; }
+  .pm-thumbs button { width: 52px; height: 52px; border-radius: 6px; }
+
+  .pm-dots { display: none; }
+}
+
+@media (min-width: 900px) {
+  .product-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem 2.5rem;
+    width: auto;
+  }
+  .pm-info { order: -1; margin-top: 0; padding-right: 3.5rem; }
+
+  .pm-media {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+  .pm-main { flex: 0 1 auto; width: fit-content; min-width: 0; max-width: 100%; }
+  .pm-main img { max-height: 62vh; }
+
+  .pm-thumbs {
+    flex: 0 0 auto;
+    flex-direction: column;
+    width: 92px;
+    margin-top: 0;
+    max-height: 62vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 3px 6px 3px 3px;
+  }
+  .pm-thumbs button { width: 80px; height: 80px; }
+  .pm-dots { display: none; }
+}
+
+/* --- Viewer catalogue (flipbook) --- */
 .book-viewer {
   width: 100%;
   max-width: 1500px;
@@ -621,28 +783,12 @@ img { display: block; max-width: 100%; }
   animation: softIn .5s cubic-bezier(.16, 1, .3, 1);
 }
 
-.bv-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: #fff;
-}
+.bv-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #fff; }
 .bv-bar span { font-family: var(--font-title); font-size: 1rem; }
 
-.bv-stage {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.bv-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
 #flipbook { touch-action: pan-y; }
-#flipbook .page {
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .4);
-}
+#flipbook .page { background: #fff; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, .4); }
 #flipbook .page img {
   width: 100%;
   height: 100%;
@@ -672,109 +818,3 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
 }
 .bv-btn:hover { background: var(--accent); }
-
-body.no-scroll { overflow: hidden; }
-
-/* ============================================================
-   Breakpoints — desktop
-   ============================================================ */
-@media (min-width: 640px) {
-  .grid { gap: 1rem; }
-  .card {
-    flex: 1 1 calc(33.333% - .67rem);
-    max-width: calc(33.333% - .67rem);
-  }
-  .card-label h3 { font-size: .92rem; }
-
-  .stack-card { flex: 1 1 calc(50% - .5rem); max-width: calc(50% - .5rem); }
-
-  .hero-line {
-    display: block;
-    position: absolute;
-    left: 1.25rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--accent) 30%, var(--accent) 70%, transparent);
-    opacity: .35;
-  }
-}
-
-@media (min-width: 900px) {
-  .site-header { padding: 0 20%; }
-
-  .gallery-section,
-  .profile-section,
-  .stack-section {
-    max-width: 60%;
-    margin-inline: auto;
-  }
-  .contact-inner {
-    max-width: 60%;
-    margin-inline: auto;
-  }
-
-  .hero-content { max-width: 60%; margin-inline: auto; }
-  .hero-sub { font-size: 1.1rem; }
-
-  .contact-grid { flex-direction: row; }
-  .contact-form { flex: 0 0 75%; max-width: 75%; }
-  .contact-aside { flex: 1; }
-  .form-row { flex-direction: row; }
-
-  .gallery-section { padding: 2rem 0 4rem; }
-  .card {
-    flex: 1 1 calc(33.333% - .67rem);
-    max-width: calc(33.333% - .67rem);
-  }
-
-  /* Profil : photo + carte côte à côte */
-  .profile-layout { flex-direction: row; align-items: stretch; gap: 2rem; }
-  .profile-photo { flex: 0 0 55%; max-width: 55%; }
-  .profile-card { flex: 0 0 45%; max-width: 45%; padding: 2.25rem; display: flex; flex-direction: column; justify-content: center; }
-
-  /* Stack : 3 colonnes */
-  .stack-card { flex: 1 1 calc(33.333% - .667rem); max-width: calc(33.333% - .667rem); }
-
-  /* Skills sombre : colonnes côte à côte, contenu recentré */
-  .skills-dark { padding: 4rem 20% 4.5rem; }
-  .skills-columns { flex-direction: row; gap: 3rem; }
-  .skills-col { flex: 1; }
-
-  .product-modal {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding: 2rem 2.5rem;
-    width: auto;
-    }
-  .pm-info { order: -1; margin-top: 0; padding-right: 3.5rem; }
-
-  .pm-media {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-  }
-  .pm-main {
-    flex: 0 1 auto;
-    width: fit-content;
-    min-width: 0;
-    max-width: 100%;
-  }
-  .pm-main img { max-height: 62vh; }
-
-  .pm-thumbs {
-    flex: 0 0 auto;
-    flex-direction: column;
-    width: 92px;
-    margin-top: 0;
-    max-height: 62vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 3px 6px 3px 3px;
-  }
-  .pm-thumbs button { width: 80px; height: 80px; }
-  .pm-dots { display: none; }
-}

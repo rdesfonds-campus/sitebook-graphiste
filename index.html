@@ -10,17 +10,15 @@
   <meta name="description" content="Book de Romain Desfonds, graphiste print & digital : catalogues produits, PLV, présentoirs, packaging, visuels e-shop, newsletters et community management.">
   <meta name="author" content="Romain Desfonds">
   <meta name="robots" content="index, follow">
-  <!-- ✏️ URL définitive de la page (évite le contenu dupliqué) -->
   <link rel="canonical" href="https://metakina.fr/book/">
   <meta name="theme-color" content="#faf7f2">
 
-  <!-- ===== Open Graph (aperçu lors d'un partage LinkedIn, mail, etc.) ===== -->
+  <!-- ===== Open Graph ===== -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Romain Desfonds — Graphiste">
   <meta property="og:title" content="Graphiste print & digital — Book de Romain Desfonds">
   <meta property="og:description" content="Catalogues, PLV, packaging, e-shop : découvrez mon book en ligne.">
   <meta property="og:url" content="https://metakina.fr/book/">
-  <!-- ✏️ Image d'aperçu 1200×630 (JPG/PNG, < 300 Ko) à créer -->
   <meta property="og:image" content="https://metakina.fr/book/assets/og-image.jpg">
   <meta property="og:locale" content="fr_FR">
 
@@ -30,7 +28,6 @@
   <meta name="twitter:description" content="Catalogues, PLV, packaging, e-shop : découvrez mon book en ligne.">
   <meta name="twitter:image" content="https://metakina.fr/book/assets/og-image.jpg">
 
-  <!-- ✏️ Favicon à déposer à la racine -->
   <link rel="icon" href="favicon.ico" sizes="any">
 
   <!-- ===== Polices ===== -->
@@ -39,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- ===== Données structurées (Google : fiche personne/pro) ===== -->
+  <!-- ===== Données structurées ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,7 +54,6 @@
 
   <!-- ===== Header ===== -->
   <header class="site-header">
-    <!-- ✏️ Logo image — dépose ton fichier dans assets/img/logo.png (ou .svg) -->
     <a class="logo" href="#top">
       <img src="assets/SVG/logo-rd.svg" alt="Romain Desfonds" class="logo-img">
     </a>
@@ -68,113 +64,106 @@
     </nav>
   </header>
 
-  <!-- Contenu principal : un seul <main> par page (repère pour Google et lecteurs d'écran) -->
   <main>
 
-  <section class="hero" id="top">
-    <div class="hero-line"></div>
-    <div class="hero-vignette"></div>
+    <!-- ===== Hero =====
+         Deux blocs d'image qui s'alternent selon la résolution (breakpoint 900px) :
+         1) .hero-mobile-img  → <img> classique, affiché < 900px (pas de background-image en mobile)
+         2) background-image sur .hero → affiché ≥ 900px (version desktop actuelle, inchangée)
+         Le CSS gère l'affichage/masquage, aucun JS nécessaire. -->
+    <section class="hero" id="top">
 
-    <div class="hero-content">
-      <div class="hero-textbox">
-        <div class="hero-badge">
-          <span class="dot"></span> Graphiste print &amp; digital — disponible pour votre mission
+      <!-- ✏️ Remplace par une image recadrée en portrait, pensée pour le mobile
+           (pas juste un crop automatique de l'image desktop) -->
+      <img
+        class="hero-mobile-img"
+        src="assets/img/romain-desfonds-graphiste-senior-developpeur-junior-mobile.webp"
+        alt="Portrait de Romain Desfonds, graphiste et développeur front-end"
+        width="1080" height="1350"
+      >
+
+      <div class="hero-line"></div>
+      <div class="hero-vignette"></div>
+
+      <div class="hero-content">
+        <div class="hero-textbox">
+          <span class="hero-badge"><span class="dot"></span>Disponible</span>
+          <h1 class="hero-name">Romain <span class="last">Desfonds</span></h1>
+          <p class="hero-sub">
+            Profil hybride designer/développeur : je recherche un poste dans les secteurs communication, marketing digital ou développement front-end, sur Valence et sa région.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Me contacter</a>
+            <a href="assets/cv-romain-desfonds.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Mon CV</a>
+          </div>
         </div>
-        <h1 class="hero-name">Romain<br><span class="last">Desfonds</span></h1>
-        <p class="hero-sub">
-          Catalogues, PLV, packaging, e-commerce — de la création à la production.
-        </p>
-        <div class="hero-actions">
-          <a href="#book" class="btn btn-primary">Voir le book ↓</a>
-          <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      </div>
+    </section>
+
+    <!-- ===== Profil ===== -->
+    <section id="profil" class="profile-section">
+      <div class="section-inner profile-layout">
+
+        <div class="profile-photo">
+          <img src="assets/img/romain-desfonds-graphiste-senior-developpeur-junior-portrait.webp" alt="Portrait de Romain Desfonds, graphiste et développeur front-end">
+        </div>
+
+        <div class="profile-stack">
+
+          <article class="panel">
+            <h2 class="section-title">De l'image <span class="accent">et du code</span></h2>
+            <p>Graphiste authentique, je maîtrise les logiciels Adobe et les techniques d'impression. J'ai mis à jour mes compétences dans le numérique avec une formation de développeur web et web mobile (Front-End), et je suis familiarisé avec les enjeux du marketing digital.</p>
+            <p>Je possède un profil hybride designer/développeur polyvalent, capable de réaliser vos missions avec ou sans l'aide de l'IA et être un soutien pour des services marketing, communication, ou développement.</p>
+            <p>Ma force réside dans ma capacité à comprendre à la fois les contraintes techniques du développement et les exigences de l'expérience utilisateur (UX/UI).</p>
+          </article>
+
+          <article class="panel">
+            <h3 class="panel-title">Ce que je <span class="accent">recherche</span></h3>
+            <p><strong>Poste en présentiel sur Valence et sa région, CDI ou CDD longue durée</strong> — communication, print, web, marketing digital, développeur Front-End, gestion de projet numérique.</p>
+            <p>Je souhaite m'investir durablement, idéalement en équipe, et je m'adapte rapidement aux process techniques existants.</p>
+            <p>Également ouvert à une alternance (Développeur avancé &amp; IA, bac +3) jusqu'à début septembre — profil éligible aux aides contrat professionnalisation adulte.</p>
+          </article>
+
+          <article class="panel">
+            <h3 class="panel-title">Soft <span class="accent">Skills</span></h3>
+            <ul class="skill-tags">
+              <li>Autonomie &amp; équipe</li>
+              <li>Gestion de projet</li>
+              <li>Communication transverse</li>
+              <li>Sens du détail</li>
+              <li>Veille active</li>
+              <li>Adaptabilité</li>
+              <li>IA responsable</li>
+            </ul>
+          </article>
+
         </div>
       </div>
-    </div>
-  </section>
-<!-- ===== Profil ===== -->
-<section id="profil" class="profile-section">
-  
+    </section>
 
-  <div class="profile-layout">
-    <div class="profile-photo">
-      <img src="assets/img/romain-desfonds-graphiste-senior-developpeur-junior-portrait.webp" alt="Portrait de Romain Desfonds">
-    </div>
-    <div class="profile-card">
- <h2 class="section-title profile-title">De l'image <span class="accent">et du code</span></h2>      <p>
-        Graphiste authentique, je maîtrise les logiciels Adobe et les techniques d'impression. J'ai mis à jour mes compétences dans le numérique avec une formation de développeur web et web mobile (Front-End), et je suis familiarisé avec les enjeux du marketing digital.
-      </p>
-      <p>
-        Je possède un profil hybride designer/développeur polyvalent, capable de réaliser vos missions avec ou sans l'aide de l'IA et être un soutien pour des services marketing, communication, ou développement.
-      </p>
-      <p>
-        Ma force réside dans ma capacité à comprendre à la fois les contraintes techniques du développement et les exigences de l'expérience utilisateur (UX/UI).
-      </p>
-      <p class="profile-objective">
-        <strong>Objectif :</strong> monter en compétences au sein d'une équipe technique et contribuer concrètement à des projets en apportant ma double vision Créa/Tech.
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- ===== Galerie / Book ===== -->
+    <section id="book" class="gallery-section">
+      <div class="section-inner">
+        <h2 class="section-title">Mon book</h2>
+      <p class="galerie-intro">Voici quelques travaux réalisés au cours de mes expériences précédentes.</p>
 
+        <div class="filters" id="filters" role="tablist" aria-label="Filtrer les projets"></div>
 
+        <div class="grid" id="grid"></div>
 
-<!-- ===== Hard & Soft skills ===== -->
-<section class="skills-dark">
-  <div class="skills-dark-inner">
-    <span class="eyebrow eyebrow-light">Hard &amp; soft skills</span>
-    <h2 class="skills-dark-title">Ce que je sais faire.<br>Comment je <span class="accent">travaille</span>.</h2>
-
-    <div class="skills-columns">
-      <div class="skills-col">
-        <h4>Hard skills — technique</h4>
-        <ul>
-          <li>Vue.js, Supabase, PHP / MariaDB</li>
-          <li>Webdesign UX/UI — Figma, Adobe CC</li>
-          <li>Git / GitHub — versioning, workflow collaboratif</li>
-          <li>WordPress &amp; Prestashop</li>
-          <li>Utilisateur IA (Claude, ChatGPT, Gemini, Copilot…)</li>
-          <li>JavaScript, PHP, Laravel</li>
-        </ul>
+        <p class="empty-msg" id="emptyMsg" hidden>Aucun projet dans cette catégorie pour le moment.</p>
       </div>
-      <div class="skills-col">
-        <h4>Soft skills — humain</h4>
-        <ul>
-          <li>Autonomie &amp; travail en équipe</li>
-          <li>Gestion de projet — délais, budgets, enjeux client</li>
-          <li>Communication transverse (créa, tech, client)</li>
-          <li>Force de proposition et sens du détail</li>
-          <li>Curiosité permanente et veille active</li>
-          <li>Reconversion proactive et capacité d'adaptation</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- ===== Galerie / Book ===== -->
-  <section id="book" class="gallery-section">
-    <h2 class="section-title">Mon book</h2>
-
-    <!-- Filtres (chips scrollables sur mobile) — générés en JS -->
-    <div class="filters" id="filters" role="tablist" aria-label="Filtrer les projets"></div>
-
-    <!-- Grille — générée en JS depuis ITEMS -->
-    <div class="grid" id="grid"></div>
-
-    <p class="empty-msg" id="emptyMsg" hidden>Aucun projet dans cette catégorie pour le moment.</p>
-  </section>
-
-  
+    </section>
 
   </main>
 
   <!-- ===== Contact ===== -->
   <footer id="contact" class="contact-section">
-    <div class="contact-inner">
+    <div class="section-inner">
       <h2 class="section-title">Contact</h2>
-      <p class="contact-intro">Disponible pour votre mission.</p>
+      <p class="contact-intro">Si mon profil vous intéresse, n'hésitez pas à me contacter. </p>
 
       <div class="contact-grid">
-        <!-- Colonne 75% : formulaire (l'email de destination reste côté serveur, dans contact.php) -->
         <form id="contactForm" class="contact-form" method="post" action="contact.php" novalidate>
           <div class="form-row">
             <label>Nom *
@@ -190,20 +179,11 @@
           <label>Message *
             <textarea name="message" rows="5" required></textarea>
           </label>
-          <!-- Honeypot anti-bots : invisible pour un humain, un bot le remplit -->
           <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="ts" id="formTs">
           <button type="submit" class="btn btn-primary">Envoyer</button>
           <p class="form-status" id="formStatus" role="status"></p>
         </form>
-
-        <!-- Colonne 25% : coordonnées (email et téléphone assemblés en JS, jamais en clair dans le HTML) -->
-        <aside class="contact-aside">
-          <h3>Coordonnées</h3>
-          <p>Basé en France<br>Réponse sous 24&nbsp;h</p>
-          <button class="reveal-btn" id="revealMail" type="button">Afficher l'email</button>
-          <button class="reveal-btn" id="revealTel" type="button">Afficher le téléphone</button>
-        </aside>
       </div>
 
       <p class="footer-note">© 2026 Romain Desfonds — metakina.fr</p>
@@ -243,7 +223,6 @@
     </div>
   </div>
 
-  <!-- Lib flipbook (pages qui tournent, tactile) -->
   <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
   <script src="assets/js/script.js"></script>
 </body>

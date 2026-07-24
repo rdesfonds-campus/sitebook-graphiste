@@ -82,10 +82,10 @@ const ITEMS = [
       "Catalogue produits 14 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.",
     cover: "assets/catalogue/naturecos-CC/page_cover.webp",
     pages: [
-      "assets/catalogue/naturecos-CC/page_cover.webp", // couverture = 1re page du flipbook
+      "assets/catalogue/naturecos-CC/page_cover.webp",
       ...catPages("assets/catalogue/naturecos-CC", 14),
     ],
-    ratio: 1, // pages carrées — ⚠️ vérifie que ce catalogue est bien carré
+    ratio: 1,
   },
   {
     id: "cat-naturecos-add",
@@ -100,7 +100,7 @@ const ITEMS = [
       "assets/catalogue/naturecos-ADD/page_cover.webp",
       ...catPages("assets/catalogue/naturecos-ADD", 6),
     ],
-    ratio: 1, // pages carrées — ⚠️ vérifie que ce catalogue est bien carré
+    ratio: 1,
   },
   {
     id: "cat-naturecos-mw",
@@ -169,7 +169,6 @@ const ITEMS = [
       },
     ],
   },
-
   {
     id: "photo-pro",
     type: "produit",
@@ -210,27 +209,11 @@ const ITEMS = [
     description:
       "Design d'interface application pour appareil à diasgnostic peau Skin@Vision",
     images: [
-      {
-        src: "assets/appli-skinvision/skinvision-01.webp",
-        alt: "Application diagnotstic peau Skin@vision",
-      },
-      {
-        src: "assets/appli-skinvision/skinvision-02.webp",
-        alt: "Application diagnotstic peau Skin@vision",
-      },
-      {
-        src: "assets/appli-skinvision/skinvision-03.webp",
-        alt: "Application diagnotstic peau Skin@vision",
-      },
-      {
-        src: "assets/appli-skinvision/skinvision-04.webp",
-        alt: "Application diagnotstic peau Skin@vision",
-      },
-      {
-        src: "assets/appli-skinvision/skinvision-05.webp",
-        alt: "Application diagnotstic peau Skin@vision",
-      },
-     
+      { src: "assets/appli-skinvision/skinvision-01.webp", alt: "Application diagnotstic peau Skin@vision" },
+      { src: "assets/appli-skinvision/skinvision-02.webp", alt: "Application diagnotstic peau Skin@vision" },
+      { src: "assets/appli-skinvision/skinvision-03.webp", alt: "Application diagnotstic peau Skin@vision" },
+      { src: "assets/appli-skinvision/skinvision-04.webp", alt: "Application diagnotstic peau Skin@vision" },
+      { src: "assets/appli-skinvision/skinvision-05.webp", alt: "Application diagnotstic peau Skin@vision" },
     ],
   },
   {
@@ -242,19 +225,9 @@ const ITEMS = [
     description:
       "E-shop des différentes marques Couleur Caramel, L'Atelier des Délices, Miss W avec Prestashop. Design, intégration, photos produits.",
     images: [
-      {
-        src: "assets/eshop-nc/eshop-mw.webp",
-        alt: "E-shop de la gamme Miss W",
-      },
-      {
-        src: "assets/eshop-nc/eshop-cc.webp",
-        alt: "E-shop de la gamme Couleur Caramel",
-      },
-      {
-        src: "assets/eshop-nc/eshop-add.webp",
-        alt: "E-shop de la gamme L'atelier des Délices",
-      },
-    
+      { src: "assets/eshop-nc/eshop-mw.webp", alt: "E-shop de la gamme Miss W" },
+      { src: "assets/eshop-nc/eshop-cc.webp", alt: "E-shop de la gamme Couleur Caramel" },
+      { src: "assets/eshop-nc/eshop-add.webp", alt: "E-shop de la gamme L'atelier des Délices" },
     ],
   },
   {
@@ -266,26 +239,11 @@ const ITEMS = [
     description:
       "Community management et création de contenu Facebook - Parutions destinées aux clients B2B et B2C.",
     images: [
-      {
-        src: "assets/facebook/mise-en-avant-produit-CC02.webp",
-        alt: "Parutions facebook B2B/B2C",
-      },
-      {
-        src: "assets/facebook/mise-en-avant-produit-CC03.webp",
-        alt: "Parutions facebook B2B/B2C",
-      },
-      {
-        src: "assets/facebook/mise-en-avant-produit-CC04.webp",
-        alt: "Parutions facebook B2B/B2C",
-      },
-      {
-        src: "assets/facebook/mise-en-avant-produit-ADD.webp",
-        alt: "Parutions facebook B2B/B2C",
-      },
-      {
-        src: "assets/facebook/mise-en-avant-produit-MW05.webp",
-        alt: "Parutions facebook B2B/B2C",
-      },
+      { src: "assets/facebook/mise-en-avant-produit-CC02.webp", alt: "Parutions facebook B2B/B2C" },
+      { src: "assets/facebook/mise-en-avant-produit-CC03.webp", alt: "Parutions facebook B2B/B2C" },
+      { src: "assets/facebook/mise-en-avant-produit-CC04.webp", alt: "Parutions facebook B2B/B2C" },
+      { src: "assets/facebook/mise-en-avant-produit-ADD.webp", alt: "Parutions facebook B2B/B2C" },
+      { src: "assets/facebook/mise-en-avant-produit-MW05.webp", alt: "Parutions facebook B2B/B2C" },
     ],
   },
   {
@@ -297,22 +255,10 @@ const ITEMS = [
     description:
       "Photos promotionnelles utilisées pour supports de communication",
     images: [
-      {
-        src: "assets/newsletter/newsletter-nc-01.webp",
-        alt: "Exemple newsletter e-shop Couleur Caramel",
-      },
-      {
-        src: "assets/newsletter/newsletter-cc-01.webp",
-        alt: "Exemple newsletter e-shop Couleur Caramel",
-      },
-      {
-        src: "assets/newsletter/newsletter-add-01.webp",
-        alt: "Exemple newsletter e-shop L\'Atelier des Délices",
-      },
-      {
-        src: "assets/newsletter/newsletter-mw-01.webp",
-        alt: "Exemple newsletter e-shop Miss W",
-      },
+      { src: "assets/newsletter/newsletter-nc-01.webp", alt: "Exemple newsletter e-shop Couleur Caramel" },
+      { src: "assets/newsletter/newsletter-cc-01.webp", alt: "Exemple newsletter e-shop Couleur Caramel" },
+      { src: "assets/newsletter/newsletter-add-01.webp", alt: "Exemple newsletter e-shop L'Atelier des Délices" },
+      { src: "assets/newsletter/newsletter-mw-01.webp", alt: "Exemple newsletter e-shop Miss W" },
     ],
   },
   {
@@ -321,14 +267,9 @@ const ITEMS = [
     title: "Siroco-box.fr",
     société: "Siroco SAS",
     tags: ["siroco", "photos", "print"],
-    description:
-      "Site vitrine siroco-box.fr",
+    description: "Site vitrine siroco-box.fr",
     images: [
-      {
-        src: "assets/site-siroco/site-siroco.webp",
-        alt: "Site vitrine siroco-box.fr",
-      },
-    
+      { src: "assets/site-siroco/site-siroco.webp", alt: "Site vitrine siroco-box.fr" },
     ],
   },
   {
@@ -337,29 +278,14 @@ const ITEMS = [
     title: "Présentoirs Siroco",
     société: "Siroco SAS",
     tags: ["siroco", "photos", "print"],
-    description:
-      "Présentoirs carton, box de foire ave reprise d'invendus",
+    description: "Présentoirs carton, box de foire ave reprise d'invendus",
     images: [
-      {
-        src: "assets/presentoirs/presentoir-halloween.webp",
-        alt: "Présentoir carton, box Halloween",
-      },
-      {
-        src: "assets/presentoirs/presentoir-barbecue.webp",
-        alt: "Présentoir carton, box BBQ Party",
-      },
-      {
-        src: "assets/presentoirs/presentoir-boxelec.webp",
-        alt: "Présentoir carton, box Box Elec",
-      },
-      {
-        src: "assets/presentoirs/presentoir-chandeleur.webp",
-        alt: "Présentoir carton, box Chandeleur",
-      },
-      
+      { src: "assets/presentoirs/presentoir-halloween.webp", alt: "Présentoir carton, box Halloween" },
+      { src: "assets/presentoirs/presentoir-barbecue.webp", alt: "Présentoir carton, box BBQ Party" },
+      { src: "assets/presentoirs/presentoir-boxelec.webp", alt: "Présentoir carton, box Box Elec" },
+      { src: "assets/presentoirs/presentoir-chandeleur.webp", alt: "Présentoir carton, box Chandeleur" },
     ],
   },
-  
 ];
 
 /* ============================================================
@@ -373,7 +299,6 @@ let activeFilter = "*";
 function renderFilters() {
   filtersEl.innerHTML = "";
   FILTERS.forEach((f) => {
-    // n'affiche une chip que si au moins un projet porte le tag
     if (f.tag !== "*" && !ITEMS.some((it) => it.tags.includes(f.tag))) return;
     const btn = document.createElement("button");
     btn.className = "chip" + (f.tag === activeFilter ? " active" : "");
@@ -404,7 +329,6 @@ function renderGrid() {
     card.setAttribute("aria-label", it.title);
 
     const img = document.createElement("img");
-    // fallback vignette : 1re image du produit (chaîne OU objet {src, alt})
     const first = it.images && it.images[0];
     img.src =
       it.cover ||
@@ -443,31 +367,26 @@ function renderGrid() {
 
 /* ============================================================
    Modale fiche produit (type Amazon)
-   Desktop : vignettes cliquables à droite
-   Mobile  : vignettes et tags masqués (voir CSS), navigation
-             au swipe gauche/droite + points de position
    ============================================================ */
 const productOverlay = document.getElementById("productOverlay");
 const pmMainImg = document.getElementById("pmMainImg");
 const pmMainBox = document.querySelector(".pm-main");
 const pmThumbs = document.getElementById("pmThumbs");
 const pmTitle = document.getElementById("pmTitle");
-/* ⚠️ l'id dans index.html reste 'pmClient' — seule la variable est renommée */
 const pmSociete = document.getElementById("pmClient");
 const pmDesc = document.getElementById("pmDesc");
 const pmTags = document.getElementById("pmTags");
 
-/* Points de position (mobile) — créés une fois, sous le visuel */
 const pmDots = document.createElement("div");
 pmDots.className = "pm-dots";
 pmMainBox.after(pmDots);
 
-let pmImgs = []; // images de la fiche ouverte
-let pmIndex = 0; // visuel affiché
+let pmImgs = [];
+let pmIndex = 0;
 
 function showProductImage(i, instant = false) {
   if (!pmImgs.length) return;
-  const next = (i + pmImgs.length) % pmImgs.length; // boucle aux extrémités
+  const next = (i + pmImgs.length) % pmImgs.length;
   if (!instant && next === pmIndex) return;
   pmIndex = next;
   const def = pmImgs[pmIndex];
@@ -482,7 +401,7 @@ function showProductImage(i, instant = false) {
   if (instant) {
     apply();
   } else {
-    pmMainImg.style.opacity = "0"; // fondu doux
+    pmMainImg.style.opacity = "0";
     setTimeout(apply, 150);
   }
 
@@ -495,10 +414,6 @@ function showProductImage(i, instant = false) {
 }
 
 function openProduct(item) {
-  /* images accepte 2 formats, mélangeables :
-       'chemin.webp'                            → alt = titre du projet
-       { src: 'chemin.webp', alt: 'texte SEO' } → alt personnalisé
-     L'ordre d'affichage = l'ordre du tableau (1re = visuel principal). */
   pmImgs = item.images.map((im) =>
     typeof im === "string" ? { src: im, alt: item.title } : im,
   );
@@ -514,7 +429,6 @@ function openProduct(item) {
     pmTags.appendChild(s);
   });
 
-  // vignettes (desktop) : cliquer remplace le visuel principal
   pmThumbs.innerHTML = "";
   pmThumbs.hidden = pmImgs.length < 2;
   pmImgs.forEach((imgDef, i) => {
@@ -525,11 +439,10 @@ function openProduct(item) {
     im.alt = imgDef.alt || "";
     b.appendChild(im);
     b.addEventListener("click", () => showProductImage(i));
-    b.addEventListener("mouseenter", () => showProductImage(i)); // survol façon Amazon
+    b.addEventListener("mouseenter", () => showProductImage(i));
     pmThumbs.appendChild(b);
   });
 
-  // points de position (mobile)
   pmDots.innerHTML = "";
   if (pmImgs.length > 1) {
     pmImgs.forEach(() => pmDots.appendChild(document.createElement("span")));
@@ -539,7 +452,6 @@ function openProduct(item) {
   openOverlay(productOverlay);
 }
 
-/* Swipe gauche/droite sur le visuel (mobile) */
 let pmTouchX = null;
 pmMainBox.addEventListener(
   "touchstart",
@@ -569,14 +481,11 @@ function openBook(item) {
   bvTitle.textContent = item.title;
   openOverlay(bookOverlay);
 
-  /* StPageFlip abîme son conteneur lors du destroy() : on recrée
-     donc un conteneur neuf à chaque ouverture */
   bvStage.innerHTML = "";
   flipbookEl = document.createElement("div");
   flipbookEl.id = "flipbook";
   bvStage.appendChild(flipbookEl);
 
-  // construit les pages
   item.pages.forEach((src) => {
     const page = document.createElement("div");
     page.className = "page";
@@ -587,13 +496,10 @@ function openBook(item) {
     flipbookEl.appendChild(page);
   });
 
-  /* Dimensions : occupe le maximum de la scène.
-     ⚠️ clientHeight / clientWidth : propriétés natives du DOM,
-     à ne jamais renommer (le "client" n'a rien à voir avec un client !) */
   const ratio = item.ratio || 0.75;
   const maxH = bvStage.clientHeight - 8;
   const maxW = bvStage.clientWidth - 8;
-  const portrait = maxW < 640; // mobile : 1 page ; desktop : double page
+  const portrait = maxW < 640;
   let pageH = maxH;
   let pageW = pageH * ratio;
   const totalW = portrait ? pageW : pageW * 2;
@@ -654,7 +560,6 @@ function closeOverlay(el) {
 }
 
 [productOverlay, bookOverlay].forEach((ov) => {
-  // clic sur le fond ou sur ✕ → fermer
   ov.addEventListener("click", (e) => {
     if (e.target === ov || e.target.closest("[data-close]")) closeOverlay(ov);
   });
@@ -666,7 +571,6 @@ document.addEventListener("keydown", (e) => {
       if (!ov.hidden) closeOverlay(ov);
     });
   }
-  // flèches clavier dans le flipbook
   if (!bookOverlay.hidden && pageFlip) {
     if (e.key === "ArrowLeft") pageFlip.flipPrev();
     if (e.key === "ArrowRight") pageFlip.flipNext();
@@ -675,9 +579,6 @@ document.addEventListener("keydown", (e) => {
 
 /* ============================================================
    Formulaire de contact (anti-bots)
-   - L'adresse de destination vit dans contact.php, jamais dans
-     le HTML → pas de scraping possible.
-   - Honeypot (champ "website" invisible) + piège temporel (ts).
    ============================================================ */
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
@@ -723,12 +624,18 @@ contactForm.addEventListener("submit", async (e) => {
 
 /* ============================================================
    Coordonnées masquées — jamais en clair dans le HTML.
-   Les bots scrapent le HTML brut ; ici email et téléphone sont
-   assemblés en JS au clic seulement. Même principe pour les deux.
-   ✏️ Remplace les morceaux par les tiens.
+   Les bots scrapent le HTML brut ; email et téléphone sont
+   assemblés en JS au clic seulement.
+   ------------------------------------------------------------
+   ✏️ CORRECTIF : le bouton, une fois révélé, devient un <a>
+   auquel on redonne la classe .reveal-btn (+ .is-revealed).
+   Avant, l'<a> de remplacement perdait tout style de bouton
+   (plus de display:block/width:100%), ce qui décalait la mise
+   en page et donnait l'impression que l'autre bouton disparaissait.
    ============================================================ */
 function revealContact(btnId, parts, hrefPrefix) {
   const btn = document.getElementById(btnId);
+  if (!btn) return;
   btn.addEventListener(
     "click",
     () => {
@@ -736,6 +643,7 @@ function revealContact(btnId, parts, hrefPrefix) {
       const a = document.createElement("a");
       a.href = hrefPrefix + value;
       a.textContent = value;
+      a.className = "reveal-btn is-revealed";
       btn.replaceWith(a);
     },
     { once: true },
@@ -745,8 +653,8 @@ function revealContact(btnId, parts, hrefPrefix) {
 // Email : [utilisateur, arobase, domaine]
 revealContact("revealMail", ["romain.desfonds", "@", "gmail.com"], "mailto:");
 
-// Téléphone : ✏️ mets ton vrai numéro en morceaux
-revealContact("revealTel", ["06", " 12", " 34", " 56", " 78"], "tel:");
+// Téléphone : 06 78 11 64 30
+revealContact("revealTel", ["06 ", "78 ", "11 ", "64 ", "30"], "tel:0678116430");
 
 /* ===== Init ===== */
 renderFilters();
