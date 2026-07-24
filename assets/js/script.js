@@ -578,51 +578,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 /* ============================================================
-   Formulaire de contact (anti-bots)
-   ============================================================ */
-const contactForm = document.getElementById("contactForm");
-const formStatus = document.getElementById("formStatus");
-document.getElementById("formTs").value = Math.floor(Date.now() / 1000);
-
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  formStatus.className = "form-status";
-
-  if (!contactForm.checkValidity()) {
-    formStatus.classList.add("err");
-    formStatus.textContent = "Merci de remplir les champs obligatoires (*).";
-    return;
-  }
-
-  const btn = contactForm.querySelector("button[type=submit]");
-  btn.disabled = true;
-  btn.textContent = "Envoi…";
-
-  try {
-    const res = await fetch(contactForm.action, {
-      method: "POST",
-      body: new FormData(contactForm),
-    });
-    const data = await res.json();
-    if (!data.ok) throw new Error(data.error || "Erreur serveur");
-    formStatus.classList.add("ok");
-    formStatus.textContent =
-      "Message envoyé, merci ! Je vous réponds rapidement.";
-    contactForm.reset();
-    document.getElementById("formTs").value = Math.floor(Date.now() / 1000);
-  } catch (err) {
-    formStatus.classList.add("err");
-    formStatus.textContent =
-      location.protocol === "file:"
-        ? "Le formulaire nécessite un serveur PHP (il fonctionnera une fois en ligne sur IONOS)."
-        : "Échec de l'envoi. Réessayez ou utilisez le bouton email ci-contre.";
-  } finally {
-    btn.disabled = false;
-    btn.textContent = "Envoyer";
-  }
-});
-
-/* ============================================================
    Coordonnées masquées — jamais en clair dans le HTML.
    Les bots scrapent le HTML brut ; email et téléphone sont
    assemblés en JS au clic seulement.

@@ -1,14 +1,13 @@
-// assets/js/contact.js
 const CONTACT_ENDPOINT = 'https://metakina.fr/api/contact-api.php';
+const FALLBACK_EMAIL = 'romain.desfonds@gmail.com'; // ✏️ ton adresse
 
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 
-// On note l'heure d'affichage du formulaire, pour l'anti-spam côté serveur
 document.getElementById('formTs').value = Date.now();
 
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // empêche le rechargement classique de la page
+  e.preventDefault();
 
   status.textContent = 'Envoi en cours…';
   status.className = 'form-status';
@@ -31,7 +30,9 @@ form.addEventListener('submit', async (e) => {
       throw new Error(data.error || 'unknown');
     }
   } catch (err) {
-    status.textContent = "Erreur lors de l'envoi, réessaie ou écris-moi directement.";
+    status.innerHTML =
+      `Échec de l'envoi. Écrivez-moi directement à ` +
+      `<a href="mailto:${FALLBACK_EMAIL}">${FALLBACK_EMAIL}</a>.`;
     status.className = 'form-status err';
   }
 });
