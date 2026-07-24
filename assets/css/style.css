@@ -53,7 +53,7 @@ body {
 body.no-scroll { overflow: hidden; }
 
 h1 { font-weight: 700; font-size: 2.5em; }
-h2 { font-weight: 600; font-size: 2.3em; }
+h2 { font-weight: 700; font-size: 2.3em; }
 
 img { display: block; max-width: 100%; }
 
@@ -92,6 +92,10 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-title);
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.section-title-light {
+  color: var(--card);
 }
 .accent { color: var(--accent); }
 
@@ -392,8 +396,8 @@ img { display: block; max-width: 100%; }
   .profile-layout { flex-direction: row; align-items: flex-start; gap: 2rem; }
 
   .profile-photo {
-    flex: 0 0 45%;
-    max-width: 45%;
+    flex: 0 0 55%;
+    max-width: 55%;
     position: sticky;
     top: 120px;
   }
