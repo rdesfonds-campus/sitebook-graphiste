@@ -513,8 +513,11 @@ img { display: block; max-width: 100%; }
 .contact-section .section-title { color: #fff; }
 .contact-intro { color: rgba(255, 255, 255, .7); margin-bottom: 1.5rem; }
 
-.contact-grid { display: flex; }
-
+.contact-grid {
+  display: flex;
+  flex-direction: column;   /* ✏️ empile en mobile */
+  gap: 2rem;
+}
 .contact-form { display: flex; flex-direction: column; gap: .9rem; width: 100%; max-width: 42rem; }
 .form-row { display: flex; flex-direction: column; gap: .9rem; }
 
@@ -555,7 +558,30 @@ img { display: block; max-width: 100%; }
 .contact-aside h3 { font-size: 1em; font-weight: 600; margin-bottom: .4rem; }
 .contact-aside p { color: rgba(255, 255, 255, .7); font-size: .9rem; margin-bottom: 1rem; }
 .contact-aside a { color: var(--accent); word-break: break-all; }
+.contact-aside {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;   /* ✏️ pour que justify-content ait de l'espace à répartir */
+}
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+}
+
+.social-icon {
+  display: block;
+  width: 52px;
+  height: 52px;
+  transition: transform .15s, opacity .15s;
+}
+.social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.social-icon:hover { transform: translateY(-3px); opacity: .85; }
 .reveal-btn {
   display: block;
   width: 100%;
@@ -572,6 +598,7 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
   text-decoration: none;
 }
+
 .reveal-btn:hover { border-color: var(--accent); }
 /* état "révélé" : le bouton devient un lien, garde exactement le même gabarit */
 .reveal-btn.is-revealed { cursor: default; }
@@ -583,6 +610,7 @@ img { display: block; max-width: 100%; }
   .contact-grid { flex-direction: row; }
   .contact-form { flex: 0 0 75%; max-width: 75%; }
   .contact-aside { flex: 1; }
+  .social-icons { justify-content: flex-start; }   /* ✏️ annule le centrage mobile */
   .form-row { flex-direction: row; }
 }
 
@@ -822,3 +850,24 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
 }
 .bv-btn:hover { background: var(--accent); }
+
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;   /* ✏️ force les enfants à occuper toute la largeur */
+  gap: 2rem;
+}
+
+.contact-form { width: 100%; }   /* ✏️ ajout, sécurise la largeur en mobile */
+
+.contact-aside {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+}
