@@ -36,19 +36,19 @@ function catPages(dir, n) {
    ============================================================ */
 const FILTERS = [
   { tag: "*", label: "Tous" },
-  { tag: "nature-cos", label: "Nature.cos" },
+  { tag: "nature.cos", label: "Nature.cos" },
   { tag: "siroco", label: "Siroco" },
   { tag: "catalogue", label: "Catalogues" },
   { tag: "plv", label: "PLV" },
   { tag: "presentoir", label: "Présentoirs" },
-  { tag: "packaging", label: "Packaging" },
+  { tag: "marketing", label: "Marketing" },
   { tag: "photos", label: "Photos" },
-  { tag: "eshop", label: "E-shop" },
+  { tag: "digital", label: "Digital" },
   { tag: "cm", label: "Community management" },
   { tag: "newsletter", label: "Newsletters" },
   { tag: "print", label: "Print" },
-  { tag: "web", label: "Web" },
-  { tag: "tableaux", label: "Tableaux" },
+  { tag: "branding", label: "Branding" },
+  { tag: "UX", label: "UX/UI" },
 ];
 
 const TAG_LABELS = Object.fromEntries(FILTERS.map((f) => [f.tag, f.label]));
@@ -69,7 +69,7 @@ const ITEMS = [
     type: "catalogue",
     title: "Catalogue Nature.cos CC",
     société: "Nature.cos",
-    tags: ["nature-cos", "catalogue", "print"],
+    tags: ["nature.cos", "catalogue", "print"],
     description:
       "Catalogue produits 14 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.",
     cover: "assets/catalogue/naturecos-CC/page_cover.webp",
@@ -84,7 +84,7 @@ const ITEMS = [
     type: "catalogue",
     title: "Catalogue Nature.cos ADD",
     société: "Nature.cos",
-    tags: ["nature-cos", "catalogue", "print"],
+    tags: ["nature.cos", "catalogue", "print"],
     description:
       "Catalogue produits 7 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.",
     cover: "assets/catalogue/naturecos-ADD/page_cover.webp",
@@ -99,7 +99,7 @@ const ITEMS = [
     type: "catalogue",
     title: "Catalogue Nature.cos MW",
     société: "Nature.cos",
-    tags: ["nature-cos", "catalogue", "print"],
+    tags: ["nature.cos", "catalogue", "print"],
     description:
       "Catalogue produits 7 pages — direction artistique, mise en page, retouche photo, fichier HD certifié imprimeur.",
     cover: "assets/catalogue/naturecos-MW/page_cover.webp",
@@ -114,7 +114,7 @@ const ITEMS = [
     type: "catalogue",
     title: "Bible ADD Nature.cos",
     société: "Nature.cos",
-    tags: ["nature-cos", "catalogue", "print"],
+    tags: ["nature.cos", "catalogue", "print"],
     description:
       "Bible produits et soins Atelier des Délices 124 pages — mise en page, retouche photo, fichier HD certifié imprimeur.",
     cover: "assets/catalogue/naturecos-bibleADD/page_cover.webp",
@@ -144,7 +144,7 @@ const ITEMS = [
     type: "produit",
     title: "PLV totem triptyque",
     société: "Nature.cos",
-    tags: ["nature-cos", "plv", "print"],
+    tags: ["nature.cos", "plv", "print"],
     description: "PLV 154x154cm : porte affiche 50x154cm",
     images: [
       {
@@ -166,7 +166,7 @@ const ITEMS = [
     type: "produit",
     title: "Photos promotionnelles",
     société: "Nature.cos",
-    tags: ["nature-cos", "photos", "print"],
+    tags: ["nature.cos", "photos", "print"],
     description:
       "Photos promotionnelles utilisées pour supports de communication",
     images: [
@@ -197,7 +197,7 @@ const ITEMS = [
     type: "produit",
     title: "Application Skin@vision",
     société: "Nature.cos",
-    tags: ["nature-cos", "application", "UI/UX"],
+    tags: ["nature-cos", "UX"],
     description:
       "Design d'interface application pour appareil à diasgnostic peau Skin@Vision",
     images: [
@@ -213,7 +213,7 @@ const ITEMS = [
     type: "eshop",
     title: "E-shop Nature.cos",
     société: "Nature.cos",
-    tags: ["nature-cos", "eshop", "digital"],
+    tags: ["nature-cos", "marketing", "digital"],
     description:
       "E-shop des différentes marques Couleur Caramel, L'Atelier des Délices, Miss W avec Prestashop. Design, intégration, photos produits.",
     images: [
@@ -227,7 +227,7 @@ const ITEMS = [
     type: "digital",
     title: "Réseaux sociaux",
     société: "Nature.cos",
-    tags: ["nature-cos", "digital", "print"],
+    tags: ["nature-cos","marketing","digital"],
     description:
       "Community management et création de contenu Facebook - Parutions destinées aux clients B2B et B2C.",
     images: [
@@ -243,7 +243,7 @@ const ITEMS = [
     type: "digital",
     title: "Newsletters e-shops",
     société: "Nature.cos",
-    tags: ["nature-cos", "photos", "print"],
+    tags: ["nature.cos", "digital", "marketing"],
     description:
       "Photos promotionnelles utilisées pour supports de communication",
     images: [
@@ -258,7 +258,7 @@ const ITEMS = [
     type: "digital",
     title: "Siroco-box.fr",
     société: "Siroco SAS",
-    tags: ["siroco", "photos", "print"],
+    tags: ["siroco", "digital"],
     description: "Site vitrine siroco-box.fr",
     images: [
       { src: "assets/site-siroco/site-siroco.webp", alt: "Site vitrine siroco-box.fr" },
@@ -269,7 +269,7 @@ const ITEMS = [
     type: "produit",
     title: "Présentoirs Siroco",
     société: "Siroco SAS",
-    tags: ["siroco", "photos", "print"],
+    tags: ["siroco", "plv", "print"],
     description: "Présentoirs carton, box de foire ave reprise d'invendus",
     images: [
       { src: "assets/presentoirs/presentoir-halloween.webp", alt: "Présentoir carton, box Halloween" },
