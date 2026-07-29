@@ -1,13 +1,7 @@
 /* ============================================================
    Book graphiste — galerie filtrée + flipbook + fiche produit
    ------------------------------------------------------------
-   ✏️ POUR METTRE TES VRAIS VISUELS :
-   Remplace les appels ph('Texte', '#couleur') par le chemin de
-   ton image, ex :  cover: 'assets/catalogue-nature-cover.jpg'
-   - cover  : vignette dans la grille
-   - images : visuels de la fiche produit (1er = principal)
-   - pages  : pages du catalogue, dans l'ordre (1 image = 1 page)
-   ============================================================ */
+   
 
 /* --- Générateur de placeholder (SVG en data-URI) — à supprimer
        quand toutes les images seront remplacées --- */
@@ -28,9 +22,7 @@ function phPages(name, color, n) {
   return pages;
 }
 
-/* --- Pages RÉELLES d'un catalogue : dossier + nombre de pages.
-       Attend des fichiers nommés page_01.webp, page_02.webp, …
-       (+ page_cover.webp pour la couverture, ajoutée à part) --- */
+/* --- Pages RÉELLES d'un catalogue  --- */
 function catPages(dir, n) {
   const pages = [];
   for (let i = 1; i <= n; i++) {

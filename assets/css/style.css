@@ -86,7 +86,29 @@ img { display: block; max-width: 100%; }
   font-size: 1.75rem;
   margin-bottom: 1rem;
 }
+.panel a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .6rem;
+  color: var(--card);
+  background: var(--ink, #d4a24c);
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 600;
+  padding: .5rem .9rem;
+  border-radius: 999px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
 
+.panel a:hover {
+background-color:var(--accent);  box-shadow: 0 3px 0 var(--ink);
+}
+
+.panel a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
 /* --- Titres de section & accent --- */
 .section-title {
   font-family: var(--font-title);
@@ -534,9 +556,9 @@ img { display: block; max-width: 100%; }
 .contact-form textarea {
   font: inherit;
   color: #fff;
-  background: rgba(255, 255, 255, .08);
-  border: 1px solid rgba(255, 255, 255, .18);
-  border-radius: 8px;
+  background: var(--ink);
+  border:none;
+border-bottom: 1px solid rgba(255, 255, 255, .3);
   padding: .65rem .8rem;
 }
 .contact-form input:focus,
